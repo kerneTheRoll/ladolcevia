@@ -15,14 +15,14 @@
 @font-face {
   font-family: 'YourFontName';
   /*a name to be used later*/
-  src: url('/../fonts/Alperton-Regular.ttf');
+  src: url('./../fonts/Alperton-Regular.ttf');
   /*URL to font*/
 }
 
 @font-face {
   font-family: 'FontMenu';
   /*a name to be used later*/
-  src: url('/../fonts/CaviarDreams.ttf');
+  src: url('./../fonts/CaviarDreams.ttf');
   /*URL to font*/
 }
 
