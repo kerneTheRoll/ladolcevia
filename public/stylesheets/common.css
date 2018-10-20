@@ -32,10 +32,8 @@
 body {
   color: #72767b;
   font-family: 'YourFontName';
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.4;
-  line-height: 28px;
+  margin: 0;
+  padding: 0;
 }
 
 .motto {

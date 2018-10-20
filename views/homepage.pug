@@ -59,27 +59,27 @@ block body
           h1.motto
             != RichText.asText(home.data.Motto)
   .container-fluid
-  .row
-    .col-md-6.categoria-immagine
-        img(src=home.data.immagine_categorie.url)
-    .col-md-6.d-flex.flex-column.justify-content-center.categoriaTitolo
-      div
-        h2.title I nostri Gelati
-      p
+    .row
+      .col-md-6.categoria-immagine
+         img(src=home.data.immagine_categorie.url)
+      .col-md-6.d-flex.flex-column.justify-content-center.categoriaTitolo
+       div
+         h2.title I nostri Gelati
+       p
         ul.listaCategorie
           each linkItem in home.data.sezione_categorie
             li
               a.ban(href=Link.url(linkItem.link_categoria, ctx.linkResolver))
                 != linkItem.label
   .container-fluid.mt-5
-  .row
-    .col-md-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center.py-5.px-5
-      h2.titolo-storia
-        != RichText.asText(home.data.titolosezionestoria)
-      .paragrafoStoria
+    .row
+     .col-md-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center.py-5.px-5
+        h2.titolo-storia
+         != RichText.asText(home.data.titolosezionestoria)
+        .paragrafoStoria
          != RichText.asHtml(home.data.descrizione_storia, ctx.linkResolver)
-    .col-md-6.immagine-storia
-      img(src=home.data.immaginestoria.url)
+     .col-md-6.immagine-storia
+       img.img-fluid(src=home.data.immaginestoria.url)
 
 
 
