@@ -1,0 +1,43 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = categoria
+  - var tablet = categoria.data.backgroundImage.Tablet.url
+  - var desktop = categoria.data.backgroundImage.url
+  - var mobile = categoria.data.backgroundImage.Mobile.url
+  style(type="text/css").
+       .homepage-banner{
+            background-image:url(#{desktop});
+
+
+            background-repeat:no-repeat;
+            background-size:cover;
+         }
+       @media only screen and (max-width:970px){
+          .homepage-banner{
+            background-image:url(#{tablet});
+            height:200px;
+
+
+         }
+           @media only screen and (max-width:400px){
+          .homepage-banner{
+            background-image:url(#{mobile});
+            height:200px;
+
+
+         }
+         .banne{
+           color:red;
+           font-size:40px;
+         }
+       }
+block body
+
+  section.homepage-banner
+    h1.motto
+      != RichText.asText(categoria.data.title)
+  -// Content Section
+  div
+

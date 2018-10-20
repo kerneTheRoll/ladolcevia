@@ -1,0 +1,19 @@
+{
+  "languages": [{
+      "key": "fr-fr",
+      "label": "Francais"
+    },
+    {
+      "key": "en-gb",
+      "label": "English"
+    },
+    {
+      "key": "de-de",
+      "label": "German"
+    }, {
+      "key": "it-it",
+      "label": "Italiano"
+    }
+  ],
+  "default": "it-it"
+}

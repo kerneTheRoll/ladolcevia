@@ -1,0 +1,108 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = home
+  - var tablet = home.data.backgroundImage.Tablet.url
+  - var desktop = home.data.backgroundImage.url
+  - var mobile = home.data.backgroundImage.Mobile.url
+
+block body
+  style(type="text/css").
+       .homepage-banner{
+            background-image:url(#{desktop});
+
+
+            background-repeat:no-repeat;
+            background-size:cover;
+         }
+          .title{
+            color:#5d7daa;
+            font-size:3em;
+            text-align:left;
+            width:200px;
+
+       }
+       @media only screen and (max-width:970px){
+          .homepage-banner{
+            background-image:url(#{tablet});
+            height:200px;
+
+
+         }
+           @media only screen and (max-width:400px){
+          .homepage-banner{
+            background-image:url(#{mobile});
+            height:200px;
+
+
+         }
+         .banne{
+           color:red;
+           font-size:40px;
+         }
+      }
+
+
+  .homepage
+
+
+    section.homepage-banner
+
+
+      -//.banner-content.grid-container
+      - // h2.banner-title
+      -//    != RichText.asText(home.data.title)
+
+      -//  if ( home.data.buttonLink && home.data.buttonText )
+      -//      a.banner-button(href=Link.url(home.data.buttonLink, ctx.linkResolver)) !{home.data.buttonText}
+          h1.motto
+            != RichText.asText(home.data.Motto)
+  .container-fluid
+  .row
+    .col-md-6.categoria-immagine
+        img(src=home.data.immagine_categorie.url)
+    .col-md-6.d-flex.flex-column.justify-content-center.categoriaTitolo
+      div
+        h2.title I nostri Gelati
+      p
+        ul.listaCategorie
+          each linkItem in home.data.sezione_categorie
+            li
+              a.ban(href=Link.url(linkItem.link_categoria, ctx.linkResolver))
+                != linkItem.label
+  .container-fluid.mt-5
+  .row
+    .col-md-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center.py-5.px-5
+      h2.titolo-storia
+        != RichText.asText(home.data.titolosezionestoria)
+      .paragrafoStoria
+         != RichText.asHtml(home.data.descrizione_storia, ctx.linkResolver)
+    .col-md-6.immagine-storia
+      img(src=home.data.immaginestoria.url)
+
+
+
+
+    -// Content Section
+    div.grid-container
+
+      -// Display the slices
+      for slice in home.data.body
+        case slice.slice_type
+          when 'highlight_section'
+            include ./slices/highlight-section.pug
+          when 'banner'
+            include ./slices/banner.pug
+          when 'banner_look'
+            include ./slices/quote-banner.pug
+          when 'editorial_look'
+            include ./slices/featured-section.pug
+
+          when 'image_slider'
+            include ./slices/image-slider.pug
+          when 'gallery'
+            include ./slices/gallery.pug
+          when 'video'
+            include ./slices/video.pug
+
