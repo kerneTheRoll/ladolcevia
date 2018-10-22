@@ -36,6 +36,23 @@ body {
   padding: 0;
 }
 
+.descrizionepremium {
+  color: #42b1e6;
+  font-weight: bold;
+  font-family: 'FontMenu';
+  font-size: 4em;
+  margin-bottom: 20px;
+
+}
+
+
+.descrizionepremium+p {
+  font-size: 1.7em;
+  padding-top: 10px;
+  margin-top: 10px;
+  font-family: 'FontMenu';
+}
+
 .motto {
   font-family: 'YourFontName';
   color: #003b7f;

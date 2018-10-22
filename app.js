@@ -80,16 +80,6 @@ app.get("/", (req, res, next) => {
   res.redirect(I18N.default);
 });
 
-app.get("/pippo", function(req, res, next) {
-  req.prismic.api
-    .query([
-      Prismic.Predicates.at("document.type", "prodotto"),
-      Prismic.Predicates.at("document.tags", ["crema"])
-    ])
-    .then(function(response) {
-      console.log(response);
-    });
-});
 function getHome(req, res, next) {
   req.prismic.api
     .getSingle("homepage", I18NConfig(req))
@@ -102,14 +92,27 @@ function getHome(req, res, next) {
       next(`error when retriving homepage ${error.message}`);
     });
 }
+
+function getProduct(req, res, next) {
+  req.prismic.api
+    .query(
+      [Prismic.Predicates.at("document.type", "prodotto")],
+      I18NConfig(req)
+    )
+    .then(function(response) {
+      req.prodotto = response.results;
+      next();
+    });
+}
 function consola(req, res) {
   res.render("homepage", {
     home: req.home,
     current: "home",
-    title: "ladolcevia"
+    title: "ladolcevia",
+    prodotto: req.prodotto
   });
 }
-app.get(I18NUrl("/"), getHome, consola);
+app.get(I18NUrl("/"), getHome, getProduct, consola);
 // Route for the homepage
 
 /*

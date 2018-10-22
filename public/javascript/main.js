@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#image-slider').lightSlider({
+  $("#image-slider").lightSlider({
     gallery: false,
     auto: true,
     item: 1,
@@ -7,30 +7,45 @@ $(document).ready(function() {
     slideMargin: 0,
     controls: false,
     enableDrag: false,
-    currentPagerPosition: 'left',
+    currentPagerPosition: "left",
     pauseOnHover: true,
-    pause: 6000,
+    pause: 6000
+  });
+  $("#slide").lightSlider({
+    gallery: false,
+
+    item: 1,
+    slideMove: 1,
+    slideMargin: 0,
+    controls: false,
+    enableDrag: true,
+    currentPagerPosition: "left",
+    rtl: false,
+    pauseOnHover: true,
+
+    pager: false
   });
 
-  $('.language-selector select').on('change', function(event) {
+  $(".language-selector select").on("change", function(event) {
     const $select = $(this);
     const $option = $select.find("option:selected", this);
-    const url = $option.attr('href');
+    const url = $option.attr("href");
     window.location.href = url;
   });
 
   //profiles
-  var PROFILE_COOKIE = 'prismic.profile';
+  var PROFILE_COOKIE = "prismic.profile";
   function setProfile(profile) {
     window.Cookies.setItem(PROFILE_COOKIE, profile);
   }
-  if(!Cookies.hasItem(PROFILE_COOKIE)) setProfile(window.PrismicProfiles.default);
+  if (!Cookies.hasItem(PROFILE_COOKIE))
+    setProfile(window.PrismicProfiles.default);
 
-$('.profile-selector select').on('change', function(event) {
-    console.log(this)
+  $(".profile-selector select").on("change", function(event) {
+    console.log(this);
     const $select = $(this);
     const $option = $select.find("option:selected", this);
-    const profile = $option.attr('value');
+    const profile = $option.attr("value");
     setProfile(profile);
     window.location.reload();
   });

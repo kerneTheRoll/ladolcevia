@@ -6,6 +6,7 @@ block variables
   - var tablet = categoria.data.backgroundImage.Tablet.url
   - var desktop = categoria.data.backgroundImage.url
   - var mobile = categoria.data.backgroundImage.Mobile.url
+block body
   style(type="text/css").
        .homepage-banner{
             background-image:url(#{desktop});
@@ -33,7 +34,6 @@ block variables
            font-size:40px;
          }
        }
-block body
 
   section.homepage-banner
     h1.motto
