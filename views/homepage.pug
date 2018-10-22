@@ -77,7 +77,7 @@ block body
 
     .row
      .col-md-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center.py-5.px-5
-        h2.titolo-storia &#x1F60D
+        h2.titolo-storia
          != RichText.asText(home.data.titolosezionestoria)
         .paragrafoStoria
          != RichText.asHtml(home.data.descrizione_storia, ctx.linkResolver)
@@ -85,15 +85,19 @@ block body
        img.img-fluid(src=home.data.immaginestoria.url)
 
   .container-fluid.mt-5
+    h2.motto.mb-5 Prodotto Premium
+
 
   div#slide
     each elem in prodotto
+
       if(elem.data.titolo_premium.length)
         .row
-          .col-md-6
+
+          .col-md-6.col-sm-6.col-xs-6
             each immagine in elem.data.prodotto_premium
               img.img-fluid(src=immagine.immagine_premium.url)
-          .col-md-6.d-flex.flex-column.justify-content-center.box
+          .col-md-6.col-sm-6.col-xs-6.d-flex.flex-column.justify-content-center.box
             h2.descrizionepremium
               != RichText.asText(elem.data.titolo_premium)
             each elem1 in elem.data.prodotto_premium

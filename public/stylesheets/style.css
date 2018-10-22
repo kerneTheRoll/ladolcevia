@@ -13,8 +13,6 @@
   font-weight: 700;
 }
 
-
-
 .site-header.dark a {
   color: #fff;
 }
@@ -60,6 +58,15 @@
   .site-header nav {
     margin-top: 30px;
   }
+
+  .motto {
+    line-height: 55px;
+  }
+
+  .titolo-storia {
+    line-height: 60px;
+    padding-bottom: 10px;
+  }
 }
 
 .homepage-banner {
@@ -78,7 +85,7 @@
 .navbar {
 
   background: #003b7f;
-  height: 75px;
+  min-height: 75px;
   border-bottom: 6px solid #42b1e6;
 
 }
@@ -741,6 +748,18 @@ footer a {
   .highlight-section .illustration {
     display: block;
     width: 100%;
+  }
+
+  .descrizionepremium+p {
+
+
+    font-size: 1em;
+  }
+
+  .descrizionepremium {
+
+    font-size: 2em;
+
   }
 }
 
