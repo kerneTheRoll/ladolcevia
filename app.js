@@ -93,26 +93,27 @@ function getHome(req, res, next) {
     });
 }
 
-function getProduct(req, res, next) {
+function getPremium(req, res, next) {
   req.prismic.api
     .query(
-      [Prismic.Predicates.at("document.type", "prodotto")],
+      [Prismic.Predicates.at("document.type", "ingredienti-premium")],
       I18NConfig(req)
     )
     .then(function(response) {
-      req.prodotto = response.results;
+      req.premium = response.results;
       next();
     });
 }
 function consola(req, res) {
+  console.log(req.premium);
   res.render("homepage", {
     home: req.home,
     current: "home",
     title: "ladolcevia",
-    prodotto: req.prodotto
+    prodotto: req.premium
   });
 }
-app.get(I18NUrl("/"), getHome, getProduct, consola);
+app.get(I18NUrl("/"), getHome, getPremium, consola);
 // Route for the homepage
 
 /*

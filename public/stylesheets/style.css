@@ -25,6 +25,26 @@
   color: #ffffff;
 }
 
+.custom-prev-html {
+  background: none;
+  width: 50px;
+}
+
+.custom-prev-html img {
+
+  width: 500px;
+}
+
+.lSAction>a {
+  height: 500px;
+}
+
+a.lSPrev {
+  background-image: none;
+  background-image: url('../images/next.png') !important;
+
+}
+
 .site-header.light a:hover {
   color: #c8c9cb;
 }

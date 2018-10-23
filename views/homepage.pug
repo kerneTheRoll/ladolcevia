@@ -86,29 +86,16 @@ block body
 
   .container-fluid.mt-5
     h2.motto.mb-5 Prodotto Premium
+    include ./slices/slide.pug
 
 
-  div#slide
-    each elem in prodotto
 
-      if(elem.data.titolo_premium.length)
-        .row
-
-          .col-md-6.col-sm-6.col-xs-6
-            each immagine in elem.data.prodotto_premium
-              img.img-fluid(src=immagine.immagine_premium.url)
-          .col-md-6.col-sm-6.col-xs-6.d-flex.flex-column.justify-content-center.box
-            h2.descrizionepremium
-              != RichText.asText(elem.data.titolo_premium)
-            each elem1 in elem.data.prodotto_premium
-              p
-                != RichText.asText(elem1.descrizione_premium)
 
 
 
 
     -// Content Section
-    div.grid-container
+     div.grid-container
 
 
       -// Display the slices

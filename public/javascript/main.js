@@ -17,13 +17,17 @@ $(document).ready(function() {
     item: 1,
     slideMove: 1,
     slideMargin: 0,
-    controls: false,
+
     enableDrag: true,
-    currentPagerPosition: "left",
+
     rtl: false,
     pauseOnHover: true,
 
-    pager: false
+    controls: true,
+    prevHtml:
+      '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  style="transform:rotate(-180deg)"/></span>',
+    nextHtml:
+      '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  /></span>'
   });
 
   $(".language-selector select").on("change", function(event) {

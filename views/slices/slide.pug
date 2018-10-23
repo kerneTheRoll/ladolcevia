@@ -1,0 +1,11 @@
+div#slide
+  each elem in prodotto
+    .row
+      .col-md-6.col-sm-6.col-xs-6
+         img(src=elem.data.foto_ingrediente.url)
+      .col-md-6.col-sm-6.col-xs-6.d-flex.flex-column.justify-content-center.box
+        h2.descrizionepremium
+         != RichText.asText(elem.data.nome_incrediente)
+        p
+         != RichText.asText(elem.data.descrizione_ingrediente)
+
