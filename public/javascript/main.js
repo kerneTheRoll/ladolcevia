@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     item: 1,
     slideMove: 1,
-    slideMargin: 0,
+    slideMargin: 20,
 
     enableDrag: true,
 
@@ -27,7 +27,8 @@ $(document).ready(function() {
     prevHtml:
       '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  style="transform:rotate(-180deg)"/></span>',
     nextHtml:
-      '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  /></span>'
+      '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  /></span>',
+    pager: false
   });
 
   $(".language-selector select").on("change", function(event) {

@@ -25,10 +25,26 @@
   color: #ffffff;
 }
 
+.titolo-prodotto {
+  color: #42b1e6;
+
+}
+
 .custom-prev-html {
   background: none;
   width: 50px;
 }
+
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+  border: 2px solid #42b1e6
+}
+
+
 
 .custom-prev-html img {
 
@@ -555,6 +571,14 @@ footer a {
     position: static;
     -webkit-transform: initial;
     transform: initial;
+  }
+
+  .listaCategorie li a {
+    color: #cbcbcb;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'FontMenu';
+    text-decoration: none;
   }
 }
 

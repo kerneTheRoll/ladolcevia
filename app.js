@@ -105,7 +105,6 @@ function getPremium(req, res, next) {
     });
 }
 function consola(req, res) {
-  console.log(req.premium);
   res.render("homepage", {
     home: req.home,
     current: "home",
@@ -159,8 +158,57 @@ app.get(I18NUrl("/page/:uid"), (req, res, next) => {
       next(`error when retriving page ${error.message}`);
     });
 });
+function renderCategoria(req, res) {
+  res.render("Categorie", {
+    title: "ladolcevia",
+    categoria: req.categoria,
+    prodottoFiglio: req.prodottoFiglio
+  });
+  console.log(req.prodottoFiglio);
+}
 
-app.get(I18NUrl("/categoria/:uid"), (req, res, next) => {
+function getCategoria(req, res, next) {
+  const uid = req.params.uid;
+  req.prismic.api
+    .getByUID("category", uid, I18NConfig(req))
+    .then(categoria => {
+      if (!categoria) res.status(404).send("page not found");
+      else req.categoria = categoria;
+      next();
+    })
+    .catch(error => {
+      next(`error when retriving page ${error.message}`);
+    });
+}
+
+// fetch dei prodotti che hanno la categoria del parametro passato : uid
+// io prendo poi l'id del documento e lo vado a fetchare dal mio campo "collegamento a un documento"
+function getProdottoSimile(req, res, next) {
+  const id = req.categoria.id;
+
+  req.prismic.api
+    .query([
+      Prismic.Predicates.at("document.type", "prodotto"),
+      Prismic.Predicates.at("my.prodotto.categories.link", id)
+    ])
+    .then(function(response) {
+      // response is the response object, response.results holds the documents
+      req.prodottoFiglio = response.results;
+      next();
+    })
+    .catch(error => {
+      next("error " + error.message);
+    });
+}
+
+app.get(
+  I18NUrl("/categoria/:uid"),
+  getCategoria,
+  getProdottoSimile,
+  renderCategoria
+);
+
+/* app.get(I18NUrl("/categoria/:uid"), (req, res, next) => {
   const uid = req.params.uid;
 
   req.prismic.api
@@ -172,7 +220,7 @@ app.get(I18NUrl("/categoria/:uid"), (req, res, next) => {
     .catch(error => {
       next(`error when retriving page ${error.message}`);
     });
-});
+}); */
 
 //preview
 app.get("/preview", (req, res) => {
