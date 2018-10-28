@@ -41,7 +41,8 @@
 .table-bordered>tfoot>tr>th,
 .table-bordered>thead>tr>td,
 .table-bordered>thead>tr>th {
-  border: 1px solid #42b1e6
+  border: 1px solid #42b1e6;
+
 }
 
 
@@ -251,6 +252,17 @@ p {
 
   h3 {
     font-size: 18px;
+  }
+
+  .table-bordered>tbody>tr>td,
+  .table-bordered>tbody>tr>th,
+  .table-bordered>tfoot>tr>td,
+  .table-bordered>tfoot>tr>th,
+  .table-bordered>thead>tr>td,
+  .table-bordered>thead>tr>th {
+
+    padding: 5px;
+    font-size: 15px;
   }
 }
 
