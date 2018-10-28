@@ -53,26 +53,27 @@ block body
              strong dosaggio :
              !=RichText.asText(items.data.dosaggio)
           if (items.data.codice.length && items.data.peso.length && items.data.numero_confezioni.length)
-             table.table.table-bordered.mytable
-                thead
-                 tr
-                  th
-                  th
-                  th TIPO IMBALLAGGIO
-                  th NR CONFEZIONI
-                  th  PESO CONFEZIONE (KG)
-                tbody
-                  tr
-                    td
-                      != RichText.asText(items.data.codice)
-                    td
-                      != RichText.asText(items.data.title)
-                    td
-                      != RichText.asText(items.data.imballaggio)
-                    td
-                      != RichText.asText(items.data.numero_confezioni)
-                    td
-                      != RichText.asText(items.data.peso)
+            div.table-responsive
+              table.table.table-bordered.mytable
+                  thead
+                   tr
+                    th
+                    th
+                    th TIPO IMBALLAGGIO
+                    th NR CONFEZIONI
+                    th  PESO CONFEZIONE (KG)
+                  tbody
+                    tr
+                      td
+                       != RichText.asText(items.data.codice)
+                      td
+                       != RichText.asText(items.data.title)
+                      td
+                       != RichText.asText(items.data.imballaggio)
+                      td
+                       != RichText.asText(items.data.numero_confezioni)
+                      td
+                       != RichText.asText(items.data.peso)
 
 
 
