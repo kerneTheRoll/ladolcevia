@@ -64,22 +64,14 @@ $(document).ready(function() {
     trigger: "manual"
   });
 
-  $("#card").mouseenter(function() {
-    $(this).flip(true);
+  $("#card").hover(function() {
+    $(this).flip("toggle");
   });
-  $("#card").mouseleave(function() {
-    $(this).flip(false);
+  $("#card1").hover(function() {
+    $(this).flip("toggle");
   });
-  $("#card1").mouseenter(function() {
-    $(this).flip(true);
-  });
-  $("#card1").mouseleave(function() {
-    $(this).flip(false);
-  });
-  $("#card2").mouseenter(function() {
-    $(this).flip(true);
-  });
-  $("#card2").mouseleave(function() {
-    $(this).flip(false);
+
+  $("#card2").hover(function() {
+    $(this).flip("toggle");
   });
 });
