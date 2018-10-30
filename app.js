@@ -187,10 +187,13 @@ function getProdottoSimile(req, res, next) {
   const id = req.categoria.id;
 
   req.prismic.api
-    .query([
-      Prismic.Predicates.at("document.type", "prodotto"),
-      Prismic.Predicates.at("my.prodotto.categories.link", id)
-    ])
+    .query(
+      [
+        Prismic.Predicates.at("document.type", "prodotto"),
+        Prismic.Predicates.at("my.prodotto.categories.link", id)
+      ],
+      I18NConfig(req)
+    )
     .then(function(response) {
       // response is the response object, response.results holds the documents
       req.prodottoFiglio = response.results;

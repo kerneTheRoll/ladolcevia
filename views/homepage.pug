@@ -84,10 +84,33 @@ block body
      .col-md-6.immagine-storia
        img.img-fluid(src=home.data.immaginestoria.url)
 
-  .container-fluid.mt-5
-    h2.motto.mb-5 Prodotto Premium
-    include ./slices/slide.pug
+  .container.mt-5
+     h2.titolo
+      !=RichText.asText(home.data.titolo_il_segreto)
+     .row.listaSegreti
+        .col-md-4
+          #card
+            .front.bluastro.pt-4
+              img(src=home.data.iconasegreto1.url)
+            .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
+              |  Collaboriamo direttamente con i nostri clienti per sviluppare un prodotto eccellente
 
+        .col-md-4
+          #card1
+            .front.bluastro.pt-4
+              img(src=home.data.iconasegreto2.url)
+            .back
+              | Back content
+        .col-md-4
+          #card2
+            .front.bluastro.pt-4
+              img(src=home.data.iconasegreto3.url)
+            .back
+              | Back content
+
+  .container-fluid.mt-5
+
+    include ./slices/slide.pug
 
 
 

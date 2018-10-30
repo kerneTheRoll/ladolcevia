@@ -45,7 +45,62 @@
 
 }
 
+.bluastro {
+  background-color: #1d74bb;
+}
 
+#card {
+  height: 330px;
+  width: 300px;
+}
+
+
+#card1 {
+  height: 330px;
+  width: 300px;
+}
+
+#card2 {
+  height: 330px;
+  width: 300px;
+}
+
+
+#card .back {
+  padding: 5px;
+  border: 4px solid #2478bb;
+
+}
+
+#card1 .back {
+  padding: 5px;
+  border: 4px solid #2478bb;
+
+}
+
+#card2 .back {
+  padding: 5px;
+  border: 4px solid #2478bb;
+
+}
+
+.titolo {
+  color: #2478bb;
+  text-align: center;
+  font-size: 4em;
+  font-family: 'FontMenu';
+  margin-bottom: 50px;
+  margin-top: 10px;
+  font-weight: bold;
+
+
+}
+
+.descrizione-segreto {
+  font-size: 2em;
+  text-align: center;
+  color: #1d74bb;
+}
 
 .custom-prev-html img {
 
@@ -86,6 +141,16 @@ a.lSPrev {
   margin-left: 40px;
 }
 
+@media (max-width: 994px) {
+
+  #card,
+  #card1,
+  #card2 {
+    width: auto;
+
+  }
+}
+
 @media (max-width: 767px) {
   .site-header {
     padding-left: 20px;
@@ -94,6 +159,21 @@ a.lSPrev {
 
   .site-header nav {
     margin-top: 30px;
+  }
+
+  #card,
+  #card1,
+  #card2 {
+    width: 430px;
+
+
+  }
+
+  #card img,
+  #card1 img,
+  #card2 img {
+    width: 300px;
+    margin-left: 50px;
   }
 
   .motto {
@@ -118,6 +198,8 @@ a.lSPrev {
   align-items: center;
   text-align: center;
 }
+
+
 
 .navbar {
 
@@ -249,6 +331,8 @@ p {
   h2 {
     font-size: 26px;
   }
+
+
 
   h3 {
     font-size: 18px;
@@ -986,9 +1070,14 @@ footer a {
     column-gap: 40px;
   }
 
-  .quote {
-    font-size: 20px;
+  div.listaSegreti>div.col-md-4 {
+    margin-bottom: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
   }
+
+
 
   .gallery-item {
     -webkit-box-flex: 100%;

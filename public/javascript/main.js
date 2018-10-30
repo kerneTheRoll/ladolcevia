@@ -54,4 +54,32 @@ $(document).ready(function() {
     setProfile(profile);
     window.location.reload();
   });
+  $("#card").flip({
+    trigger: "manual"
+  });
+  $("#card1").flip({
+    trigger: "manual"
+  });
+  $("#card2").flip({
+    trigger: "manual"
+  });
+
+  $("#card").mouseenter(function() {
+    $(this).flip(true);
+  });
+  $("#card").mouseleave(function() {
+    $(this).flip(false);
+  });
+  $("#card1").mouseenter(function() {
+    $(this).flip(true);
+  });
+  $("#card1").mouseleave(function() {
+    $(this).flip(false);
+  });
+  $("#card2").mouseenter(function() {
+    $(this).flip(true);
+  });
+  $("#card2").mouseleave(function() {
+    $(this).flip(false);
+  });
 });
