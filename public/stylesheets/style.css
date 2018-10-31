@@ -217,7 +217,7 @@ a.lSPrev {
 
   .geometrico {
     position: absolute;
-    width: 100%;
+    width: 99%;
     clip-path: initial;
     top: 400px;
     bottom: 0;
@@ -225,11 +225,14 @@ a.lSPrev {
     height: 400px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
   }
 
   .geometrico h2 {
     width: 100%;
+    margin-top: 100px;
+
   }
 
   .colonna1 {
@@ -239,11 +242,12 @@ a.lSPrev {
   }
 
   .colonna2 {
-    width: 100%;
+    width: 99%;
     height: 500px;
     margin-bottom: 500px;
     z-index: 9999;
-    clip-path: polygon(0% 100%, 11% 90%, 25% 100%, 41% 90%, 56% 100%, 73% 92%, 100% 100%, 100% 1%, 0 0);
+    -webkit-clip-path: polygon(0% 100%, 15% 88%, 30% 100%, 46% 87%, 63% 100%, 81% 87%, 100% 100%, 100% 1%, 0 0);
+    clip-path: polygon(0% 100%, 15% 88%, 30% 100%, 46% 87%, 63% 100%, 81% 87%, 100% 100%, 100% 1%, 0 0);
   }
 
 
