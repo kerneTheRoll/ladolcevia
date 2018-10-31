@@ -64,14 +64,37 @@ $(document).ready(function() {
     trigger: "manual"
   });
 
-  $("#card").on("touchstart click", function() {
-    $(this).flip("toggle");
-  });
-  $("#card1").on("touchstart click", function() {
-    $(this).flip("toggle");
-  });
+  var event = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+    ? false
+    : true;
 
-  $("#card2").on("touchstart click", function() {
-    $(this).flip("toggle");
-  });
+  console.log(event);
+  if (event) {
+    // caso è mobile
+    $("#card").hover(function() {
+      $(this).flip("toggle");
+    });
+    $("#card1").hover(function() {
+      $(this).flip("toggle");
+    });
+
+    $("#card2").hover(function() {
+      $(this).flip("toggle");
+    });
+  } else {
+    //caso desktop
+
+    $("#card").on("touchstart", function() {
+      $(this).flip("toggle");
+    });
+    $("#card1").on("touchstart", function() {
+      $(this).flip("toggle");
+    });
+
+    $("#card2").on("touchstart", function() {
+      $(this).flip("toggle");
+    });
+  }
 });
