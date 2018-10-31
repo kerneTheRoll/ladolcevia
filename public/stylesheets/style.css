@@ -184,6 +184,11 @@ a.lSPrev {
     line-height: 60px;
     padding-bottom: 10px;
   }
+
+  .immagine-storia {
+    margin-top: 10px;
+  }
+
 }
 
 @media (max-width:450px) {
@@ -694,10 +699,11 @@ footer a {
 
   .listaCategorie li a {
     color: #cbcbcb;
-    font-size: 18px;
+    font-size: 25px;
     text-transform: uppercase;
     font-family: 'FontMenu';
     text-decoration: none;
+    margin-right: 10px;
   }
 }
 
