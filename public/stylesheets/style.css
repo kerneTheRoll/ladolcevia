@@ -686,6 +686,19 @@ footer a {
     margin-bottom: 0;
   }
 
+  .box-storia {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .box-storia h2 {
+    text-align: center;
+    font-size: 3.5em;
+    line-height: 43px;
+    width: 100%;
+    ;
+  }
+
   .quote-banner .container-text {
     width: 100%;
     position: static;
@@ -699,11 +712,11 @@ footer a {
 
   .listaCategorie li a {
     color: #cbcbcb;
-    font-size: 25px;
+    font-size: 23px;
     text-transform: uppercase;
     font-family: 'FontMenu';
     text-decoration: none;
-    margin-right: 10px;
+    margin-right: 3px;
   }
 }
 
