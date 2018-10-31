@@ -64,14 +64,14 @@ $(document).ready(function() {
     trigger: "manual"
   });
 
-  $("#card").hover(function() {
+  $("#card").on("touchstart click", function() {
     $(this).flip("toggle");
   });
-  $("#card1").hover(function() {
+  $("#card1").on("touchstart click", function() {
     $(this).flip("toggle");
   });
 
-  $("#card2").hover(function() {
+  $("#card2").on("touchstart click", function() {
     $(this).flip("toggle");
   });
 });
