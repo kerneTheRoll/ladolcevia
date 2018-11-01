@@ -96,18 +96,18 @@
 }
 
 #card {
-  height: 330px;
+  height: 300px;
   width: 300px;
 }
 
 
 #card1 {
-  height: 330px;
+  height: 300px;
   width: 300px;
 }
 
 #card2 {
-  height: 330px;
+  height: 300px;
   width: 300px;
 }
 
@@ -115,19 +115,30 @@
 #card .back {
   padding: 5px;
   border: 4px solid #2478bb;
+  font-size: 1.4rem;
+  ;
 
 }
 
 #card1 .back {
   padding: 5px;
   border: 4px solid #2478bb;
+  font-size: 1.4rem;
 
 }
 
 #card2 .back {
   padding: 5px;
   border: 4px solid #2478bb;
+  font-size: 1.4rem;
 
+}
+
+div#card img,
+div#card1 img,
+div#card2 img {
+  width: 260px;
+  margin-left: 20px;
 }
 
 .titolo {
@@ -193,6 +204,14 @@ a.lSPrev {
   #card1,
   #card2 {
     width: auto;
+    height: 250px;
+
+  }
+
+  div#card img,
+  div#card1 img,
+  div#card2 img {
+    margin-left: 0;
 
   }
 }
@@ -210,9 +229,17 @@ a.lSPrev {
   #card,
   #card1,
   #card2 {
-    width: 430px;
+    width: 300px;
 
 
+  }
+
+  div#card img,
+  div#card1 img,
+  div#card2 img {
+    position: relative;
+    bottom: 20px;
+    left: 15px;
   }
 
   .geometrico {
@@ -246,8 +273,7 @@ a.lSPrev {
     height: 500px;
     margin-bottom: 500px;
     z-index: 9999;
-    -webkit-clip-path: polygon(0% 100%, 15% 88%, 30% 100%, 46% 87%, 63% 100%, 81% 87%, 100% 100%, 100% 1%, 0 0);
-    clip-path: polygon(0% 100%, 15% 88%, 30% 100%, 46% 87%, 63% 100%, 81% 87%, 100% 100%, 100% 1%, 0 0);
+
   }
 
 
