@@ -1,0 +1,51 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = prodotti
+  - var tablet = prodotti.data.banner.tablet.url
+  - var desktop = prodotti.data.banner.url
+  - var mobile = prodotti.data.banner.mobile.url
+block body
+  style(type="text/css").
+       .homepage-banner{
+            background-image:url(#{desktop});
+
+
+            background-repeat:no-repeat;
+            background-size:cover;
+         }
+       @media only screen and (max-width:970px){
+          .homepage-banner{
+            background-image:url(#{tablet});
+            height:200px;
+
+
+         }
+           @media only screen and (max-width:400px){
+          .homepage-banner{
+            background-image:url(#{mobile});
+            height:200px;
+
+
+         }
+         .banne{
+           color:red;
+           font-size:40px;
+         }
+       }
+
+  section.homepage-banner
+    h1.motto
+      != RichText.asText(prodotti.data.motto_prodotti)
+  .container.mt-5
+    .row
+      each items in categorie
+        .col-md-4.py-4.px-4
+          div.d-flex.flex-column
+            img(src=items.data.backgroundImage.Mobile.url)
+            h2.bluastro.bannersotto
+              a.ban(href="/"+items.lang+"/categoria/"+items.uid)
+                != RichText.asText(items.data.title)
+              span
+                i.fas.fa-chevron-right

@@ -225,6 +225,58 @@ app.get(
     });
 }); */
 
+app.get(I18NUrl("/azienda"), (req, res, next) => {
+  req.prismic.api
+    .getSingle("azienda", I18NConfig(req))
+    .then(azienda => {
+      res.render("azienda", { azienda: azienda, title: "azienda" });
+    })
+    .catch(error => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+});
+
+//servizi
+
+function getProdotti(req, res, next) {
+  req.prismic.api
+    .getSingle("prodotti", I18NConfig(req))
+    .then(prodotti => {
+      req.prodotti = prodotti;
+
+      next();
+    }, I18NConfig(req))
+    .catch(error => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+}
+
+function getCategorieInServizi(req, res, next) {
+  req.prismic.api
+    .query(
+      [Prismic.Predicates.at("document.type", "category")],
+      I18NConfig(req)
+    )
+    .then(function(response) {
+      req.categorie = response.results;
+      next();
+    });
+}
+function renderProdotti(req, res) {
+  res.render("Prodotti", {
+    title: "Prodotti",
+    prodotti: req.prodotti,
+    categorie: req.categorie
+  });
+  console.log(req.prodottoFiglio);
+}
+app.get(
+  I18NUrl("/prodotti"),
+  getProdotti,
+  getCategorieInServizi,
+  renderProdotti
+);
+
 //preview
 app.get("/preview", (req, res) => {
   const token = req.query.token;

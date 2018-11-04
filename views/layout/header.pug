@@ -15,6 +15,6 @@ header
       if menu
           each linkItem in menu.data.menuLinks
 
-            li(class=(linkItem.label===title)?'active' : '')
-              a.nav-link(href=Link.url(linkItem.link, ctx.linkResolver))
+            li
+              a(href=Link.url(linkItem.link, ctx.linkResolver) class=(linkItem.label.toLowerCase()===title.toLowerCase())?'linkattivo' : ' ')
                 != linkItem.label

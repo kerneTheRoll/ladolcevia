@@ -1,0 +1,49 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = azienda
+
+block body
+  style(type="text/css").
+       .homepage-banner{
+            background-image:url(#{desktop});
+
+
+            background-repeat:no-repeat;
+            background-size:cover;
+         }
+       @media only screen and (max-width:970px){
+          .homepage-banner{
+            background-image:url(#{tablet});
+            height:200px;
+
+
+         }
+           @media only screen and (max-width:400px){
+          .homepage-banner{
+            background-image:url(#{mobile});
+            height:200px;
+
+
+         }
+         .banne{
+           color:red;
+           font-size:40px;
+         }
+       }
+  .container-fluid.row.mt-5
+    .col-md-6.col1
+      img(src=azienda.data.immagine_azienda.url)
+    .col-md-6.bluastro.col2
+      p
+        != RichText.asText(azienda.data.storia_azienda)
+
+  .container-fluid.mt-5.d-flex.justify-content-center.flex-column
+
+      .para
+        img.float(src=azienda.data.immagine_paragrafo_storia.url  width='900' height='600')
+        h2.motto
+          != RichText.asText(azienda.data.titolo_storia)
+
+        != RichText.asText(azienda.data.storia_completa)

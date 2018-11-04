@@ -15,6 +15,8 @@ module.exports = {
     if (doc.type == "page") return `/${doc.lang}/page/${doc.uid}`;
     if (doc.type == "category") return `/${doc.lang}/categoria/${doc.uid}`;
     if (doc.type == "homepage") return `/${doc.lang}`;
+    if (doc.type == "azienda") return `/${doc.lang}/azienda`;
+    if (doc.type == "prodotti") return `/${doc.lang}/prodotti`;
     return "/";
   }
 };

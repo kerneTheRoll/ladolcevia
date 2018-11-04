@@ -34,6 +34,26 @@
 #navigation ul li a {
 
   text-decoration: none;
+
+}
+
+.bannersotto {
+  height: 90px;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bannersotto a {
+  font-size: 1em;
+  text-decoration: none;
+  color: #fff;
+}
+
+.bannersotto a:hover {
+  text-decoration: none;
 }
 
 .toggle {
@@ -659,6 +679,27 @@ footer a {
   cursor: pointer;
 }
 
+.col1,
+.col2 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.col2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.col2 p {
+  color: #fff;
+  font-size: 1.2em;
+
+
+}
+
 .language-selector .select-wrapper:after {
   font-family: "Material Icons";
   content: '\e313';
@@ -671,6 +712,15 @@ footer a {
 
 .profile-selector {
   display: none;
+}
+
+.float {
+  float: right;
+}
+
+.linkattivo {
+  color: #fff;
+
 }
 
 .profile-selector.active {
