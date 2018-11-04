@@ -229,7 +229,7 @@ app.get(I18NUrl("/azienda"), (req, res, next) => {
   req.prismic.api
     .getSingle("azienda", I18NConfig(req))
     .then(azienda => {
-      res.render("azienda", { azienda: azienda, title: "azienda" });
+      res.render("Azienda", { azienda: azienda, title: "azienda" });
     })
     .catch(error => {
       next(`error when retriving homepage ${error.message}`);
