@@ -9,6 +9,45 @@
   border-bottom: 6px solid #42b1e6;
 }
 
+#navigation {
+  width: 100%;
+  background: #003b7f;
+
+  z-index: 99999;
+  ;
+  border-bottom: 6px solid #42b1e6;
+}
+
+#navigation ul {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
+}
+
+#navigation ul li {
+  display: inline-block;
+  padding: 20px;
+
+}
+
+#navigation ul li a {
+
+  text-decoration: none;
+}
+
+.toggle {
+  width: 100%;
+  padding: 10px 20px;
+  background: #003b7f;
+  text-align: right;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 30px;
+  display: none;
+  cursor: pointer;
+}
+
 .site-header a {
   font-weight: 700;
 }
@@ -51,14 +90,20 @@
 .colonna1 {
 
   width: 30%;
-  max-height: 700px;
+  max-height: 300px;
 
 
 }
 
+.geometrico h2 {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+
 .geometrico {
   position: absolute;
-  width: 50%;
+  width: 40%;
   left: 0;
   top: 0;
   display: flex;
@@ -75,7 +120,13 @@
 
 .colonna2 {
   width: 70%;
-  max-height: 700px;
+  max-height: 300px;
+
+}
+
+div.colonna2 img {
+  max-height: 300px;
+  width: 900px;
 
 }
 
@@ -232,6 +283,28 @@ a.lSPrev {
 
   }
 
+  .toggle {
+    display: block;
+  }
+
+  #navigation {
+    border-bottom: 0;
+  }
+
+  #navigation ul {
+    width: 100%;
+    display: none;
+  }
+
+  #navigation ul li {
+    display: block;
+    text-align: center;
+  }
+
+  .actives {
+    display: block
+  }
+
   div#card img,
   div#card1 img,
   div#card2 img {
@@ -247,7 +320,7 @@ a.lSPrev {
     top: 400px;
     bottom: 0;
     left: 0;
-    height: 400px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -257,7 +330,7 @@ a.lSPrev {
   .geometrico h2 {
     width: 100%;
     margin-top: 100px;
-
+    font-size: 25px;
   }
 
   .colonna1 {
@@ -268,7 +341,7 @@ a.lSPrev {
 
   .colonna2 {
     width: 99%;
-    height: 310px;
+    height: 200px;
 
     z-index: 9999;
 
@@ -313,6 +386,13 @@ a.lSPrev {
   .geometrico {
 
     margin-top: -290px;
+    height: 200px;
+    font-size: 2rem;
+  }
+
+  .geometrico h2 {
+    font-size: 20px;
+    padding-bottom: 20px;
   }
 
   .titolo {
@@ -563,6 +643,7 @@ footer a {
 
 .language-selector .select-wrapper {
   border: 1px solid #adb9c5;
+  ;
   border-radius: 3px;
   position: relative;
   cursor: pointer;
@@ -582,8 +663,9 @@ footer a {
   font-family: "Material Icons";
   content: '\e313';
   position: absolute;
-  top: 2px;
+  top: 5px;
   right: 3px;
+  color: black;
   pointer-events: none;
 }
 

@@ -1,21 +1,20 @@
 
 .logo-container
   include ./Logoheader
+  include ./language-selector
 header
   - var homeUrl = `/${I18N.current}`;
 
 
-  nav.navbar.navbar-expand-lg.navbar-dark
-    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarNav.collapse.navbar-collapse
-      ul.navbar-nav.mx-auto
-        if menu
+
+
+  nav#navigation.navbar.navbar-dark
+    .toggle
+      i.fas.fa-bars.menu
+    ul#listamenu.navbar-nav.text-center
+      if menu
           each linkItem in menu.data.menuLinks
 
             li(class=(linkItem.label===title)?'active' : '')
               a.nav-link(href=Link.url(linkItem.link, ctx.linkResolver))
                 != linkItem.label
-
-          li.lang
-            include ./language-selector

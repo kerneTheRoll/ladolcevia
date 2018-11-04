@@ -1,7 +1,7 @@
 - var activeClass = activeDoc && I18N.languages.length > 1 ? 'active' : '';
-.language-selector(class=activeClass)
+.language-selector.pl-4(class=activeClass)
   .select-wrapper
-    select.form-control
+    select
       for lang in I18N.languages
         - var selected = lang.key === I18N.current ? true : false;
         - var alternateDocLink = activeDoc.alternate_languages.find(al => al.lang === lang.key);

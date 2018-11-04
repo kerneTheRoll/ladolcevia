@@ -1,4 +1,19 @@
 $(document).ready(function() {
+  $(window).resize(function() {
+    if ($(document).width() > 767) {
+      $("#listamenu").css("display", "block");
+      console.log("on resize");
+    }
+  });
+  $(".menu").click(function() {
+    var flagVisibile =
+      document.getElementById("listamenu").style.display === "block"
+        ? "none"
+        : "block";
+    $("#listamenu").css("display", flagVisibile);
+
+    console.log(flagVisibile + " " + $(window).width());
+  });
   $("#image-slider").lightSlider({
     gallery: false,
     auto: true,

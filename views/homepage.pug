@@ -113,11 +113,10 @@ block body
     include ./slices/slide.pug
 
   .container-fluid.mt-5.pl-4
-    .row(style='position:relative')
+    .row.mx-auto(style='position:relative')
       .geometrico.bluastro
         h2.text-center(style='color:#ffff')
-          |17 APRILE 2019 PURUGIA (PG)
-          |Workshop con gli artigiani del gusto
+           !=RichText.asText(home.data.evento)
       .bluastro.colonna1.
 
 
