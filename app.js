@@ -224,6 +224,17 @@ app.get(
       next(`error when retriving page ${error.message}`);
     });
 }); */
+// servizi
+app.get(I18NUrl("/servizi"), function(req, res, next) {
+  req.prismic.api
+    .getSingle("servizi", I18NConfig(req))
+    .then(servizi => {
+      res.render("servizi", { title: "servizi", servizi: servizi });
+    })
+    .catch(err => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+});
 
 app.get(I18NUrl("/azienda"), (req, res, next) => {
   req.prismic.api

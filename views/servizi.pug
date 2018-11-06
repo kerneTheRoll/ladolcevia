@@ -1,0 +1,75 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = servizi
+  - var tablet = servizi.data.banner.tablet.url
+  - var desktop = servizi.data.banner.url
+  - var mobile = servizi.data.banner.mobile.url
+block body
+  style(type="text/css").
+       .homepage-banner{
+            background-image:url(#{desktop});
+
+            height:600px;
+            background-repeat:no-repeat;
+            background-size:cover;
+         }
+       @media only screen and (max-width:970px){
+          .homepage-banner{
+            background-image:url(#{tablet});
+            height:200px;
+
+
+         }
+       }
+           @media only screen and (max-width:400px){
+          .homepage-banner{
+            background-image:url(#{mobile});
+            height:400px;
+
+
+         }
+         .banne{
+           color:red;
+           font-size:40px;
+         }
+       }
+  section.homepage-banner
+    h1.motto
+      != RichText.asText(servizi.data.title)
+
+  .container
+    h2.float-left.numerotitolo
+      != RichText.asText(servizi.data.number1)
+    p.titolo-float
+        != RichText.asText(servizi.data.titolo_numero1)
+    div(style='clear:both')
+
+    div.text-sub
+        != RichText.asText(servizi.data.subtitle1)
+        p.pt-3.description
+          != RichText.asText(servizi.data.descrizione1)
+  .container.mt-5
+    h2.float-left.numerotitolo
+      != RichText.asText(servizi.data.number2)
+    p.secondo
+        != RichText.asText(servizi.data.titolo2)
+    div(style='clear:both')
+
+    div.text-sub
+
+       p.pt-3.description
+          != RichText.asText(servizi.data.descrizione2)
+
+  .container.mt-5
+    h2.float-left.numerotitolo
+      != RichText.asText(servizi.data.number3)
+    p.secondo
+        != RichText.asText(servizi.data.titolo3)
+    div(style='clear:both')
+
+    div.text-sub
+
+       p.pt-3.description
+          != RichText.asText(servizi.data.descrizione3)

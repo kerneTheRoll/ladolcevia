@@ -247,6 +247,32 @@ a.lSPrev {
   color: #c8c9cb;
 }
 
+.numerotitolo {
+  font-weight: bold;
+  font-size: 9em;
+
+  color: #1d74bb;
+}
+
+p.titolo-float {
+  font-weight: bold;
+  font-size: 3.5em;
+  padding-top: 28px;
+  width: 70%;
+  color: #1d74bb;
+  float: left;
+  line-height: 55px;
+}
+.secondo{
+  font-weight: bold;
+  font-size: 3.5em;
+  padding-top: 38px;
+  width: 40%;
+  color: #1d74bb;
+  float: left;
+  line-height: 55px;
+}
+
 .site-header .logo {
   display: inline-block;
   font-size: 22px;
@@ -267,6 +293,16 @@ a.lSPrev {
   margin-left: 40px;
 }
 
+.text-sub {
+  padding-left: 76px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color:#484d52;
+}
+.description{
+  font-weight: normal;
+}
+
 @media (max-width: 994px) {
 
   #card,
@@ -277,12 +313,43 @@ a.lSPrev {
 
   }
 
+  .numerotitolo {
+    font-weight: bold;
+    font-size: 7em;
+
+    color: #1d74bb;
+  }
+
+  p.titolo-float {
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 10px;
+
+    color: #1d74bb;
+    float: left;
+    line-height: 40px;
+  }
+  
+  .secondo{
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 20px;
+    width: 40%;
+    color: #1d74bb;
+    float: left;
+    line-height: 55px;
+  }
+
   div#card img,
   div#card1 img,
   div#card2 img {
     margin-left: 0;
 
   }
+
+
+
+
 }
 
 @media (max-width: 767px) {
@@ -369,6 +436,32 @@ a.lSPrev {
 
   }
 
+  .numerotitolo {
+    font-weight: bold;
+    font-size: 7em;
+
+    color: #1d74bb;
+  }
+
+  p.titolo-float {
+    font-weight: bold;
+    font-size: 2em;
+    padding-top: 10px;
+
+    color: #1d74bb;
+    float: left;
+    line-height: 40px;
+  }
+  .secondo{
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 20px;
+    width: 40%;
+    color: #1d74bb;
+    float: left;
+    line-height: 44px;
+  }
+
 
   #card img,
   #card1 img,
@@ -378,7 +471,7 @@ a.lSPrev {
   }
 
   .motto {
-    line-height: 55px;
+    line-height: 65px;
   }
 
   .titolo-storia {
@@ -439,6 +532,7 @@ a.lSPrev {
   align-items: center;
   text-align: center;
 }
+
 
 
 
