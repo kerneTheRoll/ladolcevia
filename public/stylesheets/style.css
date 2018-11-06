@@ -1,5 +1,52 @@
 @charset "UTF-8";
 
+/*** accordion stile da codepen */
+.accordion .card-header {
+  color: #003b7f;
+  font-weight: bold;
+  box-shadow: 0;
+  background: #fff;
+  border: 0;
+  border-top: 3px solid #003b7f;
+
+}
+
+.card-header:nth-child(7) {
+
+  border-bottom: 3px solid #003b7f;
+
+}
+
+.card.mb-0 {
+  border: 0;
+  box-shadow: 0;
+}
+
+.accordion .card-header a.card-title {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.accordion .card-header:after {
+
+  content: "-";
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+
+}
+
+.accordion .card-header.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "+";
+  font-size: 1.5em;
+  cursor: pointer;
+
+}
+
+
+
+/**fine accordion stilr */
 .site-header {
   height: 30px;
   padding: 20px 0;
@@ -263,7 +310,8 @@ p.titolo-float {
   float: left;
   line-height: 55px;
 }
-.secondo{
+
+.secondo {
   font-weight: bold;
   font-size: 3.5em;
   padding-top: 38px;
@@ -297,9 +345,10 @@ p.titolo-float {
   padding-left: 76px;
   font-size: 1.2em;
   font-weight: bold;
-  color:#484d52;
+  color: #484d52;
 }
-.description{
+
+.description {
   font-weight: normal;
 }
 
@@ -329,8 +378,8 @@ p.titolo-float {
     float: left;
     line-height: 40px;
   }
-  
-  .secondo{
+
+  .secondo {
     font-weight: bold;
     font-size: 2.5em;
     padding-top: 20px;
@@ -452,7 +501,8 @@ p.titolo-float {
     float: left;
     line-height: 40px;
   }
-  .secondo{
+
+  .secondo {
     font-weight: bold;
     font-size: 2.5em;
     padding-top: 20px;

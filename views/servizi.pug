@@ -50,6 +50,7 @@ block body
         != RichText.asText(servizi.data.subtitle1)
         p.pt-3.description
           != RichText.asText(servizi.data.descrizione1)
+
   .container.mt-5
     h2.float-left.numerotitolo
       != RichText.asText(servizi.data.number2)
@@ -61,6 +62,33 @@ block body
 
        p.pt-3.description
           != RichText.asText(servizi.data.descrizione2)
+  .container.pl-5.mt-5
+     #accordion.accordion.pl-4
+      .card.mb-0
+        .card-header.collapsed(data-toggle='collapse', href='#collapseOne')
+          a.card-title
+            != RichText.asText(servizi.data.consulenza)
+        #collapseOne.card-body.collapse(data-parent='#accordion')
+          p
+             != RichText.asText(servizi.data.testotitolo1)
+        .card-header.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
+          a.card-title
+              != RichText.asText(servizi.data.titoloconsolidamento)
+        #collapseTwo.card-body.collapse(data-parent='#accordion')
+          p
+             != RichText.asText(servizi.data.testo_consolidamento)
+        .card-header.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
+          a.card-title
+              != RichText.asText(servizi.data.titolo_recupero_attivita)
+        #collapseThree.collapse(data-parent='#accordion')
+          .card-body
+              != RichText.asText(servizi.data.testo_consolidamento)
+        .card-header.collapsed(data-toggle='collapse', href='#collapseOne')
+          a.card-title
+            != RichText.asText(servizi.data.titolo_sviluppo_prodotti)
+        #collapseOne.card-body.collapse(data-parent='#accordion')
+          p
+             != RichText.asText(servizi.data.testo_sviluppo_prodotti)
 
   .container.mt-5
     h2.float-left.numerotitolo
@@ -73,3 +101,5 @@ block body
 
        p.pt-3.description
           != RichText.asText(servizi.data.descrizione3)
+
+
