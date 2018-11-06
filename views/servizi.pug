@@ -83,10 +83,10 @@ block body
         #collapseThree.collapse(data-parent='#accordion')
           .card-body
               != RichText.asText(servizi.data.testo_consolidamento)
-        .card-header.collapsed(data-toggle='collapse', href='#collapseOne')
+        .card-header.collapsed(data-toggle='collapse', href='#collapseFour')
           a.card-title
             != RichText.asText(servizi.data.titolo_sviluppo_prodotti)
-        #collapseOne.card-body.collapse(data-parent='#accordion')
+        #collapseFour.card-body.collapse(data-parent='#accordion')
           p
              != RichText.asText(servizi.data.testo_sviluppo_prodotti)
 
