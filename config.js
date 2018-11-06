@@ -10,7 +10,7 @@ var compression = require("compression");
 module.exports = (function() {
   var app = express();
   app.use(compression());
-
+  process.env.NODE_ENV = "production";
   // all environments
   app.set("port", process.env.PORT || 3000);
   app.set("views", path.join(__dirname, "views"));
