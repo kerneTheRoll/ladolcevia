@@ -6,9 +6,10 @@ var express = require("express"),
   errorHandler = require("errorhandler"),
   http = require("http"),
   path = require("path");
-
+var compression = require("compression");
 module.exports = (function() {
   var app = express();
+  app.use(compression());
 
   // all environments
   app.set("port", process.env.PORT || 3000);
