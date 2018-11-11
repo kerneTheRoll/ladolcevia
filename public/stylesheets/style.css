@@ -116,6 +116,13 @@
   color:#003b7f;
  
 }
+.inputArea{
+  border:3px solid #1d74bb;
+  width:100%;
+  
+  font-size:.4em;
+  color:#003b7f;
+}
 textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color:#1d74bb;
   opacity: 1; /* Firefox */
