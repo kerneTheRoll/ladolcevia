@@ -4,7 +4,7 @@ const app = require("./config");
 const config = require("./prismic-configuration");
 const PORT = app.get("port");
 const Cookies = require("cookies");
-
+const nodemailer = require("nodemailer");
 //Must be at the end so it go through the Prismic middleware because ended up in the final route
 const I18N = require("./i18n.json");
 //provide a lang parameter in the route
@@ -261,6 +261,78 @@ function getProdotti(req, res, next) {
       next(`error when retriving homepage ${error.message}`);
     });
 }
+// contatti
+function getContatti(req, res, next) {
+  req.prismic.api
+    .getSingle("contatti", I18NConfig(req))
+    .then(contatti => {
+      req.contatti = contatti;
+
+      next();
+    }, I18NConfig(req))
+    .catch(error => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+}
+function gestisciEmail(req, res, next) {
+  nodemailer.createTestAccount((err, account) => {
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // true for 465, false for other ports
+      tls: {
+        rejectUnauthorized: false
+      },
+      auth: {
+        type: "OAuth2",
+        user: "abdimohamed862992@gmail.com",
+        clientId:
+          "1002077818722-nuu831na5k4ooukl7k6ktv5on52er09t.apps.googleusercontent.com",
+        clientSecret: "8jjiNsSSekwHiGOzXldLPnw3",
+        refreshToken:
+          "1/OAiMWWIav06OOfgOMmNUz0QJZwnkSweA-i1mmihs3BIBcG5l8ul0lfn7IZ3zx-bJ"
+      }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+      to: "abdimohamed862992@gmail.com", // list of receivers
+      subject: "richiesta", // Subject line
+      text: "Hello world?", // plain text body
+      html: "<b>Hello world?</b>" // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        return console.log(error);
+      }
+      console.log("Message sent: %s", info.messageId);
+      // Preview only available when sending through an Ethereal account
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+
+      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    });
+  });
+
+  next();
+}
+function renderContatti(req, res) {
+  res.render("Contatti", {
+    contatti: req.contatti,
+    title: "Contatti",
+    inviato: req.inviato
+  });
+}
+
+function renderContattiEmail(req, res) {
+  res.status(204).send();
+}
+
+app.get(I18NUrl("/contatti"), getContatti, renderContatti);
+app.post(I18NUrl("/contatti"), getContatti, gestisciEmail, renderContattiEmail);
 
 function getCategorieInServizi(req, res, next) {
   req.prismic.api

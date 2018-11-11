@@ -112,4 +112,23 @@ $(document).ready(function() {
       $(this).flip("toggle");
     });
   }
+  $("#sub").click(function(e) {
+    e.preventDefault();
+    alert("titto fermo");
+  });
+  $("#country").jeoCountrySelect({
+    callback: function() {
+      $("#country").removeAttr("disabled");
+    }
+  });
+});
+
+$(function() {
+  jeoquery.defaultData.userName = "ladolcevia";
+
+  $("#country").jeoCountrySelect({});
+  $("#postalCode").jeoPostalCodeLookup({
+    countryInput: $("#country"),
+    target: $("#postalPlace")
+  });
 });

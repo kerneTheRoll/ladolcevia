@@ -18,6 +18,7 @@ module.exports = {
     if (doc.type == "azienda") return `/${doc.lang}/azienda`;
     if (doc.type == "prodotti") return `/${doc.lang}/prodotti`;
     if (doc.type == "servizi") return `/${doc.lang}/servizi`;
+    if (doc.type == "contatti") return `/${doc.lang}/contatti`;
     return "/";
   }
 };

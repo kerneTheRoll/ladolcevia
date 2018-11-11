@@ -1,0 +1,90 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = contatti
+
+block body
+    .container-fluid.row.mt-5
+      .col-md-6
+         img(src=contatti.data.immaginecontatti.url)
+      .col-md-6.d-flex.justify-content-center.flex-column.pl-5
+        p
+          h2.nome-azienda
+            != RichText.asText(contatti.data.nome_azienda)
+          div.text-left.desc
+             != RichText.asText(contatti.data.residenza)
+          div.desc
+            != RichText.asText(contatti.data.localita)
+          div.desc
+            != RichText.asText(contatti.data.cap_azienda)
+          div.desc
+            != RichText.asText(contatti.data.stato)
+          .mt-5.desc Tel
+            != RichText.asText(contatti.data.telefono)
+          div.desc Fax
+            != RichText.asText(contatti.data.fax)
+          .mt-2.desc
+            != RichText.asText(contatti.data.email)
+    .container-fluid
+      h2.pl-5.mt-4.blue-color
+        != RichText.asText(contatti.data.titolo_contatti)
+      p.pl-5.mt-2.desc
+        != RichText.asText(contatti.data.descrizione_contatti)
+
+
+
+    form(method="post" action='/'+contatti.lang+'/contatti' name='contatti').container-fluid.pl-5
+     .container-fluid.row
+       .col-md-6.inp
+        input(type="text" placeholder=RichText.asText(contatti.data.form_nome) name='nome').input#nome
+       .col-md-6.inp
+        input(type="text" placeholder=RichText.asText(contatti.data.form_cognome) name='cognome').input#cognome
+     .container-fluid.row.pt-4
+       .col-md-6.inp
+          input(type="email" placeholder=RichText.asText(contatti.data.form_email) name='email').input#email
+       .col-md-6.inp
+          input(type="text" placeholder=RichText.asText(contatti.data.form_azienda) name='azienda').input#azienda
+     .container-fluid.row.pt-4
+
+       .col-md-4.inp
+          select#country.input
+
+
+
+
+
+
+       .col-md-4.inp
+          input#postalCode.input(type='text' placeholder=RichText.asText(contatti.data.form_cap))
+
+
+
+       .col-md-4.inp
+          input#postalPlace.input(type='text' placeholder=RichText.asText(contatti.data.form_citta))
+
+     .container-fluid.row.pt-4
+       .col-md-12.inp
+          input(type="phone" placeholder=RichText.asText(contatti.data.form_telefono) name='telefono').input#telefono
+     .container-fluid.row.pt-4.blue-color.pl-4
+          h2.pl-4
+            != RichText.asText(contatti.data.domanda_form)
+          .col-md-12
+          select.inputSelect
+            option(value='', disabled='', selected='')
+              != RichText.asText(contatti.data.servizi_interessi)
+            option(value=RichText.asText(contatti.data.servizio_apertura) )
+              !=RichText.asText(contatti.data.servizio_apertura)
+            option(value=RichText.asText(contatti.data.info_prodotti) )
+              !=RichText.asText(contatti.data.info_prodotti)
+            option(value=RichText.asText(contatti.data.appuntamento) )
+              !=RichText.asText(contatti.data.appuntamento)
+            option(value=RichText.asText(contatti.data.ferie_eventi) )
+              !=RichText.asText(contatti.data.ferie_eventi)
+
+
+     .container-fluid.row.pt-4.blue-color.pl-4
+          textarea.input(name="richiesta", cols="10", rows="3" placeholder=RichText.asText(contatti.data.form__richiesta))
+     .container-fluid.row.pt-4.blue-color.pl-4
+          button.btn-block.mybtn#sub
+            | invia la tua richiesta
