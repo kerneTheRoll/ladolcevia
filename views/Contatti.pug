@@ -34,9 +34,11 @@ block body
 
 
 
-    form(method="post" action='/'+contatti.lang+'/contatti' name='contatti').container-fluid.pl-5
+    form(method="post" action='/'+contatti.lang+'/contatti' name='contatti' id='contatta').container-fluid.pl-5
+     input#language(type="hidden" value=contatti.lang)
      .container-fluid.row
        .col-md-6.inp
+
         input(type="text" placeholder=RichText.asText(contatti.data.form_nome) name='nome').form-control#nome
        .col-md-6.inp
         input(type="text" placeholder=RichText.asText(contatti.data.form_cognome) name='cognome').form-control#cognome
@@ -48,7 +50,7 @@ block body
      .container-fluid.row.pt-4
 
        .col-md-4.inp
-          select#country.form-control
+          select(name='country')#country.form-control
 
 
 
@@ -56,12 +58,12 @@ block body
 
 
        .col-md-4.inp
-          input#postalCode.form-control(type='text' placeholder=RichText.asText(contatti.data.form_cap))
+          input#postalCode.form-control(type='text' placeholder=RichText.asText(contatti.data.form_cap) name='cap')
 
 
 
        .col-md-4.inp
-          input#postalPlace.form-control(type='text' placeholder=RichText.asText(contatti.data.form_citta))
+          input#postalPlace.form-control(type='text' placeholder=RichText.asText(contatti.data.form_citta) name='citta')
 
      .container-fluid.row.pt-4
        .col-md-12.inp
@@ -70,8 +72,8 @@ block body
           h2.pl-4.pb-3
             != RichText.asText(contatti.data.domanda_form)
           .col-md-12
-          select.form-control
-            option(value='', disabled='', selected='')
+          select(name='scelta').form-control#scelta
+            option(value='niente', disabled='', selected='true')
               != RichText.asText(contatti.data.servizi_interessi)
             option(value=RichText.asText(contatti.data.servizio_apertura) )
               !=RichText.asText(contatti.data.servizio_apertura)
@@ -83,8 +85,8 @@ block body
               !=RichText.asText(contatti.data.ferie_eventi)
 
 
+     .container-fluid.row.pt-4.blue-color.pl-4.textarealabel
+          textarea.form-control#richiesta(name="richiesta", cols="10", rows="3" placeholder=RichText.asText(contatti.data.form__richiesta))
      .container-fluid.row.pt-4.blue-color.pl-4
-          textarea.form-control(name="richiesta", cols="10", rows="3" placeholder=RichText.asText(contatti.data.form__richiesta))
-     .container-fluid.row.pt-4.blue-color.pl-4
-          button.btn-block.mybtn#sub
+          button(type='submit').btn-block.mybtn#sub
             | invia la tua richiesta

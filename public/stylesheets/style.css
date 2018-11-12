@@ -350,7 +350,10 @@ div#card2 img {
 
 
 }
-
+#richiesta-error{
+  font-size:0.5em;
+  color:red;
+}
 .descrizione-segreto {
   font-size: 2em;
   text-align: center;

@@ -294,13 +294,49 @@ function gestisciEmail(req, res, next) {
           "1/OAiMWWIav06OOfgOMmNUz0QJZwnkSweA-i1mmihs3BIBcG5l8ul0lfn7IZ3zx-bJ"
       }
     });
-
+    const nome = req.body.nome;
+    const cognome = req.body.cognome;
+    const email = req.body.email;
+    const azienda = req.body.azienda;
+    const country = req.body.country;
+    const cap = req.body.cap;
+    const citta = req.body.citta;
+    const telefono = req.body.telefono;
+    const richiesta = req.body.richiesta;
+    const scelta = req.body.scelta;
+    console.log(
+      nome +
+        "niente " +
+        cognome +
+        " niente" +
+        email +
+        "niente " +
+        azienda +
+        "niente " +
+        country +
+        "niente "
+    );
     // setup email data with unicode symbols
     let mailOptions = {
-      to: "abdimohamed862992@gmail.com", // list of receivers
-      subject: "richiesta", // Subject line
-      text: "Hello world?", // plain text body
-      html: "<b>Hello world?</b>" // html body
+      to: "Villani.emilia92@gmail.com ", // list of receivers
+      subject: "richiesta da parte di " + azienda + " per " + scelta, // Subject line
+      text:
+        "Buona sera, una richiesta da parte dell'azienda " +
+        azienda +
+        " a nome di " +
+        nome +
+        " " +
+        cognome +
+        " numero di telefono " +
+        telefono +
+        " la richiesta scritta è " +
+        richiesta +
+        " effettuata da localita " +
+        country +
+        " cap " +
+        cap +
+        " città " +
+        citta
     };
 
     // send mail with defined transport object

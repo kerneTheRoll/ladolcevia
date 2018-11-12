@@ -112,15 +112,8 @@ $(document).ready(function() {
       $(this).flip("toggle");
     });
   }
-  $("#sub").click(function(e) {
-    e.preventDefault();
-    alert("titto fermo");
-  });
-  $("#country").jeoCountrySelect({
-    callback: function() {
-      $("#country").removeAttr("disabled");
-    }
-  });
+  validaContatti();
+  //prova();
 });
 
 $(function() {
@@ -132,3 +125,112 @@ $(function() {
     target: $("#postalPlace")
   });
 });
+
+function validaContatti() {
+  var language = $("#language").val();
+  $("#contatta").validate({
+    highlight: function(element) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function(element) {
+      $(element).removeClass("is-invalid");
+    },
+    rules: {
+      nome: {
+        required: true,
+        minlength: 4
+      },
+      cognome: {
+        required: true,
+        minlength: 4
+      },
+      email: {
+        required: true,
+        email: true
+      },
+      azienda: {
+        required: true
+      },
+      country: {
+        required: true
+      },
+      cap: {
+        required: true
+      },
+      citta: {
+        required: true,
+        minlength: 2
+      },
+      telefono: {
+        required: true,
+        number: true
+      },
+
+      richiesta: {
+        required: function(elem) {
+          return $("#scelta option:selected").val() === "niente";
+        }
+      }
+      // qui va bene
+    },
+
+    messages: {
+      nome: {
+        required: traduciErrori("nome", language),
+        minlength: "nome troppo corto, minimo 4 lettere"
+      },
+
+      cognome: {
+        required: traduciErrori("cognome", language),
+        minlength: "cognome troppo corto, minimo 4 lettere"
+      },
+      email: {
+        required: "perfavore, inserisci la tua email",
+        email: "perfavore, inserisci una email valida"
+      },
+      azienda: {
+        required: "perfavore, inserisci nome dell' azineda"
+      },
+      country: {
+        required: "perfavore, seleziona il tuo stato"
+      },
+      cap: {
+        required: "perfavore,inserisci il tuo cap"
+      },
+      citta: {
+        required: "perfavore, inserisci la tua città",
+        minlength: "perfavore, inserisci nome di città valida "
+      },
+      telefono: {
+        required: "perfavore, inserisci numero di telefono",
+        number: "perfavore, inserisci solo numeri"
+      },
+      richiesta: {
+        required: "perfavore, scrivici  tua richiesta oppure seleziona sopra"
+      }
+    },
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+}
+//gestione traduzione errori @nome campo  @ lingua
+// return errore tradotto
+function traduciErrori(campo, language) {
+  if (campo === "nome") {
+    if (language === "it-it") {
+      return "Perfavore inserisci il tuo nome ";
+    }
+    if (language === "de-de") {
+      return " ktakejhs sjjsjsj";
+    }
+  }
+  if (campo === "cognome") {
+    if (language === "it-it") {
+      return "Perfavore inserisci il tuo cognome ";
+    }
+    if (language === "de-de") {
+      return " ktakejhs sjjsjsj";
+    }
+  }
+}
