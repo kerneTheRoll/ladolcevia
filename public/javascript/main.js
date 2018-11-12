@@ -1,33 +1,19 @@
 $(document).ready(function() {
-  var event = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-    ? false
-    : true;
   $(window).resize(function() {
     if ($(document).width() > 767) {
       $("#listamenu").css("display", "block");
       console.log("on resize");
     }
   });
+  $(".menu").click(function() {
+    var flagVisibile =
+      document.getElementById("listamenu").style.display === "block"
+        ? "none"
+        : "block";
+    $("#listamenu").css("display", flagVisibile);
 
-  if (event) {
-    $(".menu").click(function() {
-      var flagVisibile =
-        document.getElementById("listamenu").style.display === "block"
-          ? "none"
-          : "block";
-      $("#listamenu").css("display", flagVisibile);
-    });
-  } else {
-    $(".menu").on("touchstart", function() {
-      var flagVisibile =
-        document.getElementById("listamenu").style.display === "block"
-          ? "none"
-          : "block";
-      $("#listamenu").css("display", flagVisibile);
-    });
-  }
+    console.log(flagVisibile + " " + $(window).width());
+  });
   $("#image-slider").lightSlider({
     gallery: false,
     auto: true,
@@ -92,6 +78,12 @@ $(document).ready(function() {
   $("#card2").flip({
     trigger: "manual"
   });
+
+  var event = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+    ? false
+    : true;
 
   console.log(event);
   if (event) {

@@ -37,14 +37,14 @@ block body
     form(method="post" action='/'+contatti.lang+'/contatti' name='contatti').container-fluid.pl-5
      .container-fluid.row
        .col-md-6.inp
-        input(type="text" placeholder=RichText.asText(contatti.data.form_nome) name='nome').input#nome
+        input(type="text" placeholder=RichText.asText(contatti.data.form_nome) name='nome').form-control#nome
        .col-md-6.inp
-        input(type="text" placeholder=RichText.asText(contatti.data.form_cognome) name='cognome').input#cognome
+        input(type="text" placeholder=RichText.asText(contatti.data.form_cognome) name='cognome').form-control#cognome
      .container-fluid.row.pt-4
        .col-md-6.inp
-          input(type="email" placeholder=RichText.asText(contatti.data.form_email) name='email').input#email
+          input(type="email" placeholder=RichText.asText(contatti.data.form_email) name='email').form-control#email
        .col-md-6.inp
-          input(type="text" placeholder=RichText.asText(contatti.data.form_azienda) name='azienda').input#azienda
+          input(type="text" placeholder=RichText.asText(contatti.data.form_azienda) name='azienda').form-control#azienda
      .container-fluid.row.pt-4
 
        .col-md-4.inp
@@ -56,16 +56,16 @@ block body
 
 
        .col-md-4.inp
-          input#postalCode.input(type='text' placeholder=RichText.asText(contatti.data.form_cap))
+          input#postalCode.form-control(type='text' placeholder=RichText.asText(contatti.data.form_cap))
 
 
 
        .col-md-4.inp
-          input#postalPlace.input(type='text' placeholder=RichText.asText(contatti.data.form_citta))
+          input#postalPlace.form-control(type='text' placeholder=RichText.asText(contatti.data.form_citta))
 
      .container-fluid.row.pt-4
        .col-md-12.inp
-          input(type="phone" placeholder=RichText.asText(contatti.data.form_telefono) name='telefono').input#telefono
+          input(type="phone" placeholder=RichText.asText(contatti.data.form_telefono) name='telefono').form-control#telefono
      .container-fluid.row.pt-4.blue-color.pl-4
           h2.pl-4.pb-3
             != RichText.asText(contatti.data.domanda_form)
