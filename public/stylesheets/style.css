@@ -303,6 +303,12 @@ input.form-control{
   width:100%;
   color:#1d74bb;
 }
+select.form-control{
+  border-color: #1d74bb;
+  border-width: 2px;;
+  width:100%;
+  color:#1d74bb;
+}
 
 #card .back {
   padding: 5px;
