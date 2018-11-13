@@ -193,6 +193,9 @@ button.mybtn{
 .site-header.dark a {
   color: #fff;
 }
+#answers{
+  display: none;
+}
 
 .site-header.dark a:hover {
   color: #72767B;

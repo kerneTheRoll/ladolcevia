@@ -5,10 +5,14 @@ var express = require("express"),
   methodOverride = require("method-override"),
   errorHandler = require("errorhandler"),
   http = require("http"),
-  path = require("path");
+  path = require("path"),
+  session = require("express-session"),
+  cookieParse = require("cookie-parser");
+
 var compression = require("compression");
 module.exports = (function() {
   var app = express();
+
   app.use(compression());
 
   // all environments

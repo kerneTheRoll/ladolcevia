@@ -275,6 +275,7 @@ function getContatti(req, res, next) {
     });
 }
 function gestisciEmail(req, res, next) {
+  var message = "";
   nodemailer.createTestAccount((err, account) => {
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
@@ -294,6 +295,7 @@ function gestisciEmail(req, res, next) {
           "1/OAiMWWIav06OOfgOMmNUz0QJZwnkSweA-i1mmihs3BIBcG5l8ul0lfn7IZ3zx-bJ"
       }
     });
+    // bisogna controllare!!!!
     const nome = req.body.nome;
     const cognome = req.body.cognome;
     const email = req.body.email;
@@ -318,7 +320,7 @@ function gestisciEmail(req, res, next) {
     );
     // setup email data with unicode symbols
     let mailOptions = {
-      to: "Villani.emilia92@gmail.com ", // list of receivers
+      to: "abdimohamed862992@gmail.com ", // list of receivers
       subject: "richiesta da parte di " + azienda + " per " + scelta, // Subject line
       text:
         "Buona sera, una richiesta da parte dell'azienda " +
@@ -342,8 +344,18 @@ function gestisciEmail(req, res, next) {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
-        return console.log(error);
+        req.message =
+          "non è stato possibile inviare il messaggio, riprovare più tardi";
+      } else {
+        res
+          .status(200)
+          .send({
+            message: JSON.stringify(
+              "grazie per averci contatto, a breve vi ricontatteremo"
+            )
+          });
       }
+
       console.log("Message sent: %s", info.messageId);
       // Preview only available when sending through an Ethereal account
       console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
@@ -352,8 +364,6 @@ function gestisciEmail(req, res, next) {
       // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     });
   });
-
-  next();
 }
 function renderContatti(req, res) {
   res.render("Contatti", {
@@ -364,11 +374,12 @@ function renderContatti(req, res) {
 }
 
 function renderContattiEmail(req, res) {
-  res.status(204).send();
+  console.log(req.message);
+  res.send(JSON.stringify(req.message));
 }
 
 app.get(I18NUrl("/contatti"), getContatti, renderContatti);
-app.post(I18NUrl("/contatti"), getContatti, gestisciEmail, renderContattiEmail);
+app.post(I18NUrl("/contatti"), getContatti, gestisciEmail);
 
 function getCategorieInServizi(req, res, next) {
   req.prismic.api

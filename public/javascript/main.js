@@ -210,7 +210,16 @@ function validaContatti() {
       }
     },
     submitHandler: function(form) {
-      form.submit();
+      $.ajax({
+        url: form.action,
+        type: form.method,
+        data: $(form).serialize(),
+        success: function(response) {
+          $("#answers")
+            .slideDown()
+            .html(response.message);
+        }
+      });
     }
   });
 }

@@ -65,6 +65,9 @@ block body
       .col-md-6.d-flex.flex-column.justify-content-center.categoriaTitolo
        div
          h2.title I nostri Gelati
+         if message
+          h2
+            message
        p
         ul.listaCategorie
           each linkItem in home.data.sezione_categorie
