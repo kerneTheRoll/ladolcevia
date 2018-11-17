@@ -86,45 +86,46 @@ block body
          != RichText.asHtml(home.data.descrizione_storia, ctx.linkResolver)
      .col-md-6.immagine-storia
        img.img-fluid(src=home.data.immaginestoria.url)
+  if (home.data.titolo_il_segreto.length)
+      .container.mt-5
 
-  .container.mt-5
-     h2.titolo
-      !=RichText.asText(home.data.titolo_il_segreto)
-     .row.listaSegreti
-        .col-md-4
-          #card
-            .front.bluastro.pt-4
-              img(src=home.data.iconasegreto1.url)
-            .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
-              |  Collaboriamo direttamente con i nostri clienti per sviluppare un prodotto eccellente
+          h2.titolo
+            !=RichText.asText(home.data.titolo_il_segreto)
+          .row.listaSegreti
+              .col-md-4
+                #card
+                  .front.bluastro.pt-4
+                    img(src=home.data.iconasegreto1.url)
+                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
+                    != RichText.asText(home.data.testo_segreto1)
 
-        .col-md-4
-          #card1
-            .front.bluastro.pt-4
-              img(src=home.data.iconasegreto2.url)
-            .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        .col-md-4
-          #card2
-            .front.bluastro.pt-4
-              img(src=home.data.iconasegreto3.url)
-            .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
-              | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              .col-md-4
+                #card1
+                  .front.bluastro.pt-4
+                    img(src=home.data.iconasegreto2.url)
+                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
+                     != RichText.asText(home.data.testo_segreto2)
+              .col-md-4
+                #card2
+                  .front.bluastro.pt-4
+                    img(src=home.data.iconasegreto3.url)
+                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
+                    != RichText.asText(home.data.testo_segreto3)
 
   .container-fluid.mt-5
 
     include ./slices/slide.pug
+  if home.data.evento.length
+    .container.mt-5.pl-4.pt-5
+      .row.mx-auto(style='position:relative')
+        .col-md-4.bluastro.d-flex.flex-column.justify-content-center.mr-0.pr-0
+          h2.text-center(style='color:#ffff')
+            !=RichText.asText(home.data.evento)
 
-  .container-fluid.mt-5.pl-4
-    .row.mx-auto(style='position:relative')
-      .geometrico.bluastro
-        h2.text-center(style='color:#ffff')
-           !=RichText.asText(home.data.evento)
-      .bluastro.colonna1.
 
 
-      .colonna2
-          img.img-fluid(src=home.data.immagine_evento.url)
+        .col-md-8.ml-0.pl-0
+            img.img-fluid(src=home.data.immagine_evento.url)
 
 
 
