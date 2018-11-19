@@ -60,6 +60,23 @@ body {
   text-align: center;
 }
 
+.motto-storia {
+  font-family: 'YourFontName';
+  color: #003b7f;
+  font-size: 3.5em;
+  line-height: 60px;
+  text-align: left;
+  text-indent: 5px;
+
+}
+
+.storia {
+  margin-top: 30px;
+  padding-top: 10px;
+  font-size: 1.4em;
+  color: #484D52;
+  letter-spacing: 2.5px;
+}
 
 .navbar-nav {
   font-family: 'FontMenu';

@@ -113,18 +113,18 @@ block body
                     != RichText.asText(home.data.testo_segreto3)
 
   .container-fluid.mt-5
-
-    include ./slices/slide.pug
+    .mt-5
+      include ./slices/slide.pug
   if home.data.evento.length
     .container.mt-5.pl-4.pt-5
       .row.mx-auto(style='position:relative')
-        .col-md-4.bluastro.d-flex.flex-column.justify-content-center.mr-0.pr-0
-          h2.text-center(style='color:#ffff')
+        .col-md-5.bluastro.d-flex.flex-column.justify-content-center.geometrico
+          h2.text-center.pr-5(style='color:#ffff')
             !=RichText.asText(home.data.evento)
 
 
 
-        .col-md-8.ml-0.pl-0
+        .col-md-7
             img.img-fluid(src=home.data.immagine_evento.url)
 
 

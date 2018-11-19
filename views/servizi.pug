@@ -101,5 +101,18 @@ block body
 
        p.pt-3.description
           != RichText.asText(servizi.data.descrizione3)
-
+    #accordion1.accordion.pl-4
+        .card.mb-0
+          .card-header.collapsed(data-toggle='collapse', href='#collapse-3-one')
+            a.card-title
+              != RichText.asText(servizi.data.titolo_avviare_distribuzione)
+          #collapse-3-one.card-body.collapse(data-parent='#accordion')
+            p
+              != RichText.asText(servizi.data.descrizione_distribuzione)
+          .card-header.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse-3-two')
+            a.card-title
+                != RichText.asText(servizi.data.titolo_consolidamento_attivita)
+          #collapse-3-two.card-body.collapse(data-parent='#accordion')
+            p.last
+              != RichText.asText(servizi.data.descrizione_consolidamento_3)
 
