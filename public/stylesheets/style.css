@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 /*** accordion stile da codepen */
 .accordion .card-header {
   color: #003b7f;
@@ -18,6 +19,8 @@
   ;
 
 }
+
+
 
 .float img {
   display: block;
@@ -197,22 +200,53 @@ button.mybtn {
 }
 
 .bannersotto {
-  height: 90px;
+
   color: #fff;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  height: 90px;
+
 }
 
 .bannersotto a {
-  font-size: 1em;
+
   text-decoration: none;
   color: #fff;
+  width: 100%;
+
+  padding: 10px;
+  margin-top: 10px;
+
+
+  text-align: center;
+
+  ;
 }
+
+.bannersotto a::after {
+  content: "\f054";
+  display: block;
+  float: right;
+  font-family: 'Font Awesome 5 Free';
+  /* >> Weight of the font (mandatory)
+               - 400 for Regular and Brands symbols;
+               - 900 for Solid symbols. */
+  font-weight: 900;
+}
+
+.bannersotto a>span {
+  font-size: 30px;
+
+}
+
 
 .bannersotto a:hover {
   text-decoration: none;
+  color: #42b1e6;
+
 }
 
 .toggle {
@@ -331,6 +365,12 @@ div.colonna2 img {
   background-color: #1d74bb;
 }
 
+.darkblue {
+  background-color: #003b7f;
+  padding: 10px;
+  font-family: 'FontMenu'
+}
+
 .font-storia {
   font-size: 1.3em;
 }
@@ -416,6 +456,10 @@ div#card2 img {
   font-weight: bold;
 
 
+}
+
+.center-thumbs .lslide {
+  margin: 0 auto;
 }
 
 #richiesta-error {
@@ -506,6 +550,8 @@ p.titolo-float {
   font-weight: normal;
 }
 
+
+
 @media (max-width: 994px) {
 
   #card,
@@ -550,6 +596,10 @@ p.titolo-float {
 
   }
 
+  .bannersotto a {
+    font-size: 0.7em;
+    line-height: 20px;
+  }
 
 
 
@@ -574,6 +624,10 @@ p.titolo-float {
     margin-bottom: 10px;
   }
 
+  .slid {
+    max-width: 400px;
+  }
+
   #card,
   #card1,
   #card2 {
@@ -581,6 +635,7 @@ p.titolo-float {
 
 
   }
+
 
   .toggle {
     display: block;
@@ -704,6 +759,20 @@ p.titolo-float {
 
     font-size: 13px;
     padding: 0;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .slid {
+    width: 300px;
+  }
+
+  .descrizionepremium {
+
+    font-size: 0.5em;
+
   }
 
   #card,

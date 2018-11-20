@@ -30,14 +30,14 @@ $(document).ready(function() {
     gallery: false,
 
     item: 1,
-    slideMove: 1,
-    slideMargin: 20,
+
+    slideMargin: 90,
 
     enableDrag: true,
 
     rtl: false,
     pauseOnHover: true,
-
+    addClass: "center-thumbs",
     controls: true,
     prevHtml:
       '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  style="transform:rotate(-180deg)"/></span>',

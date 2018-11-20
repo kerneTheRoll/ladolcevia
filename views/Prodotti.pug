@@ -45,7 +45,6 @@ block body
           div.d-flex.flex-column
             img(src=items.data.backgroundImage.Mobile.url)
             h2.bluastro.bannersotto
-              a.ban(href="/"+items.lang+"/categoria/"+items.uid)
+              a(href="/"+items.lang+"/categoria/"+items.uid)
                 != RichText.asText(items.data.title)
-              span
-                i.fas.fa-chevron-right
+

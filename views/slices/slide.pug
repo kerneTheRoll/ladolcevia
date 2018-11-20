@@ -1,11 +1,11 @@
 div#slide
   each elem in prodotto
     .row
-      .col-md-6.col-sm-6.col-xs-6
-         img(src=elem.data.foto_ingrediente.url)
-      .col-md-6.col-sm-6.col-xs-6.d-flex.flex-column.justify-content-center.box
-        h2.descrizionepremium
+      .col-md-6.col-sm-12.col-xs-12.d-flex.justify-content-center.flex-column.align-items-center
+         img.img-fluid(src=elem.data.foto_ingrediente.url)
+      .col-md-6.col-sm-12.col-xs-12
+        h2.descrizionepremium.text-center
          != RichText.asText(elem.data.nome_incrediente)
-        p
+        p.px-4.mb-5.py-5
          != RichText.asText(elem.data.descrizione_ingrediente)
 
