@@ -647,15 +647,13 @@ p.titolo-float {
 
   #navigation {
     border-bottom: 0;
-    position: absolute;
-    background: rgba(0, 45, 115, .9);
+
+
 
 
   }
 
-  .homepage {
-    margin-top: 5px;
-  }
+
 
   #navigation ul {
     width: 100%;
@@ -677,10 +675,6 @@ p.titolo-float {
 
   }
 
-  #navigation ul li a {
-    color: #fff;
-
-  }
 
   div#card img,
   div#card1 img,
