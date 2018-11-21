@@ -252,7 +252,7 @@ button.mybtn {
 .toggle {
   width: 100%;
   padding: 10px 20px;
-  background: #003b7f;
+
   text-align: right;
   box-sizing: border-box;
   color: #fff;
@@ -327,7 +327,9 @@ button.mybtn {
   align-items: center;
 
   clip-path: polygon(0 0, 77% 0, 100% 100%, 0% 100%);
-  margin-right: -180px;
+  margin-right: -200px;
+  position: relative;
+  left: 100px;
 
   z-index: 99999;
 }
@@ -639,24 +641,45 @@ p.titolo-float {
 
   .toggle {
     display: block;
+
+
   }
 
   #navigation {
     border-bottom: 0;
+    position: absolute;
+    background: rgba(0, 45, 115, .9);
+
+
+  }
+
+  .homepage {
+    margin-top: 5px;
   }
 
   #navigation ul {
     width: 100%;
     display: none;
+
+
   }
 
   #navigation ul li {
     display: block;
     text-align: center;
+
+    padding: 10px;
+
   }
 
   .actives {
-    display: block
+    display: block;
+
+  }
+
+  #navigation ul li a {
+    color: #fff;
+
   }
 
   div#card img,
@@ -671,8 +694,9 @@ p.titolo-float {
     clip-path: none;
     align-items: center;
     justify-content: center;
+    margin: 3px -100px;
+    padding-bottom: 50px;
 
-    margin-bottom: 10px;
 
   }
 
@@ -680,6 +704,8 @@ p.titolo-float {
     width: 100%;
     margin-top: 100px;
     font-size: 25px;
+    text-align: center;
+    padding-left: 50px;
   }
 
   .colonna1 {
@@ -748,6 +774,7 @@ p.titolo-float {
 
 }
 
+
 @media (max-width:450px) {
 
   .table-bordered>tbody>tr>td,
@@ -758,7 +785,7 @@ p.titolo-float {
   .table-bordered>thead>tr>th {
 
     font-size: 13px;
-    padding: 0;
+    padding: 1px;
   }
 
   .text {
@@ -788,12 +815,7 @@ p.titolo-float {
     font-size: 35px;
   }
 
-  .geometrico {
 
-
-    height: 200px;
-    font-size: 2rem;
-  }
 
   .geometrico h2 {
     font-size: 20px;
