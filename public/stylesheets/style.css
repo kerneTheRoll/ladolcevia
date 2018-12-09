@@ -1,5 +1,127 @@
 @charset "UTF-8";
 
+:root {
+  --main-color-blue-dark: #1b60ab;
+  --main-color-blue-light: #1d74bb;
+  --main-colore-test: #83807b;
+
+}
+
+.text-blue-light {
+  color: var(--main-color-blue-light)
+}
+
+.box-blue-light {
+  background: var(--main-color-blue-light)
+}
+
+div.container-fluid.mt-5 {
+  padding-left: 40px;
+  padding-right: 40px;
+
+}
+
+span.giorno,
+span.mese {
+  display: block;
+  text-align: center;
+
+
+}
+
+.titolone {
+  width: 800px;
+
+}
+
+span.giorno {
+  font-size: 4em;
+
+  font-weight: 900;
+  letter-spacing: 0.7;
+
+
+}
+
+div.luogo>div i {
+  font-size: 3.4em;
+  text-align: center;
+  color: #FF4136
+}
+
+.luogo {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.paese {
+
+  padding-left: 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+
+
+}
+
+span.mese {
+
+
+  margin-top: -25px;
+  font-size: 1.5em;
+  font-weight: bold;
+
+}
+
+
+.event-card img {
+  margin-top: -90px;
+
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-sizing: border-box;
+}
+
+.event-card {
+  position: relative;
+  padding: 20px;
+
+
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+
+
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+h2.descrizionepremium {
+  font-size: 1.7em;
+}
+
+div.col-md-12.categoriaTitolo {
+  margin-right: 0;
+  padding-right: 0;
+  background: var(--main-color-blue-light)
+}
+
+div .col-md-12.immagine-storia {
+  margin-left: 0;
+  padding-left: 0
+}
+
+
+body {
+  font-family: 'FontMenu';
+
+}
+
+
+
+div .col-md-12.immagine-storia {
+  padding-left: 0;
+  margin-left: 0;
+}
 
 /*** accordion stile da codepen */
 .accordion .card-header {
@@ -91,11 +213,12 @@
 
 #navigation {
   width: 100%;
-  background: #003b7f;
+  background: #1b60ab;
 
   z-index: 99999;
-  ;
-  border-bottom: 6px solid #42b1e6;
+  position: absolute;
+  transition: .3s;
+  border-bottom: 16px solid #1d74bb;
 }
 
 .nome-azienda {
@@ -129,6 +252,9 @@
 #navigation ul li a {
 
   text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
 
 }
 
@@ -164,6 +290,14 @@ textarea::placeholder {
   opacity: 1;
   /* Firefox */
   font-size: 20px;
+
+
+}
+
+textarea {
+  border: 2px solid #1d74bb;
+
+  width: 100%;
 
 }
 
@@ -282,8 +416,7 @@ button.mybtn {
 }
 
 .titolo-prodotto {
-  color: #42b1e6;
-
+  color: var(--main-color-blue-light)
 }
 
 .custom-prev-html {
@@ -363,8 +496,10 @@ div.colonna2 img {
 
 }
 
+
+
 .bluastro {
-  background-color: #1d74bb;
+  background: var(--main-color-blue-light)
 }
 
 .darkblue {
@@ -449,7 +584,7 @@ div#card2 img {
 }
 
 .titolo {
-  color: #2478bb;
+  color: var(--main-color-blue-light);
   text-align: center;
   font-size: 4em;
   font-family: 'FontMenu';
@@ -459,6 +594,15 @@ div#card2 img {
 
 
 }
+
+.descrizionepremium {
+  color: var(--main-color-blue-light);
+  font-weight: bold;
+  font-family: 'FontMenu';
+  font-size: 4rem;
+
+}
+
 
 .center-thumbs .lslide {
   margin: 0 auto;
@@ -525,6 +669,7 @@ p.titolo-float {
   display: inline-block;
   font-size: 22px;
   font-weight: 900;
+
 }
 
 .site-header nav {
@@ -554,7 +699,7 @@ p.titolo-float {
 
 
 
-@media (max-width: 994px) {
+@media (max-width: 991px) {
 
   #card,
   #card1,
@@ -563,6 +708,47 @@ p.titolo-float {
     height: 250px;
 
   }
+
+  .float-right {
+    clear: both;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .motto-storia {
+    text-align: center;
+    width: 90%;
+  }
+
+  .float-right img {
+    width: 90%;
+
+    margin-left: 10px;
+    clear: both;
+    margin: 10px auto;
+  }
+
+  div.col-md-12.categoriaTitolo {
+    margin: auto;
+    padding-right: 20px;
+    margin-bottom: 40px;
+  }
+
+  div .col-md-12.immagine-storia {
+    margin: auto;
+    height: auto;
+    height: 350px;
+
+    ;
+  }
+
+  .titolo-storia {
+    line-height: 60px;
+    padding-bottom: 10px;
+  }
+
 
   .numerotitolo {
     font-weight: bold;
@@ -607,11 +793,26 @@ p.titolo-float {
 
 }
 
+.titolo-storia {
+  line-height: 60px;
+  padding-bottom: 10px;
+}
+
 @media (max-width: 767px) {
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  div.col-md-12.categoriaTitolo {
+    margin: auto;
+  }
+
+  div .col-md-12.immagine-storia {
+    margin: auto;
+    ;
+  }
+
 
   .site-header nav {
     margin-top: 30px;
@@ -758,7 +959,7 @@ p.titolo-float {
   }
 
   .titolo-storia {
-    line-height: 60px;
+    line-height: 50px;
     padding-bottom: 10px;
   }
 
@@ -770,6 +971,14 @@ p.titolo-float {
 
 
 @media (max-width:450px) {
+
+  .motto-storia {
+    font-size: 4em;
+  }
+
+  .storia {
+    text-align: left;
+  }
 
   .table-bordered>tbody>tr>td,
   .table-bordered>tbody>tr>th,
@@ -833,7 +1042,7 @@ p.titolo-float {
   padding: 10em 0 6em;
   background-position: center;
   background-size: content;
-  height: 45vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -940,7 +1149,7 @@ p.titolo-float {
 
 
 .logo {
-  width: 200px;
+  width: 150px;
 }
 
 .content-section {
@@ -990,6 +1199,7 @@ p {
 
     padding-top: 2rem;
   }
+
 
   footer p {
     padding-bottom: 2rem;
@@ -1309,6 +1519,9 @@ p {
     right: auto;
   }
 
+
+
+
   @media screen and (max-width: 767px) {
     .quote-banner {
       height: auto;
@@ -1567,11 +1780,12 @@ p {
       font-size: 1em;
     }
 
-    .descrizionepremium {
+    .descrizionepremium h2 {
 
       font-size: 2em;
 
     }
+
   }
 
   .text-section {

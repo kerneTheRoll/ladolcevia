@@ -190,12 +190,15 @@ function getProdottoSimile(req, res, next) {
     .query(
       [
         Prismic.Predicates.at("document.type", "prodotto"),
+
         Prismic.Predicates.at("my.prodotto.categories.link", id)
       ],
+
       I18NConfig(req)
     )
     .then(function(response) {
       // response is the response object, response.results holds the documents
+      console.log(response);
       req.prodottoFiglio = response.results;
       next();
     })
@@ -347,13 +350,11 @@ function gestisciEmail(req, res, next) {
         req.message =
           "non è stato possibile inviare il messaggio, riprovare più tardi";
       } else {
-        res
-          .status(200)
-          .send({
-            message: JSON.stringify(
-              "grazie per averci contatto, a breve vi ricontatteremo"
-            )
-          });
+        res.status(200).send({
+          message: JSON.stringify(
+            "grazie per averci contatto, a breve vi ricontatteremo"
+          )
+        });
       }
 
       console.log("Message sent: %s", info.messageId);

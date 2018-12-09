@@ -66,16 +66,16 @@ block body
     .row.mt-5.px-4
       .col-md-6.col1
 
-      .col-md-6.col2.darkblue.blocco-testo.d-flex
+      .col-md-6.col2.box-blue-light.blocco-testo.d-flex
         p.font-storia
           != RichText.asText(azienda.data.storia_azienda)
 
-  .container.mt-5
+  .container-fluid.mt-0.pt-0
 
-        .float
+        .float-right.pt-5.mt-4
           img.img-fluid(src=azienda.data.immagine_paragrafo_storia.url)
-        .para
-          h2.motto-storia
+        .para(style='background:#faf9f7;margin-left:10px;margin-right:10px;')
+          h2.motto-storia.pt-5.text-blue-light
 
            != RichText.asText(azienda.data.titolo_storia)
           p.storia

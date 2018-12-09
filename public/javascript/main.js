@@ -222,6 +222,14 @@ function validaContatti() {
       });
     }
   });
+  $("#content")
+    .on("change keyup keydown paste cut", "textarea", function() {
+      $(this)
+        .height(0)
+        .height(this.scrollHeight);
+    })
+    .find("textarea")
+    .change();
 }
 //gestione traduzione errori @nome campo  @ lingua
 // return errore tradotto

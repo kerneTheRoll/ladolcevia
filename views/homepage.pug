@@ -15,9 +15,17 @@ block body
 
             background-repeat:no-repeat;
             background-size:cover;
-         }
+        }
+          div.immagine-storia{
+            background-image:url(#{home.data.immaginestoria.url});
+
+
+            background-repeat:no-repeat;
+            background-size:cover;
+       }
+
           .title{
-            color:#5d7daa;
+            color:var( --main-color-blue-light);
             font-size:3em;
             text-align:left;
             width:200px;
@@ -27,21 +35,49 @@ block body
           .homepage-banner{
             background-image:url(#{tablet});
             height:200px;
+            }
+          div.immagine-storia{
+            background-image:url(#{home.data.immaginestoria.url});
 
 
-         }
+            background-repeat:no-repeat;
+            background-size:cover;
+            }
+
+           }
+        @media only screen and (max-width:767px){
+
+          div.immagine-storia{
+            background-image:url(#{home.data.immaginestoria.url});
+
+            height:400px;
+            width:90%;
+
+            margin:50px auto;
+            background-repeat:no-repeat;
+            background-size:cover;
+            }
+
+           }
            @media only screen and (max-width:400px){
-          .homepage-banner{
-            background-image:url(#{mobile});
-            height:200px;
+              .homepage-banner{
+                 background-image:url(#{mobile});
+                 height:200px;
+           }
+           div.immagine-storia{
+            background-image:url(#{home.data.immaginestoria.url});
 
 
-         }
-         .banne{
+            background-repeat:no-repeat;
+            background-size:cover;
+            }
+
+          }
+          .banne{
            color:red;
            font-size:40px;
-         }
-      }
+          }
+
 
 
   .homepage
@@ -62,13 +98,13 @@ block body
     .row
       .col-md-6.categoria-immagine
          img(src=home.data.immagine_categorie.url)
-      .col-md-6.d-flex.flex-column.justify-content-center.categoriaTitolo
+      .col-md-6.d-flex.flex-column.justify-content-center.categoriaList
        div
          h2.title I nostri Gelati
          if message
           h2
             message
-       p
+       p.pt-4
         ul.listaCategorie
           each linkItem in home.data.sezione_categorie
             li
@@ -79,13 +115,14 @@ block body
 
 
     .row
-     .col-md-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center.py-5.px-5
+     .col-md-12.col-lg-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center.py-5.px-5
         h2.titolo-storia
          != RichText.asText(home.data.titolosezionestoria)
         .paragrafoStoria
          != RichText.asHtml(home.data.descrizione_storia, ctx.linkResolver)
-     .col-md-6.immagine-storia
-       img.img-fluid(src=home.data.immaginestoria.url)
+
+     .col-md-12.col-lg-6.immagine-storia
+
   if (home.data.titolo_il_segreto.length)
       .container.mt-5
 
@@ -116,16 +153,33 @@ block body
     .mt-5
       include ./slices/slide.pug
   if home.data.evento.length
-    .container-fluid.mt-5.pl-4.pt-5
-      .row.mx-auto(style='position:relative')
-        .col-md-6.bluastro.d-flex.flex-column.justify-content-center.geometrico
-          h2.text-center.pr-5(style='color:#ffff')
-            !=RichText.asText(home.data.evento)
-
-
-
-        .col-md-6
+    .container.mt-5.pl-4.pt-5
+        div.row.event-card
+          .col-md-6
             img.img-fluid(src=home.data.immagine_evento.url)
+            div.d-flex.fle-column.justify-content-center
+              div.mese-giorno
+                span.giorno 12
+                span.mese GENNAIO
+              .luogo.mt-3
+                div.text-center
+                  i.fas.fa-map-marker-alt.text-center
+                div.paese PERUGIA (PG)
+
+
+
+
+
+          .col-md-6.justify-content-center
+                h2.text-center.pr-5.display-4
+
+                  |Workshop con gli artigiani del gusto, vi aspettiamo numerosi!!
+
+
+
+
+
+
 
 
 

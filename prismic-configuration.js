@@ -1,3 +1,6 @@
+var PrismicDOM = require("prismic-dom");
+var Elements = PrismicDOM.RichText.Elements;
+
 module.exports = {
   apiEndpoint: "https://altroancora.prismic.io/api/v2",
 

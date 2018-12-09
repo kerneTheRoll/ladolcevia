@@ -88,8 +88,8 @@ block body
               !=RichText.asText(contatti.data.ferie_eventi)
 
 
-     .container-fluid.row.pt-4.blue-color.pl-4.textarealabel
-          textarea.form-control#richiesta(name="richiesta", cols="10", rows="3" placeholder=RichText.asText(contatti.data.form__richiesta))
+     .container-fluid.row.pt-4.blue-color.pl-4.textarealabel#content
+          textarea#richiesta(name="richiesta",  placeholder=RichText.asText(contatti.data.form__richiesta))
      .container-fluid.row.pt-4.blue-color.pl-4
           button(type='submit').btn-block.mybtn#sub
             | invia la tua richiesta

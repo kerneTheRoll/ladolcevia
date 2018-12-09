@@ -22,7 +22,7 @@
 @font-face {
   font-family: 'FontMenu';
   /*a name to be used later*/
-  src: url('fonts/CaviarDreams.ttf') format('truetype');
+  src: url('fonts/WorkSans-Regular.ttf') format('truetype');
   /*URL to font*/
 }
 
@@ -36,14 +36,13 @@ body {
   padding: 0;
 }
 
-.descrizionepremium {
-  color: #42b1e6;
-  font-weight: bold;
-  font-family: 'FontMenu';
-  font-size: 4rem;
+
+:root {
+  --main-color-blue-dark: #1b60ab;
+  --main-color-blue-light: #1d74bb;
+  --main-colore-test: #83807b;
 
 }
-
 
 .descrizionepremium+p {
 
@@ -55,7 +54,7 @@ body {
 
 .motto {
   font-family: 'YourFontName';
-  color: #003b7f;
+  color: var(--main-color-blue-light);
   font-size: 6em;
   text-align: center;
 }
@@ -63,20 +62,20 @@ body {
 .motto-storia {
   font-family: 'YourFontName';
   color: #003b7f;
-  font-size: 3.5em;
+  font-size: 6em;
   line-height: 60px;
   text-align: left;
-  text-indent: 5px;
+  margin-left: 15px;
+  width: 500px;
 
 }
 
 .storia {
   margin-top: 30px;
-  padding-top: 10px;
+  padding: 10px;
   font-size: 1.4em;
-  color: #484D52;
-
-
+  color: var(--main-colore-test);
+  text-align: justify;
 
 }
 
@@ -101,6 +100,21 @@ body {
   font-size: 1.5em;
   font-family: 'FontMenu';
 
+}
+
+.para {
+  margin-right: 40px;
+  padding: 10px;
+}
+
+.float-right img {
+  width: 95%;
+  float: right;
+  margin-right: 8px;
+}
+
+.float-right {
+  width: 56%;
 }
 
 a {

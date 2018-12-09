@@ -2,7 +2,8 @@ div#slide
   each elem in prodotto
     .row
       .col-md-6.col-sm-12.col-xs-12.d-flex.justify-content-center.flex-column.align-items-center
-         img.img-fluid(src=elem.data.foto_ingrediente.url)
+
+         img.img-fluid.myim(src=elem.data.foto_ingrediente.url)
       .col-md-6.col-sm-12.col-xs-12
         h2.descrizionepremium.text-center
          != RichText.asText(elem.data.nome_incrediente)
