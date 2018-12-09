@@ -1,6 +1,10 @@
 {
-  "name": "prismic-demo",
-  "version": "2.0.0",
+  "name": "LadolceVia",
+
+  "version": "1.0.0",
+  "engines": {
+    "node": "9.4.0"
+  },
   "scripts": {
     "start": "npm run build:css; node app.js",
     "dev": "npm run watch-css | nodemon app.js",
@@ -11,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/prismicio/prismic-demo.git"
+    "url": "https://github.com/kerneTheRoll/ladolcevia"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
