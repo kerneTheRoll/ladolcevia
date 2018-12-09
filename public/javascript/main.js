@@ -1,19 +1,34 @@
 $(document).ready(function() {
+  var getDispositivo = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  )
+    ? true
+    : false;
+  if (getDispositivo) {
+    $(".menu").on("touchstart", function() {
+      var flagVisibile =
+        document.getElementById("listamenu").style.display === "block"
+          ? "none"
+          : "block";
+      $("#listamenu").css("display", flagVisibile);
+    });
+  } else {
+    $(".menu").click(function() {
+      var flagVisibile =
+        document.getElementById("listamenu").style.display === "block"
+          ? "none"
+          : "block";
+      $("#listamenu").css("display", flagVisibile);
+    });
+  }
+
   $(window).resize(function() {
     if ($(document).width() > 767) {
       $("#listamenu").css("display", "block");
       console.log("on resize");
     }
   });
-  $(".menu").click(function() {
-    var flagVisibile =
-      document.getElementById("listamenu").style.display === "block"
-        ? "none"
-        : "block";
-    $("#listamenu").css("display", flagVisibile);
 
-    console.log(flagVisibile + " " + $(window).width());
-  });
   $("#image-slider").lightSlider({
     gallery: false,
     auto: true,
