@@ -17,7 +17,7 @@ function I18NConfig(req, options) {
 }
 
 app.listen(PORT, () => {
-  console.log(`Go to browser: http://localhost:${PORT}`);
+  // console.log(`Go to browser: http://localhost:${PORT}`);
 });
 
 //Middleware catch all request, query Prismic API and configure everything for it
@@ -164,7 +164,6 @@ function renderCategoria(req, res) {
     categoria: req.categoria,
     prodottoFiglio: req.prodottoFiglio
   });
-  console.log(req.prodottoFiglio);
 }
 
 function getCategoria(req, res, next) {
@@ -198,7 +197,7 @@ function getProdottoSimile(req, res, next) {
     )
     .then(function(response) {
       // response is the response object, response.results holds the documents
-      console.log(response);
+
       req.prodottoFiglio = response.results;
       next();
     })
@@ -309,18 +308,7 @@ function gestisciEmail(req, res, next) {
     const telefono = req.body.telefono;
     const richiesta = req.body.richiesta;
     const scelta = req.body.scelta;
-    console.log(
-      nome +
-        "niente " +
-        cognome +
-        " niente" +
-        email +
-        "niente " +
-        azienda +
-        "niente " +
-        country +
-        "niente "
-    );
+
     // setup email data with unicode symbols
     let mailOptions = {
       to: "abdimohamed862992@gmail.com ", // list of receivers
@@ -357,10 +345,6 @@ function gestisciEmail(req, res, next) {
         });
       }
 
-      console.log("Message sent: %s", info.messageId);
-      // Preview only available when sending through an Ethereal account
-      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-
       // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
       // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     });
@@ -375,7 +359,6 @@ function renderContatti(req, res) {
 }
 
 function renderContattiEmail(req, res) {
-  console.log(req.message);
   res.send(JSON.stringify(req.message));
 }
 
@@ -399,7 +382,6 @@ function renderProdotti(req, res) {
     prodotti: req.prodotti,
     categorie: req.categorie
   });
-  console.log(req.prodottoFiglio);
 }
 app.get(
   I18NUrl("/prodotti"),
