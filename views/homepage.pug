@@ -48,9 +48,9 @@ block body
         @media only screen and (max-width:767px){
 
           div.immagine-storia{
-            background-image:url(#{home.data.immaginestoria.url});
 
-            height:400px;
+
+            display:none;
             width:90%;
 
             margin:50px auto;
@@ -64,13 +64,7 @@ block body
                  background-image:url(#{mobile});
                  height:200px;
            }
-           div.immagine-storia{
-            background-image:url(#{home.data.immaginestoria.url});
 
-
-            background-repeat:no-repeat;
-            background-size:cover;
-            }
 
           }
           .banne{
@@ -115,7 +109,7 @@ block body
 
 
     .row
-     .col-md-12.col-lg-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center.py-5.px-5
+     .col-md-12.col-lg-6.box-storia.d-flex.flex-column.justify-content-center.categoriaTitolo.align-items-center
         h2.titolo-storia
          != RichText.asText(home.data.titolosezionestoria)
         .paragrafoStoria

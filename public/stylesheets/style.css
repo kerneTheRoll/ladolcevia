@@ -109,13 +109,10 @@ h2.descrizionepremium {
 div.col-md-12.categoriaTitolo {
   margin-right: 0;
   padding-right: 0;
-  background: var(--main-color-blue-light)
+  background: var(--main-color-blue-light);
+  padding:20px;
 }
 
-div .col-md-12.immagine-storia {
-  margin-left: 0;
-  padding-left: 0
-}
 
 
 body {
@@ -125,10 +122,7 @@ body {
 
 
 
-div .col-md-12.immagine-storia {
-  padding-left: 0;
-  margin-left: 0;
-}
+
 
 /*** accordion stile da codepen */
 .accordion .card-header {
@@ -748,20 +742,16 @@ p.titolo-float {
     clear: both;
     margin: 10px auto;
   }
-
+  div .col-md-12.immagine-storia{
+    display: none
+  }
   div.col-md-12.categoriaTitolo {
     margin: auto;
     padding-right: 20px;
     margin-bottom: 40px;
   }
 
-  div .col-md-12.immagine-storia {
-    margin: auto;
-    height: auto;
-    height: 350px;
 
-    ;
-  }
 
   .titolo-storia {
     line-height: 60px;
@@ -827,10 +817,7 @@ p.titolo-float {
     margin: auto;
   }
 
-  div .col-md-12.immagine-storia {
-    margin: auto;
-    ;
-  }
+
 
 
   .site-header nav {
@@ -1004,10 +991,10 @@ p.titolo-float {
   }
   .event-card {
 padding:10px;
-max-width: 350px;
+max-width: 290px;
   }
   .descr-event{
-    font-size:1.8rem;
+    font-size:1.4rem;
     text-align: center;
     padding-left:10px;
     width: 100%;
@@ -1070,7 +1057,30 @@ max-width: 350px;
     width: 200px;
     margin-left: 50px;
   }
+  .listaCategorie li a {
+
+    font-size:100px;
+
+    margin:0;
+
+
+
+
+  }
+  .listaCategorie li a:after{
+    padding:3px;
+  }
+  .categoriaTitolo{
+    min-width:300px;
+    padding:0;
+   margin:0;
+   position: relative;
+   right:22px;
+
+  }
 }
+
+
 
 .homepage-banner {
   margin: 0 0 40px;
@@ -1165,12 +1175,12 @@ max-width: 350px;
 .listaCategorie li {
   list-style: none;
   display: inline-block;
-  font-family: Roboto, sans-serif;
+
 }
 
 .listaCategorie li a {
   color: #cbcbcb;
-  font-size: 25px;
+  font-size:1.5em;
   text-transform: uppercase;
   font-family: 'FontMenu';
   text-decoration: none;
