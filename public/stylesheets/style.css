@@ -990,8 +990,9 @@ p.titolo-float {
 
   }
   .event-card {
-padding:10px;
-max-width: 290px;
+  position: relative;
+  left:5px;
+max-width: 100%;
   }
   .descr-event{
     font-size:1.4rem;
@@ -999,6 +1000,47 @@ max-width: 290px;
     padding-left:10px;
     width: 100%;
     margin: initial;
+  }
+  span.giorno {
+    font-size: 2em;
+
+    margin-top: 25px;
+    padding-bottom:10px;
+
+
+  }
+
+  div.luogo>div i {
+    font-size: 2em;
+
+  }
+  .mese-giorno{
+    position: relative;
+    bottom:10px;
+  }
+
+  .luogo {
+
+
+
+  }
+
+  .paese {
+
+    padding-left: 0.5em;
+    font-size: 1em;
+
+
+
+  }
+
+  span.mese {
+
+
+
+    font-size: 1em;
+
+
   }
 
 
@@ -1070,13 +1112,11 @@ max-width: 290px;
   .listaCategorie li a:after{
     padding:3px;
   }
-  .categoriaTitolo{
-    min-width:300px;
+  .box-storia {
+    width: 100%;
+    margin: 0 auto ;
     padding:0;
-   margin:0;
-   position: relative;
-   right:22px;
-
+    min-width: 350px;
   }
 }
 
@@ -1574,7 +1614,7 @@ p {
     }
 
     .box-storia {
-      max-width: 90%;
+      min-width: 100% ;
       margin: 0 auto;
     }
 
