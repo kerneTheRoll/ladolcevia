@@ -46,9 +46,9 @@ block body
         each items in prodottoFiglio
           h2.titolo-prodotto
             != RichText.asText(items.data.title)
-          p
+          p.dettagli
             !=RichText.asText(items.data.descrizione_prodotto)
-          p
+          p.dettagli
             if(items.data.dosaggio.length)
 
              !=RichText.asText(items.data.dosaggio)

@@ -6,6 +6,12 @@
   --main-colore-test: #83807b;
 
 }
+.text-grey{
+  color:var(--main-colore-test);
+}
+.nome-prodotto{
+  font-size:3px;
+}
 
 .text-blue-light {
   color: var(--main-color-blue-light)
@@ -97,6 +103,7 @@ span.mese {
 
 h2.descrizionepremium {
   font-size: 1.7em;
+
 }
 
 div.col-md-12.categoriaTitolo {
@@ -211,12 +218,13 @@ div .col-md-12.immagine-storia {
   text-align: left;
 }
 
+
 #navigation {
   width: 100%;
   background: #1b60ab;
 
   z-index: 99999;
-  position: absolute;
+
   transition: .3s;
   border-bottom: 16px solid #1d74bb;
 }
@@ -416,9 +424,17 @@ button.mybtn {
 }
 
 .titolo-prodotto {
-  color: var(--main-color-blue-light)
+  color: var(--main-color-blue-light);
+  text-transform: lowercase;
+
 }
 
+.dettagli {
+  color:var(--main-colore-test)
+}
+.titolo-prodotto::first-letter{
+  text-transform: uppercase;
+}
 .custom-prev-html {
   background: none;
   width: 50px;
@@ -479,7 +495,10 @@ button.mybtn {
 }
 
 
-
+.descr-event{
+  font-size:3rem;
+  font-weight: 100;
+}
 div.colonna2 img {
   max-height: 300px;
   width: 1500px;
@@ -600,7 +619,7 @@ div#card2 img {
   font-weight: bold;
   font-family: 'FontMenu';
   font-size: 4rem;
-
+  text-transform: uppercase;
 }
 
 
@@ -979,6 +998,22 @@ p.titolo-float {
   .storia {
     text-align: left;
   }
+  .image-ev{
+    width:400px;
+
+  }
+  .event-card {
+padding:10px;
+max-width: 350px;
+  }
+  .descr-event{
+    font-size:1.8rem;
+    text-align: center;
+    padding-left:10px;
+    width: 100%;
+    margin: initial;
+  }
+
 
   .table-bordered>tbody>tr>td,
   .table-bordered>tbody>tr>th,
