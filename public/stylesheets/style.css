@@ -605,7 +605,7 @@ div#card2 img {
   color: var(--main-color-blue-light);
   text-align: center;
   font-size: 4em;
-  font-family: 'FontMenu';
+  font-family: 'FontMaxiBold';
   margin-bottom: 50px;
   margin-top: 10px;
   font-weight: bold;
@@ -1066,7 +1066,7 @@ p.titolo-float {
   .table-bordered>thead>tr>th {
 
     font-size: 13px;
-    padding: 1px;
+    padding: 0.8em;
   }
 
   .text {

@@ -26,6 +26,13 @@
   /*URL to font*/
 }
 
+@font-face {
+  font-family: 'FontMaxiBold';
+  /*a name to be used later*/
+  src: url('fonts/WorkSans-ExtraBold.ttf') format('truetype');
+  /*URL to font*/
+}
+
 /*
  * Globals
  */

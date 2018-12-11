@@ -29,6 +29,8 @@ block body
             font-size:3em;
             text-align:left;
             width:200px;
+             font-family: 'FontMaxiBold';
+             font-weight:900;
 
        }
        @media only screen and (max-width:970px){
@@ -93,12 +95,12 @@ block body
       .col-md-6.categoria-immagine
          img(src=home.data.immagine_categorie.url)
       .col-md-6.d-flex.flex-column.justify-content-center.categoriaList
-       div
+       div.pt-3
          h2.title I nostri Gelati
          if message
           h2
             message
-       p.pt-4
+       p
         ul.listaCategorie
           each linkItem in home.data.sezione_categorie
             li
