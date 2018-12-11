@@ -980,11 +980,6 @@ p.titolo-float {
     margin-top: 10px;
   }
 
-  .event-card {
-    width: 100%;
-    margin: 10px 70px;
-
-  }
 
   .mycont {
 
@@ -1011,8 +1006,7 @@ p.titolo-float {
   }
 
   .event-card {
-    position: relative;
-    left: 5px;
+
     max-width: 100%;
   }
 
