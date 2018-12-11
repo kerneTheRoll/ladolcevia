@@ -6,11 +6,13 @@
   --main-colore-test: #83807b;
 
 }
-.text-grey{
-  color:var(--main-colore-test);
+
+.text-grey {
+  color: var(--main-colore-test);
 }
-.nome-prodotto{
-  font-size:3px;
+
+.nome-prodotto {
+  font-size: 3px;
 }
 
 .text-blue-light {
@@ -110,7 +112,7 @@ div.col-md-12.categoriaTitolo {
   margin-right: 0;
   padding-right: 0;
   background: var(--main-color-blue-light);
-  padding:20px;
+  padding: 20px;
 }
 
 
@@ -424,11 +426,13 @@ button.mybtn {
 }
 
 .dettagli {
-  color:var(--main-colore-test)
+  color: var(--main-colore-test)
 }
-.titolo-prodotto::first-letter{
+
+.titolo-prodotto::first-letter {
   text-transform: uppercase;
 }
+
 .custom-prev-html {
   background: none;
   width: 50px;
@@ -489,10 +493,11 @@ button.mybtn {
 }
 
 
-.descr-event{
-  font-size:3rem;
+.descr-event {
+  font-size: 3rem;
   font-weight: 100;
 }
+
 div.colonna2 img {
   max-height: 300px;
   width: 1500px;
@@ -742,9 +747,11 @@ p.titolo-float {
     clear: both;
     margin: 10px auto;
   }
-  div .col-md-12.immagine-storia{
+
+  div .col-md-12.immagine-storia {
     display: none
   }
+
   div.col-md-12.categoriaTitolo {
     margin: auto;
     padding-right: 20px;
@@ -973,6 +980,18 @@ p.titolo-float {
     margin-top: 10px;
   }
 
+  .event-card {
+    width: 100%;
+    margin: 10px 70px;
+
+  }
+
+  .mycont {
+
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 
@@ -985,27 +1004,31 @@ p.titolo-float {
   .storia {
     text-align: left;
   }
-  .image-ev{
-    width:400px;
+
+  .image-ev {
+    width: 400px;
 
   }
+
   .event-card {
-  position: relative;
-  left:5px;
-max-width: 100%;
+    position: relative;
+    left: 5px;
+    max-width: 100%;
   }
-  .descr-event{
-    font-size:1.4rem;
+
+  .descr-event {
+    font-size: 1.4rem;
     text-align: center;
-    padding-left:10px;
+    padding-left: 10px;
     width: 100%;
     margin: initial;
   }
+
   span.giorno {
     font-size: 2em;
 
     margin-top: 25px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
 
 
   }
@@ -1014,16 +1037,13 @@ max-width: 100%;
     font-size: 2em;
 
   }
-  .mese-giorno{
+
+  .mese-giorno {
     position: relative;
-    bottom:10px;
+    bottom: 10px;
   }
 
-  .luogo {
-
-
-
-  }
+  .luogo {}
 
   .paese {
 
@@ -1099,23 +1119,26 @@ max-width: 100%;
     width: 200px;
     margin-left: 50px;
   }
+
   .listaCategorie li a {
 
-    font-size:100px;
+    font-size: 100px;
 
-    margin:0;
+    margin: 0;
 
 
 
 
   }
-  .listaCategorie li a:after{
-    padding:3px;
+
+  .listaCategorie li a:after {
+    padding: 3px;
   }
+
   .box-storia {
     width: 100%;
-    margin: 0 auto ;
-    padding:0;
+    margin: 0 auto;
+    padding: 0;
     min-width: 350px;
   }
 }
@@ -1220,7 +1243,7 @@ max-width: 100%;
 
 .listaCategorie li a {
   color: #cbcbcb;
-  font-size:1.5em;
+  font-size: 1.5em;
   text-transform: uppercase;
   font-family: 'FontMenu';
   text-decoration: none;
@@ -1614,7 +1637,7 @@ p {
     }
 
     .box-storia {
-      min-width: 100% ;
+      min-width: 100%;
       margin: 0 auto;
     }
 
