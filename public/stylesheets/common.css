@@ -33,6 +33,13 @@
   /*URL to font*/
 }
 
+@font-face {
+  font-family: 'FontLight';
+  /*a name to be used later*/
+  src: url('fonts/WorkSans-Light.ttf') format('truetype');
+  /*URL to font*/
+}
+
 /*
  * Globals
  */
@@ -137,13 +144,7 @@ p a {
   text-decoration: underline;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Lato', sans-serif;
-}
+
 
 .banne {
   width: 100%;
@@ -154,7 +155,7 @@ h6 {
 
 
 h1 {
-  font-family: ‘Lora’, Serif;
+
   font-size: 42px;
   font-weight: normal;
   color: #484D52;

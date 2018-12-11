@@ -94,7 +94,7 @@ span.mese {
 .event-card {
   position: relative;
   padding: 20px;
-
+  width: 90%;
 
   background-color: #fff;
   border: 1px solid #f0f0f0;
@@ -493,10 +493,16 @@ button.mybtn {
 }
 
 
+
 .descr-event {
   font-size: 3rem;
-  font-weight: 100;
+  text-align: center;
+  padding-left: 10px;
+  width: 100%;
+  margin: initial;
+  font-family: 'FontLight'
 }
+
 
 div.colonna2 img {
   max-height: 300px;
@@ -1008,6 +1014,7 @@ p.titolo-float {
   .event-card {
 
     max-width: 100%;
+    margin-right: 200px;
   }
 
   .descr-event {
@@ -1016,6 +1023,7 @@ p.titolo-float {
     padding-left: 10px;
     width: 100%;
     margin: initial;
+    font-family: 'FontLight'
   }
 
   span.giorno {
@@ -1066,7 +1074,7 @@ p.titolo-float {
   .table-bordered>thead>tr>th {
 
     font-size: 13px;
-    padding: 0.8em;
+    padding: 1.3px;
   }
 
   .text {
