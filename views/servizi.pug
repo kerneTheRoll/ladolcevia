@@ -68,25 +68,25 @@ block body
         .card-header.collapsed(data-toggle='collapse', href='#collapseOne')
           a.card-title
             != RichText.asText(servizi.data.consulenza)
-        #collapseOne.card-body.collapse(data-parent='#accordion')
+        #collapseOne.card-body.collapse.background-default(data-parent='#accordion')
           p
              != RichText.asText(servizi.data.testotitolo1)
         .card-header.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo')
           a.card-title
               != RichText.asText(servizi.data.titoloconsolidamento)
-        #collapseTwo.card-body.collapse(data-parent='#accordion')
+        #collapseTwo.card-body.collapse.background-default(data-parent='#accordion')
           p
              != RichText.asText(servizi.data.testo_consolidamento)
         .card-header.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree')
           a.card-title
               != RichText.asText(servizi.data.titolo_recupero_attivita)
-        #collapseThree.collapse(data-parent='#accordion')
+        #collapseThree.collapse.background-default(data-parent='#accordion')
           .card-body
               != RichText.asText(servizi.data.testo_consolidamento)
         .card-header.collapsed(data-toggle='collapse', href='#collapseFour')
           a.card-title
             != RichText.asText(servizi.data.titolo_sviluppo_prodotti)
-        #collapseFour.card-body.collapse(data-parent='#accordion')
+        #collapseFour.background-default.card-body.collapse(data-parent='#accordion')
           p
              != RichText.asText(servizi.data.testo_sviluppo_prodotti)
 
@@ -106,13 +106,13 @@ block body
           .card-header.collapsed(data-toggle='collapse', href='#collapse-3-one')
             a.card-title
               != RichText.asText(servizi.data.titolo_avviare_distribuzione)
-          #collapse-3-one.card-body.collapse(data-parent='#accordion')
+          #collapse-3-one.card-body.collapse.background-default(data-parent='#accordion')
             p
               != RichText.asText(servizi.data.descrizione_distribuzione)
           .card-header.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapse-3-two')
             a.card-title
                 != RichText.asText(servizi.data.titolo_consolidamento_attivita)
-          #collapse-3-two.card-body.collapse(data-parent='#accordion')
+          #collapse-3-two.card-body.collapse.background-default(data-parent='#accordion')
             p.last
               != RichText.asText(servizi.data.descrizione_consolidamento_3)
 

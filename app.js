@@ -159,6 +159,12 @@ app.get(I18NUrl("/page/:uid"), (req, res, next) => {
     });
 });
 function renderCategoria(req, res) {
+  /*  req.prodottoFiglio.forEach(ele => {
+    ele.data.ingredienteAbdi.forEach(ele2 => {
+      console.log(ele.uid);
+      console.log(ele2);
+    });
+  }); */
   res.render("Categorie", {
     title: "ladolcevia",
     categoria: req.categoria,
@@ -166,6 +172,35 @@ function renderCategoria(req, res) {
   });
 }
 
+function cerca_ingredienti(req, res, next) {
+  req.prodottoFiglio.forEach((ele, index) => {
+    ele.data.ingredienteAbdi;
+    var relatedProducts = ele.data.ingrediente_premium;
+    var id = relatedProducts.id != null ? relatedProducts.id : " ";
+    req.prismic.api
+      .query([Prismic.Predicates.at("document.id", id)])
+      .then(function(response) {
+        //response is the response object, response.results holds the documents
+
+        ele.data.ingredienteAbdi = response.results;
+        if (index == req.prodottoFiglio.length - 1) {
+          console.log("passo qui");
+          next();
+        }
+      })
+      .catch(err => {
+        next("err" + err);
+      });
+
+    /*  if (relatedProducts.id) {
+      req.prismic.api
+        .getByIDs(relatedProducts.id)
+        .then(function(relatedProducts) {
+          console.log(relatedProducts);
+        });
+    } */
+  });
+}
 function getCategoria(req, res, next) {
   const uid = req.params.uid;
   req.prismic.api
@@ -186,19 +221,16 @@ function getProdottoSimile(req, res, next) {
   const id = req.categoria.id;
 
   req.prismic.api
-    .query(
-      [
-        Prismic.Predicates.at("document.type", "prodotto"),
+    .query([
+      Prismic.Predicates.at("document.type", "prodotto"),
 
-        Prismic.Predicates.at("my.prodotto.categories.link", id)
-      ],
-
-      I18NConfig(req)
-    )
+      Prismic.Predicates.at("my.prodotto.categories.link", id)
+    ])
     .then(function(response) {
       // response is the response object, response.results holds the documents
 
       req.prodottoFiglio = response.results;
+
       next();
     })
     .catch(error => {
@@ -210,6 +242,7 @@ app.get(
   I18NUrl("/categoria/:uid"),
   getCategoria,
   getProdottoSimile,
+  cerca_ingredienti,
   renderCategoria
 );
 
