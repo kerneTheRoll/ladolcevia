@@ -91,11 +91,13 @@ span.mese {
   box-sizing: border-box;
 }
 
+
+
 .event-card {
   position: relative;
   padding: 20px;
   width: 90%;
-
+  margin-bottom: 100px;
   background-color: #fff;
   border: 1px solid #f0f0f0;
 
@@ -212,7 +214,35 @@ body {
 
 
 
-.mycol {}
+.overl {
+  position: absolute;
+  background: var(--main-color-blue-light);
+
+  width: 100%;
+  height: 95%;
+  left: -100%;
+  transition: left .3s;
+}
+
+.card.my-card {
+  background: var(--main-color-blue-light)
+}
+
+.overl-active {
+  left: 0;
+}
+
+.my-card-header {
+  font-size: 2.5em;
+}
+
+.left-slide {
+  cursor: pointer;
+}
+
+.card-slide {
+  max-width: 400px;
+}
 
 .text-left {
   text-align: left;
@@ -223,7 +253,7 @@ body {
   width: 100%;
   background: #1b60ab;
 
-  z-index: 99999;
+
 
   transition: .3s;
   border-bottom: 16px solid #1d74bb;
@@ -391,6 +421,36 @@ button.mybtn {
 
 }
 
+/*********mio stile per lo slide *************/
+
+
+.return-left {
+
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+
+  padding: 15px;
+
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  font-size: 2em;
+  ;
+
+}
+
+
+
+
+
+.return-left :hover {
+
+  color: #42b1e6;
+
+}
+
+/*********fine stile per lo slide card ********/
 .toggle {
   width: 100%;
   padding: 10px 20px;
@@ -513,6 +573,59 @@ button.mybtn {
   font-family: 'FontLight'
 }
 
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 160px;
+  /* Margin bottom by footer height */
+
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  /* Set the fixed height of the footer here */
+
+
+  /* Vertically center the text there */
+
+}
+
+.footer-text {
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 20px;
+
+}
+
+#servizi,
+#prodotti {
+  margin-bottom: 200px;
+}
+
+.contactme,
+#show-case {
+  margin-bottom: 220px;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
 
 div.colonna2 img {
   max-height: 300px;
@@ -1038,8 +1151,31 @@ div.modal-header {
     text-align: left;
   }
 
+  .footer-text {
+
+
+    padding-bottom: 40px;
+  }
+
   .image-ev {
     width: 400px;
+
+  }
+
+  .card-slide {
+    max-width: auto;
+    overflow: initial;
+    height: 450px;
+  }
+
+  .card-slide>img {
+    height: 400px;
+  }
+
+  .mytext-card {
+    font-size: 15px;
+    margin-top: -22px;
+    padding-bottom: 30px;
 
   }
 
@@ -1047,6 +1183,7 @@ div.modal-header {
 
     max-width: 100%;
     margin-right: 200px;
+
   }
 
   .descr-event {

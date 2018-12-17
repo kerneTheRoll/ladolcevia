@@ -129,9 +129,13 @@ $(document).ready(function() {
   }
   validaContatti();
   //prova();
+  $(".apri").click(function(e) {
+    e.preventDefault();
+    $(".overl").toggleClass("overl-active");
+  });
 });
-
-$(function() {
+/**guarda sotto e togli i commetni serve per le api delle citta  */
+/* $(function() {
   jeoquery.defaultData.userName = "ladolcevia";
 
   $("#country").jeoCountrySelect({});
@@ -139,7 +143,7 @@ $(function() {
     countryInput: $("#country"),
     target: $("#postalPlace")
   });
-});
+}); */
 
 function validaContatti() {
   var language = $("#language").val();

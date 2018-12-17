@@ -80,3 +80,27 @@ block body
            != RichText.asText(azienda.data.titolo_storia)
           p.storia
             != RichText.asText(azienda.data.storia_completa)
+  .container#show-case
+
+          div.d-flex.flex-column.card-slide(style=';position:relative;overflow:hidden;')
+            img(src='https://images.pexels.com/photos/209424/pexels-photo-209424.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
+            h2.bluastro.bannersotto
+              a(href="#" class='apri') Specialità
+            div.overl
+
+               div.text-white(style='padding-left:10px;padding-right:10px')
+
+                  .my-card-header.d-flex.flex-row.justify-content-center.mt-2
+                      span.left-slide.apri
+                        i.fas.fa-chevron-left
+                      h3.text-center.card-title.ml-3 Tiramisù della Nonna
+
+                  .card-body.my-card-body
+
+                    p.mytext-card
+                      |siamo italiani, e sappiamo che il tiramisù migliore lo fa sempre la nonna. La sua ricetta è quella tradizionale, con il mascarpone, che aggiunge corpo e sapore al dolce tanto amato da tutti. Abbiamo deciso anche nei nostri prodotti per gelateria di valorizzare la tradizione, il risultato è un gusto più intenso, morbido e un aroma che fa viaggiare indietro nel tempo.
+
+
+
+
+
