@@ -173,18 +173,31 @@ function renderCategoria(req, res) {
 }
 
 function cerca_ingredienti(req, res, next) {
+  const lunghezza = req.prodottoFiglio.length;
+  let indice = 0;
   req.prodottoFiglio.forEach((ele, index) => {
     ele.data.ingredienteAbdi;
+
     var relatedProducts = ele.data.ingrediente_premium;
     var id = relatedProducts.id != null ? relatedProducts.id : " ";
     req.prismic.api
       .query([Prismic.Predicates.at("document.id", id)])
       .then(function(response) {
         //response is the response object, response.results holds the documents
-
+        indice++;
         ele.data.ingredienteAbdi = response.results;
-        if (index == req.prodottoFiglio.length - 1) {
-          console.log("passo qui");
+        //console.log(response.results);
+        /*      console.log(
+          new Date().getTime() +
+            "***************inzio****************************************"
+        );
+        itera(response.results);
+        console.log(
+          new Date().getTime() +
+            "***************fine****************************************"
+        ); */
+        if (lunghezza === indice) {
+          console.log(lunghezza + "indice = " + indice);
           next();
         }
       })
