@@ -9,6 +9,11 @@ block variables
 
 block body
   style(type="text/css").
+       .categoria-immagine{
+         width:100%;
+         margin-left:0;
+         padding-left:0;
+       }
        .homepage-banner{
             background-image:url(#{desktop});
 
@@ -93,7 +98,7 @@ block body
   .container-fluid
     .row
       .col-md-6.categoria-immagine
-         img(src=home.data.immagine_categorie.url)
+         img.myimg(src=home.data.immagine_categorie.url)
       .col-md-6.d-flex.flex-column.justify-content-center.categoriaList
        div.pt-3
          h2.title I nostri Gelati

@@ -23,11 +23,7 @@
   background: var(--main-color-blue-light)
 }
 
-div.container-fluid.mt-5 {
-  padding-left: 40px;
-  padding-right: 40px;
-
-}
+div.container-fluid.mt-5 {}
 
 span.giorno,
 span.mese {
