@@ -131,9 +131,22 @@ $(document).ready(function() {
   //prova();
   $(".apri").click(function(e) {
     e.preventDefault();
-    $(".overl").toggleClass("overl-active");
+    //$(".overl").toggleClass("overl-active");
+    $(this)
+      .parent()
+      .next()
+
+      .toggleClass("overl-active");
+    if ($(".overl").hasClass("overl-active")) {
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .toggleClass("overl-active");
+    }
   });
 });
+
 /**guarda sotto e togli i commetni serve per le api delle citta  */
 /* $(function() {
   jeoquery.defaultData.userName = "ladolcevia";
