@@ -23,7 +23,22 @@
   background: var(--main-color-blue-light)
 }
 
-div.container-fluid.mt-5 {}
+div.container-fluid.mt-5.mydiv {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+}
+
+
+
+img.myim {
+  margin-left: -14px;
+  padding: 0;
+
+
+
+}
 
 span.giorno,
 span.mese {
@@ -96,7 +111,9 @@ span.mese {
   margin-bottom: 100px;
   background-color: #fff;
   border: 1px solid #f0f0f0;
-
+  background: var(--main-color-blue-dark);
+  color: #fff;
+  border-bottom: 13px solid var(--main-color-blue-light);
 
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
@@ -973,7 +990,13 @@ div.modal-header {
     margin: auto;
   }
 
+  img.myim {
+    margin-left: initial;
+    padding: 0;
 
+
+
+  }
 
 
   .site-header nav {
@@ -1270,7 +1293,7 @@ div.modal-header {
     margin: 0;
     margin-top: 10px;
     text-align: left;
-    width: 115%;
+    margin-top: 25px;
     margin-bottom: 30px;
     height: 700px;
   }
@@ -1554,11 +1577,13 @@ p {
 
   .language-selector.active {
     display: block;
+
   }
 
   .language-selector .select-wrapper {
     border: 1px solid #adb9c5;
     ;
+
     border-radius: 3px;
     position: relative;
     cursor: pointer;
@@ -1568,6 +1593,7 @@ p {
     -webkit-appearance: none;
     font-size: 14px;
     color: #484d52;
+
     border: none;
     padding: 4px 24px 4px 10px;
     outline: none;
@@ -1620,6 +1646,7 @@ p {
     border-radius: 3px;
     position: relative;
     cursor: pointer;
+
   }
 
 
@@ -1631,6 +1658,8 @@ p {
     padding: 4px 24px 4px 10px;
     outline: none;
     cursor: pointer;
+
+
   }
 
   .profile-selector .select-wrapper:after {
