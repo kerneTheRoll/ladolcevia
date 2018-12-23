@@ -285,10 +285,23 @@ app.get(I18NUrl("/servizi"), function(req, res, next) {
 });
 
 app.get(I18NUrl("/azienda"), (req, res, next) => {
+  console.log(req.premium);
   req.prismic.api
     .getSingle("azienda", I18NConfig(req))
     .then(azienda => {
-      res.render("Azienda", { azienda: azienda, title: "azienda" });
+      req.prismic.api
+        .query(
+          [Prismic.Predicates.at("document.tags", ["showcase"])],
+          I18NConfig(req)
+        )
+        .then(function(response) {
+          console.log(response.results);
+          res.render("Azienda", {
+            azienda: azienda,
+            premium: response.results,
+            title: "azienda"
+          });
+        });
     })
     .catch(error => {
       next(`error when retriving homepage ${error.message}`);

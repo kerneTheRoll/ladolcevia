@@ -65,7 +65,7 @@ span.giorno {
 div.luogo>div i {
   font-size: 3.4em;
   text-align: center;
-  color: #FF4136
+  color: #fff;
 }
 
 .luogo {
@@ -98,7 +98,7 @@ span.mese {
 .event-card img {
   margin-top: -90px;
 
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
   box-sizing: border-box;
 }
 
@@ -107,15 +107,15 @@ span.mese {
 .event-card {
   position: relative;
   padding: 20px;
-  width: 90%;
+  width: 100%;
   margin-bottom: 100px;
   background-color: #fff;
-  border: 1px solid #f0f0f0;
+
   background: var(--main-color-blue-dark);
   color: #fff;
   border-bottom: 13px solid var(--main-color-blue-light);
 
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
 }
 
 h2.descrizionepremium {
@@ -253,9 +253,7 @@ body {
   cursor: pointer;
 }
 
-.card-slide {
-  max-width: 400px;
-}
+
 
 .text-left {
   text-align: left;
