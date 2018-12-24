@@ -253,7 +253,7 @@ body {
   cursor: pointer;
 }
 
-
+.card-slide {}
 
 .text-left {
   text-align: left;
@@ -1183,17 +1183,24 @@ div.modal-header {
 
   .card-slide {
     max-width: auto;
-    overflow: initial;
-    height: 450px;
+    overflow: none;
+
   }
 
-  .card-slide>img {
-    height: 400px;
+  .card-slide>img {}
+
+  h3.title-mycard {
+    font-size: 20px;
+
+  }
+
+  i.fas.fa-chevron-left {
+    font-size: 20px;
   }
 
   .mytext-card {
-    font-size: 15px;
-    margin-top: -22px;
+    font-size: 13px;
+    margin-top: 1px;
     padding-bottom: 30px;
 
   }
