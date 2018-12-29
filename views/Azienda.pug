@@ -84,7 +84,8 @@ block body
      .row
         each element, index in premium
           if index <= 2
-            .col-md-3
+            .col-md-6.col-lg-5
+
                 div.d-flex.flex-column.card-slide(style=';position:relative;overflow:hidden;')
                   img(src=element.data.foto_ingrediente.url)
                   h2.bluastro.bannersotto
@@ -94,15 +95,15 @@ block body
 
                     div.text-white(style='padding-left:10px;padding-right:10px')
 
-                        .my-card-header.d-flex.flex-row.justify-content-center.mt-2
+                        .card-header.d-flex.flex-row.justify-content-center.mt-2
                             span.left-slide.apri
                               i.fas.fa-chevron-left
-                            h3.text-center.ml-3.title-mycard
+                            h5.text-center.ml-3.card-title
                               != RichText.asText(element.data.nome_incrediente)
-                        .my-card-body
+                        .card-body
 
-                          p.mytext-card
-                           !=RichText.asText(element.data.descrizione_ingrediente)
+                          p.mytext
+                             !=RichText.asText(element.data.descrizione_ingrediente)
 
 
 
