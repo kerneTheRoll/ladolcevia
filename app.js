@@ -39,6 +39,7 @@ app.use((req, res, next) => {
     .then(api => {
       req.prismic = { api };
       //continue spreading request
+      console.log(res.pismic);
       next();
     })
     .catch(error => {
@@ -426,10 +427,10 @@ app.post(I18NUrl("/contatti"), getContatti, gestisciEmail);
 
 function getCategorieInServizi(req, res, next) {
   req.prismic.api
-    .query(
-      [Prismic.Predicates.at("document.type", "category")],
-      I18NConfig(req)
-    )
+    .query(Prismic.Predicates.at("document.type", "category"), {
+      lang: req.params.lang,
+      orderings: "[my.category.ordinamento]"
+    })
     .then(function(response) {
       req.categorie = response.results;
       next();

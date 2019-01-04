@@ -4,11 +4,27 @@
   include ./language-selector
 header
   - var homeUrl = `/${I18N.current}`;
+  - var activeClass = activeDoc && I18N.languages.length > 1 ? 'active' : '';
 
 
 
+  nav#navigation.navbar.navbar-dark(style='position:relative')
+    .container-drop
+        .dropdown.dropdown-bubble
+            .dropdown.navbar-right
+                    button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle.text-uppercase(type='button', data-toggle='dropdown', value='' aria-haspopup='true', aria-expanded='false')
 
-  nav#navigation.navbar.navbar-dark
+                    .dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenuButton')
+                     for lang in I18N.languages
+                        - var selected = lang.key === I18N.current ? true : false;
+                        - var alternateDocLink = activeDoc.alternate_languages.find(al => al.lang === lang.key);
+                        - var alternateUrl = selected ? ctx.linkResolver(activeDoc) : (alternateDocLink ? ctx.linkResolver(alternateDocLink) : '');
+
+
+                          a.dropdown-item(href=alternateUrl, data-lingua=lang.key.substr(0,2), data-href=alternateUrl)
+                            span.badge.text-uppercase #{lang.key.substr(0,2)}
+                            span.pl-4 #{lang.label}
+
     .toggle
       i.fas.fa-bars.menu
     ul#listamenu.navbar-nav.text-center
