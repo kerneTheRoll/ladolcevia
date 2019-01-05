@@ -298,6 +298,8 @@ p.mytext {
 .nome-azienda {
   color: #1d74bb;
   font-size: 3em;
+  font-family: 'FontTesti';
+  font-weight: bold;
 }
 
 .blue-color {
@@ -364,17 +366,18 @@ textarea::placeholder {
   opacity: 1;
   /* Firefox */
   font-size: 20px;
-
-
 }
 
+input[type='text']::placeholder, input[type='email']::placeholder ,input[type='phone']::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #1d74bb;
+}
 
 
 textarea {
   border: 2px solid #1d74bb;
   background: inherit;
   width: 100%;
-
 }
 
 button.mybtn {
@@ -611,7 +614,7 @@ button.mybtn {
   padding-left: 10px;
   width: 100%;
   margin: initial;
-  font-family: 'FontLight'
+  font-family: 'FontTesti'
 }
 
 /* Sticky footer styles
@@ -701,6 +704,7 @@ div.colonna2 img {
 
 .font-storia {
   font-size: 1.3em;
+  font-family: 'FontTesti';
 }
 
 .blocco-testo {
@@ -780,7 +784,7 @@ div#card2 img {
   color: var(--main-color-blue-light);
   text-align: center;
   font-size: 4em;
-  font-family: 'FontMaxiBold';
+  font-family: 'FontTestiExtraBold';
   margin-bottom: 50px;
   margin-top: 10px;
   font-weight: bold;
@@ -790,9 +794,8 @@ div#card2 img {
 
 .descrizionepremium {
   color: var(--main-color-blue-light);
-  font-weight: bold;
-  font-family: 'FontMenu';
-  font-size: 4rem;
+  font-family: 'FontTestiExtraBold';
+  font-size: 6rem;
 
 }
 
@@ -905,7 +908,7 @@ div.modal-header {
 }
 
 .description {
-  font-weight: normal;
+  font-size: normal;
 }
 
 .text-uppercase {
@@ -1208,6 +1211,7 @@ span.badge.text-uppercase {
 
   .storia {
     text-align: left;
+    font-family: 'FontTesti';
   }
 
   .footer-text {
@@ -1251,7 +1255,7 @@ span.badge.text-uppercase {
     padding-left: 10px;
     width: 100%;
     margin: initial;
-    font-family: 'FontLight'
+    font-family: 'FontTesti'
   }
 
   span.giorno {
@@ -1269,6 +1273,7 @@ span.badge.text-uppercase {
   }
 
   .mese-giorno {
+    font-family: 'FontTest';
     position: relative;
     bottom: 10px;
   }
@@ -1511,6 +1516,7 @@ span.badge.text-uppercase {
 }
 
 .logo2 {
+  margin-bottom: 10%;
   width: 250px;
 }
 
@@ -1986,7 +1992,7 @@ p {
     color: #cbcbcb;
     font-size: 23px;
     text-transform: uppercase;
-    font-family: 'FontMenu';
+    font-family: 'FontTesti';
     text-decoration: none;
     margin-right: 3px;
   }

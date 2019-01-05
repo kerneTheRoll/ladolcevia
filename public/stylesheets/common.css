@@ -25,27 +25,27 @@
   src: url('fonts/WorkSans-Regular.ttf') format('truetype');
   /*URL to font*/
 }
-
 @font-face {
-  font-family: 'FontMaxiBold';
+  font-family: 'FontTesti';
   /*a name to be used later*/
-  src: url('fonts/WorkSans-ExtraBold.ttf') format('truetype');
+  src: url('fonts/OpenSans-Regular.ttf') format('truetype');
   /*URL to font*/
 }
 
 @font-face {
-  font-family: 'FontLight';
+  font-family: 'FontTestiExtraBold';
   /*a name to be used later*/
-  src: url('fonts/WorkSans-Light.ttf') format('truetype');
+  src: url('fonts/OpenSans-ExtraBold.ttf') format('truetype');
   /*URL to font*/
 }
+
 
 /*
  * Globals
  */
 body {
   color: #faf9f7;
-  font-family: 'YourFontName';
+  font-family: 'FontTesti';
   margin: 0;
   padding: 0;
 }
@@ -62,7 +62,7 @@ body {
 
   padding-top: 10px;
   margin-top: 10px;
-  font-family: 'FontMenu';
+  font-family: 'FontTesti';
   font-size: 1.4rem;
 }
 
@@ -112,7 +112,7 @@ body {
 .paragrafoStoria p {
   color: #fff;
   font-size: 1.5em;
-  font-family: 'FontMenu';
+  font-family: 'FontTesti';
 
 }
 
