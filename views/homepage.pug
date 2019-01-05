@@ -6,7 +6,7 @@ block variables
   - var tablet = home.data.backgroundImage.Tablet.url
   - var desktop = home.data.backgroundImage.url
   - var mobile = home.data.backgroundImage.Mobile.url
-
+  - var immagine = home.data.immagine_categorie.url
 block body
   style(type="text/css").
        .categoria-immagine{
@@ -14,6 +14,7 @@ block body
          margin-left:0;
          padding-left:0;
        }
+
        .homepage-banner{
             background-image:url(#{desktop});
 
@@ -23,7 +24,14 @@ block body
         }
           div.immagine-storia{
             background-image:url(#{home.data.immaginestoria.url});
+            min-height:420px;
 
+            background-repeat:no-repeat;
+            background-size:cover;
+       }
+        div.categoria-immagine{
+            background-image:url(#{immagine});
+            min-height:420px;
 
             background-repeat:no-repeat;
             background-size:cover;
@@ -93,12 +101,14 @@ block body
 
       -//  if ( home.data.buttonLink && home.data.buttonText )
       -//      a.banner-button(href=Link.url(home.data.buttonLink, ctx.linkResolver)) !{home.data.buttonText}
+        div.d-flex.flex-column.flex-jusify-content-center.align-items-center
+          img.logo2(src=home.data.logo.url, style='display:block')
           h1.motto
             != RichText.asText(home.data.Motto)
   .container-fluid
     .row
       .col-md-6.categoria-immagine
-         img.myimg(src=home.data.immagine_categorie.url)
+
       .col-md-6.d-flex.flex-column.justify-content-center.categoriaList
        div.pt-3
          h2.title I nostri Gelati
@@ -173,7 +183,7 @@ block body
 
 
           .col-md-6.justify-content-center
-                h2.text-center.descr-event
+                h2.descr-event
 
                   |Workshop con gli artigiani del gusto, vi aspettiamo numerosi!!
 

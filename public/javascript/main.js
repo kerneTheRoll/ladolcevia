@@ -1,4 +1,13 @@
 $(document).ready(function() {
+  var mylingua = localStorage.getItem("language");
+  var url = localStorage.getItem("url");
+
+  if (mylingua === null) {
+    mylingua = "It";
+  }
+
+  $("#dropdownMenuButton").text(mylingua);
+  console.log(url);
   var getDispositivo = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
   )
@@ -60,11 +69,17 @@ $(document).ready(function() {
       '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  /></span>',
     pager: false
   });
-
+  $(".dropdown-menu a ").click(function(e) {
+    var lingua = $(this).attr("data-lingua");
+    var url = $(this).attr("data-href");
+    localStorage.setItem("language", lingua);
+    localStorage.setItem("url", url);
+    $("#dropdownMenuButton").text(lingua);
+  });
   $(".language-selector select").on("change", function(event) {
     const $select = $(this);
     const $option = $select.find("option:selected", this);
-    const url = $option.attr("href");
+    const url = $option.attr("data-lingua");
     window.location.href = url;
   });
 
@@ -145,6 +160,10 @@ $(document).ready(function() {
         .toggleClass("overl-active");
     }
   });
+
+  /** funzione per select languiage */
+
+  /*******fine funzione********** */
 });
 
 /**guarda sotto e togli i commetni serve per le api delle citta  */
@@ -238,7 +257,7 @@ function validaContatti() {
         number: "perfavore, inserisci solo numeri"
       },
       richiesta: {
-        required: "perfavore, scrivici  tua richiesta oppure seleziona sopra"
+        required: "scrivi un messaggio"
       }
     },
     submitHandler: function(form) {
@@ -268,7 +287,7 @@ function validaContatti() {
 function traduciErrori(campo, language) {
   if (campo === "nome") {
     if (language === "it-it") {
-      return "Perfavore inserisci il tuo nome ";
+      return "Campo Obbligatorio ";
     }
     if (language === "de-de") {
       return " ktakejhs sjjsjsj";

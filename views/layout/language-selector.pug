@@ -1,11 +1,13 @@
 - var activeClass = activeDoc && I18N.languages.length > 1 ? 'active' : '';
-.language-selector.pl-4(class=activeClass)
-  .select-wrapper
-    select
-      for lang in I18N.languages
-        - var selected = lang.key === I18N.current ? true : false;
-        - var alternateDocLink = activeDoc.alternate_languages.find(al => al.lang === lang.key);
-        - var alternateUrl = selected ? ctx.linkResolver(activeDoc) : (alternateDocLink ? ctx.linkResolver(alternateDocLink) : '');
+          //
+            .language-selector.pl-4(class=activeClass)
+              .select-wrapper
+                select
+                  for lang in I18N.languages
+                    - var selected = lang.key === I18N.current ? true : false;
+                    - var alternateDocLink = activeDoc.alternate_languages.find(al => al.lang === lang.key);
+                    - var alternateUrl = selected ? ctx.linkResolver(activeDoc) : (alternateDocLink ? ctx.linkResolver(alternateDocLink) : '');
 
-        option(value=lang.key href=alternateUrl selected=selected)
-          != lang.label
+                    option(value=lang.key href=alternateUrl selected=selected)
+                      != lang.label
+

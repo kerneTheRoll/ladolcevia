@@ -7,6 +7,21 @@
 
 }
 
+body {
+  background: #ededed;
+  font-family: 'Open Sans', sans-serif;
+  color:
+}
+
+h2.text-camel::first-line {
+  text-transform: uppercase;
+}
+
+h2.text-camel {
+  text-transform: lowercase;
+}
+
+
 .text-grey {
   color: var(--main-colore-test);
 }
@@ -127,7 +142,7 @@ div.col-md-12.categoriaTitolo {
   margin-right: 0;
   padding-right: 0;
   background: var(--main-color-blue-light);
-  padding: 20px;
+  padding: 40px;
 }
 
 
@@ -143,13 +158,12 @@ body {
 
 /*** accordion stile da codepen */
 .accordion .card-header {
-  color: #003b7f;
+  color: var(--main-color-blue-light);
   font-weight: bold;
   box-shadow: 0;
   background: #faf9f7;
   border: 0;
-  border-top: 3px solid #003b7f;
-
+  border-top: 3px solid var(--main-color-blue-light)
 }
 
 .background-default {
@@ -182,8 +196,7 @@ body {
 
 .card-header:nth-child(7) {
 
-  border-bottom: 3px solid #003b7f;
-
+  border-bottom: 3px solid var(--main-color-blue-light)
 }
 
 .card.mb-0 {
@@ -289,7 +302,7 @@ p.mytext {
 
 .blue-color {
   color: #1d74bb;
-  font-size: 3em;
+
 }
 
 .desc {
@@ -355,15 +368,17 @@ textarea::placeholder {
 
 }
 
+
+
 textarea {
   border: 2px solid #1d74bb;
-
+  background: inherit;
   width: 100%;
 
 }
 
 button.mybtn {
-  background: #003b7f;
+  background: var(--main-color-blue-light);
   border: 0;
   padding: 10px;
 
@@ -414,7 +429,7 @@ button.mybtn {
 
   padding: 10px;
   margin-top: 10px;
-
+  font-size: 0.7em;
 
   text-align: center;
 
@@ -586,10 +601,13 @@ button.mybtn {
 }
 
 
+.text-left {
+  text-align: left
+}
 
 .descr-event {
   font-size: 3rem;
-  text-align: center;
+  text-align: left;
   padding-left: 10px;
   width: 100%;
   margin: initial;
@@ -716,6 +734,7 @@ input.form-control {
   border-width: 2px;
   ;
   width: 100%;
+  background: inherit;
   color: #1d74bb;
 }
 
@@ -723,6 +742,7 @@ select.form-control {
   border-color: #1d74bb;
   border-width: 2px;
   ;
+  background: inherit;
   width: 100%;
   color: #1d74bb;
 }
@@ -773,7 +793,7 @@ div#card2 img {
   font-weight: bold;
   font-family: 'FontMenu';
   font-size: 4rem;
-  text-transform: uppercase;
+
 }
 
 
@@ -833,7 +853,7 @@ p.titolo-float {
   font-size: 3.5em;
   padding-top: 38px;
   width: 40%;
-  color: #1d74bb;
+  color: var(--main-color-blue-light);
   float: left;
   line-height: 55px;
 }
@@ -881,7 +901,7 @@ div.modal-header {
   padding-left: 76px;
   font-size: 1.2em;
   font-weight: bold;
-  color: #484d52;
+  color: var(--main-colore-test)
 }
 
 .description {
@@ -892,6 +912,10 @@ div.modal-header {
   text-transform: uppercase
 }
 
+span.badge.text-uppercase {
+  background: #fff;
+  color: var(--main-color-blue-light)
+}
 
 @media (max-width: 991px) {
 
@@ -1307,7 +1331,7 @@ div.modal-header {
     text-align: left;
     margin-top: 25px;
     margin-bottom: 30px;
-    height: 700px;
+    height: content;
   }
 
 
@@ -1349,7 +1373,7 @@ div.modal-header {
     font-size: 100px;
 
     margin: 0;
-
+    text-transform: capitalize;
 
 
 
@@ -1465,10 +1489,12 @@ div.modal-header {
 
 }
 
+
+
 .listaCategorie li a {
   color: #cbcbcb;
   font-size: 1.5em;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-family: 'FontMenu';
   text-decoration: none;
 }
@@ -1482,6 +1508,10 @@ div.modal-header {
 
 .logo {
   width: 150px;
+}
+
+.logo2 {
+  width: 250px;
 }
 
 .content-section {
@@ -1602,6 +1632,69 @@ p {
   cursor: pointer;
 }
 
+#dropdownMenuButton {
+  background: #fff;
+  color: var(--main-color-blue-light);
+  font-weight: bold;
+
+
+}
+
+.dropdown-bubble .dropdown-menu {
+  margin-top: 1em;
+  background: var(--main-color-blue-dark);
+  color: #ffff;
+
+}
+
+.dropdown-bubble .dropdown-menu:before,
+.dropdown-bubble .dropdown-menu:after {
+  content: ' ';
+  display: block;
+  border-style: solid;
+  border-width: 0 .5em .8em .5em;
+  border-color: transparent;
+  position: absolute;
+  right: 1em;
+  border-bottom-color: #18569a;
+
+
+}
+
+.dropdown-bubble .dropdown-menu:before {
+  top: -.8em;
+
+
+}
+
+.dropdown-menu.dropdown-menu-right {
+  border-radius: 20px;
+}
+
+.dropdown-menu.dropdown-menu-right a {
+  color: #fff;
+  font-weight: 900;
+}
+
+.dropdown-menu.dropdown-menu-right a:hover {
+  background: inherit;
+}
+
+.dropdown-bubble .dropdown-menu:after {
+  top: -.7em;
+  border-bottom-color: var(--main-color-blue-dark)
+}
+
+.container-drop {
+  position: absolute;
+  right: 50px;
+
+}
+
+.container-drop-mobile {
+  top: -60px;
+}
+
 .language-selector .select-wrapper select {
   -webkit-appearance: none;
   font-size: 14px;
@@ -1612,6 +1705,7 @@ p {
   outline: none;
   cursor: pointer;
 }
+
 
 .col1,
 .col2 {
@@ -1970,6 +2064,15 @@ p {
   display: none;
 }
 
+.text-camel {
+  text-transform: capitalize;
+}
+
+button#dropdownMenuButton.btn.btn-secondary {
+  border-radius: 0;
+
+}
+
 .featured-section .content {
   -ms-flex-preferred-size: 0px;
   flex-basis: 0px;
@@ -2005,6 +2108,11 @@ p {
 
   .featured-section .content {
     padding: 0 30px;
+  }
+
+  .container-drop {
+    top: -55px;
+    right: 10px;
   }
 }
 
