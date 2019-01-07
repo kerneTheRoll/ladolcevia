@@ -929,6 +929,11 @@ span.badge.text-uppercase {
     height: 250px;
 
   }
+  .motto{
+    font-size:3.5em;
+    margin-top:-20px;
+    line-height: 40px;
+  }
 
   .float-right {
     clear: both;
@@ -1207,6 +1212,11 @@ span.badge.text-uppercase {
 
   .motto-storia {
     font-size: 4em;
+  }
+  .motto{
+    font-size:3em;
+    margin-top:-20px;
+    line-height: 40px;
   }
 
   .storia {

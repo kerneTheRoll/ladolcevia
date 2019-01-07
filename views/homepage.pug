@@ -43,8 +43,8 @@ block body
             text-align:left;
             width:200px;
              font-family: 'FontTestiExtraBold';
-          
-            
+
+
 
        }
        @media only screen and (max-width:970px){
@@ -79,6 +79,11 @@ block body
               .homepage-banner{
                  background-image:url(#{mobile});
                  height:200px;
+           }
+             div.categoria-immagine{
+
+            min-height:300px;
+
            }
 
 
@@ -170,7 +175,7 @@ block body
         div.row.event-card
           .col-md-6
             img.img-fluid.image-ev(src=home.data.immagine_evento.url)
-            div.d-flex.fle-column.justify-space-beetwen
+            div.d-flex.flex-row.justify-space-between.justify-content-between
               div
                 div.mese-giorno
                   span.giorno 12
