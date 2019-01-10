@@ -14,6 +14,14 @@ body {
 }
 
 
+.col2 h2 {
+  margin-top: -100px;
+
+  padding: 10px;
+  width: 50%;
+
+
+}
 
 h2.text-camel::first-line {
   text-transform: uppercase;
@@ -955,6 +963,11 @@ h1.titolo-ingredienti.badge>span.title {
 
   }
 
+  .titolo-storia1 {
+
+    line-height: 25px;
+  }
+
   .motto {
     font-size: 3.5em;
     margin-top: -20px;
@@ -1261,6 +1274,14 @@ h1.titolo-ingredienti.badge>span.title {
 
   .motto-storia {
     font-size: 4em;
+  }
+
+  .col2 h2 {
+    margin-top: initial;
+    width: auto;
+    font-size: 3.5em;
+    line-height: 45px;
+    width: 100%;
   }
 
   .motto {
@@ -1801,11 +1822,7 @@ p {
 
 }
 
-.col2 h2 {
-  padding: 10px;
-  width: 50%;
 
-}
 
 .col2 p {
   color: #fff;
