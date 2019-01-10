@@ -25,6 +25,7 @@
   src: url('fonts/WorkSans-Regular.ttf') format('truetype');
   /*URL to font*/
 }
+
 @font-face {
   font-family: 'FontTesti';
   /*a name to be used later*/
@@ -84,10 +85,17 @@ body {
 
 }
 
+.titolo-storia1 {
+  font-family: 'YourFontName';
+  text-align: left;
+  font-size: 4.5em;
+
+}
+
 .storia {
   margin-top: 30px;
   padding: 10px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: var(--main-colore-test);
   text-align: justify;
 

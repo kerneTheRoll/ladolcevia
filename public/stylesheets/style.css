@@ -10,8 +10,10 @@
 body {
   background: #ededed;
   font-family: 'Open Sans', sans-serif;
-  color:
+
 }
+
+
 
 h2.text-camel::first-line {
   text-transform: uppercase;
@@ -250,6 +252,7 @@ div.col-md-6.col-lg-5 {
   height: 95%;
   left: -100%;
   transition: left .3s;
+
 }
 
 div.card-header.d-flex.flex-row.justify-content-center.mt-2 {
@@ -275,7 +278,7 @@ div.card-header.d-flex.flex-row.justify-content-center.mt-2>h5 {
 }
 
 p.mytext {
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 
 
@@ -287,7 +290,7 @@ p.mytext {
 #navigation {
   width: 100%;
   background: #1b60ab;
-  
+
 
 
 
@@ -368,7 +371,9 @@ textarea::placeholder {
   font-size: 20px;
 }
 
-input[type='text']::placeholder, input[type='email']::placeholder ,input[type='phone']::placeholder {
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='phone']::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #1d74bb;
 }
@@ -920,6 +925,26 @@ span.badge.text-uppercase {
   color: var(--main-color-blue-light)
 }
 
+
+h1.titolo-ingredienti.badge {
+  background: var(--main-color-blue-dark);
+  color: #fff;
+  font-size: 35px;
+
+
+}
+
+h1.titolo-ingredienti.badge>div {
+  font-size: 1em;
+}
+
+h1.titolo-ingredienti.badge>span.title {
+
+  font-family: 'YourFontName';
+  font-weight: normal;
+  font-size: 4em;
+}
+
 @media (max-width: 991px) {
 
   #card,
@@ -929,9 +954,10 @@ span.badge.text-uppercase {
     height: 250px;
 
   }
-  .motto{
-    font-size:3.5em;
-    margin-top:-20px;
+
+  .motto {
+    font-size: 3.5em;
+    margin-top: -20px;
     line-height: 40px;
   }
 
@@ -1022,11 +1048,34 @@ span.badge.text-uppercase {
   padding-bottom: 10px;
 }
 
+@media (max-width: 1100px) {
+
+  h1.titolo-ingredienti.badge {
+
+    font-size: 25px;
+
+
+  }
+
+  h1.titolo-ingredienti.badge>div {
+    font-size: 1em;
+  }
+
+  h1.titolo-ingredienti.badge>span.title {
+
+
+    font-size: 3em;
+  }
+}
+
+
 @media (max-width: 767px) {
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+
 
   div.col-md-12.categoriaTitolo {
     margin: auto;
@@ -1213,9 +1262,10 @@ span.badge.text-uppercase {
   .motto-storia {
     font-size: 4em;
   }
-  .motto{
-    font-size:3em;
-    margin-top:-20px;
+
+  .motto {
+    font-size: 3em;
+    margin-top: -20px;
     line-height: 40px;
   }
 
@@ -1229,6 +1279,17 @@ span.badge.text-uppercase {
 
     padding-bottom: 40px;
   }
+
+  h1.titolo-ingredienti.badge {
+    font-size: 16px;
+  }
+
+  h1.titolo-ingredienti.badge>span.title {
+
+
+    font-size: 3.5em;
+  }
+
 
   .image-ev {
     width: 400px;
@@ -1733,13 +1794,23 @@ p {
 .col2 {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   align-content: center;
+  flex-direction: column;
+
+
+}
+
+.col2 h2 {
+  padding: 10px;
+  width: 50%;
+
 }
 
 .col2 p {
   color: #fff;
   font-size: 1.2em;
+  padding: 10px;
 
 
 }
@@ -2120,6 +2191,10 @@ button#dropdownMenuButton.btn.btn-secondary {
   .featured-section {
     display: block;
     margin-bottom: 0px;
+  }
+
+  .col2 {
+    height: content;
   }
 
   .featured-section .content {
