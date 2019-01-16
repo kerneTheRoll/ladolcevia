@@ -40,16 +40,15 @@ block body
 
      input#language(type="hidden" value=contatti.lang)
      .container-fluid.row
-       .col-md-6.inp
+       .col-md-4.inp
 
         input(type="text" placeholder=RichText.asText(contatti.data.form_nome) name='nome').form-control#nome
-       .col-md-6.inp
+       .col-md-4.inp
         input(type="text" placeholder=RichText.asText(contatti.data.form_cognome) name='cognome').form-control#cognome
-     .container-fluid.row.pt-4
-       .col-md-6.inp
+       .col-md-4.inp
           input(type="email" placeholder=RichText.asText(contatti.data.form_email) name='email').form-control#email
-       .col-md-6.inp
-          input(type="text" placeholder=RichText.asText(contatti.data.form_azienda) name='azienda').form-control#azienda
+
+
      .container-fluid.row.pt-4
 
        .col-md-4.inp

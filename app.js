@@ -361,7 +361,7 @@ function gestisciEmail(req, res, next) {
     const nome = req.body.nome;
     const cognome = req.body.cognome;
     const email = req.body.email;
-    const azienda = req.body.azienda;
+
     const country = req.body.country;
     const cap = req.body.cap;
     const citta = req.body.citta;
@@ -374,9 +374,7 @@ function gestisciEmail(req, res, next) {
       to: "abdimohamed862992@gmail.com ", // list of receivers
       subject: "richiesta da parte di " + azienda + " per " + scelta, // Subject line
       text:
-        "Buona sera, una richiesta da parte dell'azienda " +
-        azienda +
-        " a nome di " +
+        "Buona sera, una richiesta  a nome di  " +
         nome +
         " " +
         cognome +

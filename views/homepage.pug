@@ -168,6 +168,8 @@ block body
                     != RichText.asText(home.data.testo_segreto3)
 
   .container-fluid.mt-5.mydiv
+    h2.titolo.text-center
+      != RichText.asText(home.data.titolo_prodotti)
     .mt-5
       include ./slices/slide.pug
   if home.data.evento.length

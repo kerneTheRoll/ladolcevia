@@ -49,15 +49,18 @@ block body
     div.row
       .col-md-12
         each items,index in prodottoFiglio
-          div.d-flex.flex-row
+          div.info-prodotto-premium
               h2.titolo-prodotto
                 != RichText.asText(items.data.title)
               if items.data.ingredienteAbdi
                 each ele in items.data.ingredienteAbdi
                   if ele.data.nome_incrediente
-                    button( data-toggle="modal" data-target="#item-"+index, class='my-btn', title="ingrediente premium")
-                       i.fas.fa-info-circle.text-blue-light
+                    div.inmobile
+                      button( data-toggle="modal" data-target="#item-"+index, class='my-btn', title="ingrediente premium")
+                        span.text-blue-dark.text-bold
 
+                          i.far.fa-star
+                          != RichText.asText(categoria.data.premium)
                     .modal.fade(tabindex='-1', role='dialog' id="item-"+index)
                         .modal-dialog.modal-dialog-centered.modal-lg(role='document')
                             .modal-content

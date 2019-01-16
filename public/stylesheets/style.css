@@ -10,6 +10,7 @@
 body {
   background: #ededed;
   font-family: 'Open Sans', sans-serif;
+  transition: all .3s;
 
 }
 
@@ -676,6 +677,7 @@ body {
   margin-bottom: 220px;
 }
 
+
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
@@ -832,6 +834,12 @@ div#card2 img {
 
   width: 500px;
 }
+
+.custom-prev img {
+  min-width: 3.5em;
+}
+
+
 
 .lSAction>a {
   height: 500px;
@@ -1048,7 +1056,7 @@ h1.titolo-ingredienti.badge>span.title {
   }
 
   .bannersotto a {
-    font-size: 0.7em;
+    font-size: 0.6em;
     line-height: 20px;
   }
 
@@ -1269,12 +1277,25 @@ h1.titolo-ingredienti.badge>span.title {
 
 }
 
+.info-prodotto-premium {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width:521px) {
+  .info-prodotto-premium {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 @media (max-width:450px) {
 
   .motto-storia {
     font-size: 4em;
   }
+
+
 
   .col2 h2 {
     margin-top: initial;
@@ -1489,6 +1510,11 @@ h1.titolo-ingredienti.badge>span.title {
 }
 
 
+.listaCategorie li a:hover {
+  color: var(--main-color-blue-light);
+  transition: all .3s;
+
+}
 
 .homepage-banner {
   margin: 0 0 40px;
@@ -1546,6 +1572,37 @@ h1.titolo-ingredienti.badge>span.title {
   color: #333;
   background: #fff;
   border-radius: 4px;
+}
+
+.text-blue-dark {
+  color: var(--main-color-blue-dark)
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+a.contatti-link {
+  text-transform: none;
+  background: var(--main-color-blue-light);
+  color: #fff;
+  padding: 10px;
+}
+
+a.contatti-link:hover {
+  text-decoration: none;
+  background: var(--main-color-blue-light);
+  color: #fff;
+  padding: 10px;
+}
+
+span.text-bold {
+  font-size: 1em;
+
+}
+
+.text-underline {
+  text-decoration: underline;
 }
 
 .homepage-banner .banner-content .banner-button a {

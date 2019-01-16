@@ -50,7 +50,9 @@ block body
         != RichText.asText(servizi.data.subtitle1)
         p.pt-3.description
           != RichText.asText(servizi.data.descrizione1)
-
+        p.container-fluid(style='position:relative')
+          a.contatti-link(style='right:0;display:block;position:absolute')(href=Link.url(servizi.data.contatti_link, ctx.linkResolver))
+              != RichText.asText(servizi.data.label)
   .container.mt-5
     h2.float-left.numerotitolo
       != RichText.asText(servizi.data.number2)
@@ -62,6 +64,7 @@ block body
 
        p.pt-3.description
           != RichText.asText(servizi.data.descrizione2)
+
   .container.pl-5.mt-5
      #accordion.accordion.pl-4
       .card.mb-0
@@ -89,6 +92,9 @@ block body
         #collapseFour.background-default.card-body.collapse(data-parent='#accordion')
           p
              != RichText.asText(servizi.data.testo_sviluppo_prodotti)
+      p.container-fluid.mt-3(style='position:relative')
+          a.contatti-link(style='right:0;display:block;position:absolute')(href=Link.url(servizi.data.contatti_link, ctx.linkResolver))
+              != RichText.asText(servizi.data.label)
 
   .container.mt-5#servizi
     h2.float-left.numerotitolo
@@ -115,4 +121,6 @@ block body
           #collapse-3-two.card-body.collapse.background-default(data-parent='#accordion')
             p.last
               != RichText.asText(servizi.data.descrizione_consolidamento_3)
-
+    p.container-fluid.mt-3(style='position:relative')
+          a.contatti-link(style='right:0;display:block;position:absolute')(href=Link.url(servizi.data.contatti_link, ctx.linkResolver))
+              != RichText.asText(servizi.data.label)

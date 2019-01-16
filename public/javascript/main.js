@@ -64,9 +64,9 @@ $(document).ready(function() {
     addClass: "center-thumbs",
     controls: true,
     prevHtml:
-      '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  style="transform:rotate(-180deg)"/></span>',
+      '<span class="custom-prev"><img src="../images/next.png"  style="transform:rotate(-180deg)"/></span>',
     nextHtml:
-      '<span class="custom-prev"><img src="http://www.iconninja.com/files/1017/102/406/navigate-right-icon.png"  /></span>',
+      '<span class="custom-prev"><img src="../images/next.png" /></span>',
     pager: false
   });
   $(".dropdown-menu a ").click(function(e) {
@@ -199,9 +199,7 @@ function validaContatti() {
         required: true,
         email: true
       },
-      azienda: {
-        required: true
-      },
+
       country: {
         required: true
       },
@@ -238,9 +236,6 @@ function validaContatti() {
       email: {
         required: "perfavore, inserisci la tua email",
         email: "perfavore, inserisci una email valida"
-      },
-      azienda: {
-        required: "perfavore, inserisci nome dell' azineda"
       },
       country: {
         required: "perfavore, seleziona il tuo stato"
