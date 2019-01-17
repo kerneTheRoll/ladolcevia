@@ -1,9 +1,5 @@
 {
   "languages": [{
-      "key": "es-es",
-      "label": "Spanish"
-    },
-    {
       "key": "en-gb",
       "label": "English"
     },
