@@ -1,5 +1,6 @@
 const Prismic = require("prismic-javascript");
 const { RichText, Link } = require("prismic-dom");
+
 const app = require("./config");
 const config = require("./prismic-configuration");
 const PORT = app.get("port");
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
   //init prismic context
   res.locals.ctx = {
     endpoint: config.apiEndpoint,
+    htmlSerializer: config.htmlSerializer,
     linkResolver: config.linkResolver
   };
   //put RichText Helper from Prismic DOM to simplify convert RichText from json to html
@@ -39,7 +41,7 @@ app.use((req, res, next) => {
     .then(api => {
       req.prismic = { api };
       //continue spreading request
-      console.log(res.pismic);
+
       next();
     })
     .catch(error => {
@@ -198,7 +200,6 @@ function cerca_ingredienti(req, res, next) {
             "***************fine****************************************"
         ); */
         if (lunghezza === indice) {
-          console.log(lunghezza + "indice = " + indice);
           next();
         }
       })
@@ -286,7 +287,6 @@ app.get(I18NUrl("/servizi"), function(req, res, next) {
 });
 
 app.get(I18NUrl("/azienda"), (req, res, next) => {
-  console.log(req.premium);
   req.prismic.api
     .getSingle("azienda", I18NConfig(req))
     .then(azienda => {
@@ -296,7 +296,6 @@ app.get(I18NUrl("/azienda"), (req, res, next) => {
           I18NConfig(req)
         )
         .then(function(response) {
-          console.log(response.results);
           res.render("Azienda", {
             azienda: azienda,
             premium: response.results,

@@ -121,6 +121,6 @@ block body
           #collapse-3-two.card-body.collapse.background-default(data-parent='#accordion')
             p.last
               != RichText.asText(servizi.data.descrizione_consolidamento_3)
-    p.container-fluid.mt-3(style='position:relative')
+    p.container-fluid.mt-3#contenitore-link(style='position:relative')
           a.contatti-link(style='right:0;display:block;position:absolute')(href=Link.url(servizi.data.contatti_link, ctx.linkResolver))
               != RichText.asText(servizi.data.label)

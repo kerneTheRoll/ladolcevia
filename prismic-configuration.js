@@ -1,4 +1,5 @@
 var PrismicDOM = require("prismic-dom");
+
 var Elements = PrismicDOM.RichText.Elements;
 
 module.exports = {
@@ -23,5 +24,42 @@ module.exports = {
     if (doc.type == "servizi") return `/${doc.lang}/servizi`;
     if (doc.type == "contatti") return `/${doc.lang}/contatti`;
     return "/";
+  },
+
+  // -- HTML Serializer
+  // This function will be used to chnage the way the html is loaded
+
+  htmlSerializer: function(type, element, content, children) {
+    switch (type) {
+      // Add a class to paragraph elements
+      case Elements.paragraph:
+        return '<p class="storia py-2">' + children.join("") + "</p>";
+
+      // Don't wrap images in a <p> tag
+      case Elements.image:
+        return `<div class="container-fluid"><img src='${
+          element.url
+        }' class="img-resposive"/></div>`;
+
+      // Add a class to hyperlinks
+      case Elements.hyperlink:
+        var target = element.data.target
+          ? 'target="' + element.data.target + '" rel="noopener"'
+          : "";
+        var linkUrl = PrismicDOM.Link.url(element.data, linkResolver);
+        return (
+          '<a class="some-link"' +
+          target +
+          ' href="' +
+          linkUrl +
+          '">' +
+          content +
+          "</a>"
+        );
+
+      // Return null to stick with the default behavior for all other elements
+      default:
+        return null;
+    }
   }
 };

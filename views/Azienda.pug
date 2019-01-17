@@ -81,16 +81,17 @@ block body
         p.font-storia
 
           != RichText.asText(azienda.data.storia_azienda)
-  .container-fluid.mt-0.pt-0
+  .container-fluid.mt-0.pt-0(data-wio-id=activeDoc.id)
 
-        .float-right.pt-5.mt-4
-          img.img-fluid(src=azienda.data.immagine_paragrafo_storia.url)
+
         .para(style='background:#faf9f7;margin-left:10px;margin-right:10px;')
           h2.motto-storia.pt-5.text-blue-light
 
            != RichText.asText(azienda.data.titolo_storia)
           p.storia.py-2
-            != RichText.asText(azienda.data.storia_completa)
+            !=RichText.asHtml(azienda.data.storia_completa, ctx.linkResolver, ctx.htmlSerializer)
+
+
   .container-fluid#show-case
      .row
         each element, index in premium
@@ -111,6 +112,7 @@ block body
                               i.fas.fa-chevron-left
                             h5.text-center.ml-3.card-title
                               != RichText.asText(element.data.nome_incrediente)
+
                         .card-body
 
                           p.mytext
