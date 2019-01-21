@@ -162,20 +162,19 @@ $(document).ready(function() {
   });
 
   /** funzione per select languiage */
+  $(function() {
+    jeoquery.defaultData.userName = "ladolcevia";
 
+    $("#country").jeoCountrySelect({});
+    $("#postalCode").jeoPostalCodeLookup({
+      countryInput: $("#country"),
+      target: $("#postalPlace")
+    });
+  });
   /*******fine funzione********** */
 });
 
 /**guarda sotto e togli i commetni serve per le api delle citta  */
-$(function() {
-  jeoquery.defaultData.userName = "ladolcevia";
-
-  $("#country").jeoCountrySelect({});
-  $("#postalCode").jeoPostalCodeLookup({
-    countryInput: $("#country"),
-    target: $("#postalPlace")
-  });
-});
 
 function validaContatti() {
   var language = $("#language").val();
