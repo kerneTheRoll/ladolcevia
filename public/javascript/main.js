@@ -5,7 +5,13 @@ $(document).ready(function() {
   if (mylingua === null) {
     mylingua = "It";
   }
+  jeoquery.defaultData.userName = "ladolcevia";
 
+  $("#country").jeoCountrySelect({});
+  $("#postalCode").jeoPostalCodeLookup({
+    countryInput: $("#country"),
+    target: $("#postalPlace")
+  });
   $("#dropdownMenuButton").text(mylingua);
   console.log(url);
   var getDispositivo = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -162,15 +168,7 @@ $(document).ready(function() {
   });
 
   /** funzione per select languiage */
-  $(function() {
-    jeoquery.defaultData.userName = "ladolcevia";
 
-    $("#country").jeoCountrySelect({});
-    $("#postalCode").jeoPostalCodeLookup({
-      countryInput: $("#country"),
-      target: $("#postalPlace")
-    });
-  });
   /*******fine funzione********** */
 });
 
