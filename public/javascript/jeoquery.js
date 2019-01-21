@@ -36,13 +36,7 @@ var jeoquery = (function($) {
       throw 'Invalid geonames method "' + method + '".';
     }
     $.ajax({
-      url:
-        my.geoNamesProtocol +
-        "://" +
-        my.geoNamesApiServer +
-        "/" +
-        method +
-        "JSON",
+      url: "//" + my.geoNamesApiServer + "/" + method + "JSON",
       dataType: "jsonp",
       data: $.extend({}, my.defaultData, data),
       // GeoNames expects "traditional" param serializing
