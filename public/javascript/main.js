@@ -167,7 +167,7 @@ $(document).ready(function() {
 });
 
 /**guarda sotto e togli i commetni serve per le api delle citta  */
-/* $(function() {
+$(function() {
   jeoquery.defaultData.userName = "ladolcevia";
 
   $("#country").jeoCountrySelect({});
@@ -175,10 +175,11 @@ $(document).ready(function() {
     countryInput: $("#country"),
     target: $("#postalPlace")
   });
-}); */
+});
 
 function validaContatti() {
   var language = $("#language").val();
+
   $("#contatta").validate({
     highlight: function(element) {
       $(element).addClass("is-invalid");
@@ -285,15 +286,7 @@ function traduciErrori(campo, language) {
       return "Campo Obbligatorio ";
     }
     if (language === "de-de") {
-      return " ktakejhs sjjsjsj";
-    }
-  }
-  if (campo === "cognome") {
-    if (language === "it-it") {
-      return "Perfavore inserisci il tuo cognome ";
-    }
-    if (language === "de-de") {
-      return " ktakejhs sjjsjsj";
+      return "Pflichtfeld";
     }
   }
 }
