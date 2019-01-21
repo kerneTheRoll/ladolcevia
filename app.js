@@ -9,10 +9,7 @@ const nodemailer = require("nodemailer");
 //Must be at the end so it go through the Prismic middleware because ended up in the final route
 const I18N = require("./i18n.json");
 //provide a lang parameter in the route
-var GeocoderGeonames = require("geocoder-geonames"),
-  geocoder = new GeocoderGeonames({
-    username: "ladolcevia"
-  });
+
 function I18NUrl(urlPart) {
   return `/:lang(${I18N.languages.map(l => l.key).join("|")})${urlPart || ""}`;
 }
@@ -417,16 +414,6 @@ function renderContatti(req, res) {
     title: "Contatti",
     inviato: req.inviato
   });
-  geocoder
-    .get("search", {
-      q: "Berlin"
-    })
-    .then(function(response) {
-      console.log(response);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
 }
 
 function renderContattiEmail(req, res) {

@@ -15,8 +15,8 @@ var jeoquery = (function($) {
   };
   my.defaultCountryCode = "US";
   my.defaultLanguage = "en";
-  my.geoNamesApiServer = "//api.geonames.org";
-  my.geoNamesProtocol = "";
+  my.geoNamesApiServer = "api.geonames.org";
+  my.geoNamesProtocol = "https";
 
   my.featureClass = {
     AdministrativeBoundary: "A",
@@ -41,6 +41,7 @@ var jeoquery = (function($) {
       data: $.extend({}, my.defaultData, data),
       // GeoNames expects "traditional" param serializing
       traditional: true,
+      crossDomain: true,
       success: function(data) {
         deferred.resolve(data);
         if (!!callback) callback(data);
