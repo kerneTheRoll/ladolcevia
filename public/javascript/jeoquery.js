@@ -53,7 +53,7 @@ var jeoquery = (function($) {
       },
       error: function(xhr, textStatus) {
         deferred.reject(xhr, textStatus);
-        alert("Ooops, geonames server returned: " + textStatus);
+        console.log("Ooops, geonames server returned: " + textStatus);
       }
     });
     return deferred.promise();
