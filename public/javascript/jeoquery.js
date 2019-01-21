@@ -16,7 +16,7 @@ var jeoquery = (function($) {
   my.defaultCountryCode = "US";
   my.defaultLanguage = "en";
   my.geoNamesApiServer = "api.geonames.org";
-  my.geoNamesProtocol = "https";
+  my.geoNamesProtocol = "http";
 
   my.featureClass = {
     AdministrativeBoundary: "A",
@@ -36,19 +36,26 @@ var jeoquery = (function($) {
       throw 'Invalid geonames method "' + method + '".';
     }
     $.ajax({
-      url: "//" + my.geoNamesApiServer + "/" + method + "JSON",
+      url:
+        my.geoNamesProtocol +
+        "://" +
+        my.geoNamesApiServer +
+        "/" +
+        method +
+        "JSON",
       dataType: "jsonp",
       data: $.extend({}, my.defaultData, data),
       // GeoNames expects "traditional" param serializing
       traditional: true,
-      crossDomain: true,
       success: function(data) {
         deferred.resolve(data);
         if (!!callback) callback(data);
       },
       error: function(xhr, textStatus) {
         deferred.reject(xhr, textStatus);
-        console.log("Ooops, geonames server returned: " + textStatus);
+        console.log(
+          "errore 22:30 Ooops, geonames server returned: " + textStatus
+        );
       }
     });
     return deferred.promise();
