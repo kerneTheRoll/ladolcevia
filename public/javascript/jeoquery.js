@@ -16,7 +16,7 @@ var jeoquery = (function($) {
   my.defaultCountryCode = "US";
   my.defaultLanguage = "en";
   my.geoNamesApiServer = "api.geonames.org";
-  my.geoNamesProtocol = "https";
+  my.geoNamesProtocol = "";
 
   my.featureClass = {
     AdministrativeBoundary: "A",
