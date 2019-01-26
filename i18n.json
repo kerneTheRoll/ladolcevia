@@ -1,12 +1,6 @@
 {
-  "languages": [{
-      "key": "en-gb",
-      "label": "English"
-    },
+  "languages": [
     {
-      "key": "de-de",
-      "label": "German"
-    }, {
       "key": "it-it",
       "label": "Italiano"
     }
