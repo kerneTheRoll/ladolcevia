@@ -213,41 +213,39 @@ function validaContatti() {
         number: true
       },
 
-      richiesta: {
-        required: function(elem) {
-          return $("#scelta option:selected").val() === "niente";
-        }
-      }
+      
       // qui va bene
     },
 
     messages: {
       nome: {
         required: traduciErrori("nome", language),
-        minlength: "nome troppo corto, minimo 4 lettere"
+        minlength: "nome troppo corto, minimo 4 lettere",
+
       },
 
       cognome: {
         required: traduciErrori("cognome", language),
-        minlength: "cognome troppo corto, minimo 4 lettere"
+        minlength: "cognome troppo corto, minimo 4 lettere",
+        required:"Campo obbligatorio"
       },
       email: {
-        required: "perfavore, inserisci la tua email",
-        email: "perfavore, inserisci una email valida"
+        required: "Campo obbligatorio",
+        email: "Campo Obbligatorio"
       },
       country: {
-        required: "perfavore, seleziona il tuo stato"
+        required: "Campo obbligatorio"
       },
       cap: {
-        required: "perfavore,inserisci il tuo cap"
+        required: "Campo obbligatorio"
       },
       citta: {
-        required: "perfavore, inserisci la tua città",
-        minlength: "perfavore, inserisci nome di città valida "
+        required: "Campo obbligatorio",
+        minlength: "Campo obbligatorio"
       },
       telefono: {
-        required: "perfavore, inserisci numero di telefono",
-        number: "perfavore, inserisci solo numeri"
+        required: "Campo obbligatorio",
+        number: "*Campo obbligatorio"
       },
       richiesta: {
         required: "scrivi un messaggio"
@@ -280,7 +278,7 @@ function validaContatti() {
 function traduciErrori(campo, language) {
   if (campo === "nome") {
     if (language === "it-it") {
-      return "Campo Obbligatorio ";
+      return "Campo obbligatorio   ";
     }
     if (language === "de-de") {
       return "Pflichtfeld";

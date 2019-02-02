@@ -151,20 +151,20 @@ block body
                 #card
                   .front.bluastro.pt-4
                     img(src=home.data.iconasegreto1.url)
-                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
+                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center.backCard1(style='background-image:url('+home.data.cover_card1.url+');')
                     != RichText.asText(home.data.testo_segreto1)
 
               .col-md-4
                 #card1
                   .front.bluastro.pt-4
                     img(src=home.data.iconasegreto2.url)
-                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
+                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center.backCard2(style='background-image:url('+home.data.cover_card2.url+');')
                      != RichText.asText(home.data.testo_segreto2)
               .col-md-4
                 #card2
                   .front.bluastro.pt-4
                     img(src=home.data.iconasegreto3.url)
-                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center
+                  .back.d-flex.justify-content-center.descrizione-segreto.align-items-center.backCard3(style='background-image:url('+home.data.cover_card3.url+');')
                     != RichText.asText(home.data.testo_segreto3)
 
   .container-fluid.mt-5.mydiv

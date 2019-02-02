@@ -369,11 +369,11 @@ function gestisciEmail(req, res, next) {
     const telefono = req.body.telefono;
     const richiesta = req.body.richiesta;
     const scelta = req.body.scelta;
-
+ 
     // setup email data with unicode symbols
     let mailOptions = {
-      to: "abdimohamed862992@gmail.com ", // list of receivers
-      subject: "richiesta da parte di " + azienda + " per " + scelta, // Subject line
+      to: "villani.emilia92@gmail.com ", // list of receivers
+      subject: "richiesta da parte di " + nome + " per " + scelta, // Subject line
       text:
         "Buona sera, una richiesta  a nome di  " +
         nome +
@@ -395,11 +395,11 @@ function gestisciEmail(req, res, next) {
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         req.message =
-          "non è stato possibile inviare il messaggio, riprovare più tardi";
+          "Non è stato possibile inviare il messaggio, riprovare più tardi";
       } else {
         res.status(200).send({
           message: JSON.stringify(
-            "grazie per averci contatto, a breve vi ricontatteremo"
+            "La Sua richiesta è stata inviata"
           )
         });
       }

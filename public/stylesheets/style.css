@@ -743,11 +743,16 @@ div.colonna2 img {
   height: 300px;
   width: 300px;
 }
+.backCard1,.backCard2,.backCard3{
+  background-size:cover;
+  background-repeat: no-repeat;
 
+}
 #card2 {
   height: 300px;
   width: 300px;
 }
+
 
 input.form-control {
   border-color: #1d74bb;
@@ -769,23 +774,30 @@ select.form-control {
 
 #card .back {
   padding: 5px;
-  border: 4px solid #2478bb;
-  font-size: 1.4rem;
-  ;
+  font-size: 1.8em;
+  color: rgb(64, 49, 5);
+  font-weight: bold;
+  line-height: 1.2em;
 
 }
 
 #card1 .back {
+
   padding: 5px;
-  border: 4px solid #2478bb;
-  font-size: 1.4rem;
+  /* border: 4px solid #2478bb; */
+  font-size: 1.8em;
+  color: rgb(64, 49, 5);
+  font-weight: bold;
+  line-height: 1.2em;
 
 }
 
 #card2 .back {
   padding: 5px;
-  border: 4px solid #2478bb;
-  font-size: 1.4rem;
+  font-size: 1.8em;
+  color: #f0f0f0;
+  font-weight: bold;
+  line-height: 1.2em;
 
 }
 
