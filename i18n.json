@@ -3,6 +3,10 @@
     {
       "key": "it-it",
       "label": "Italiano"
+    },
+    {
+      "key": "de-de",
+      "label": "Deutsch"
     }
   ],
   "default": "it-it"
