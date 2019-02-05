@@ -33,6 +33,27 @@ head
   script(src='/javascript/main.js')
   script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
   script(src='https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js')
+  link(rel='stylesheet', type='text/css', href='//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js')
+  script.
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+    "palette": {
+    "popup": {
+    "background": "#000"
+    },
+    "button": {
+    "background": "#f1d600"
+    }
+    },
+    "position": "top",
+    "content": {
+    "message": "This website uses cookies to ensure you get the best experience on our website.",
+    "dismiss": "Got it!",
+    "link": "Read",
+    "href":"https://cookiepolicygenerator.com/live.php?token=thQUh0lemw5QFkgLgXPWpoKT2oFpPxtr"
+    }
+    })});
 
 
 

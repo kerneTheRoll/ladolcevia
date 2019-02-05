@@ -117,7 +117,8 @@ block body
 
       .col-md-6.d-flex.flex-column.justify-content-center.categoriaList
        div.pt-3
-         h2.title I nostri Gelati
+         h2.title
+            != RichText.asText(home.data.titolo_gelati)
          if message
           h2
             message
@@ -180,13 +181,16 @@ block body
             div.d-flex.flex-row.justify-space-between.justify-content-between
               div
                 div.mese-giorno
-                  span.giorno 12
-                  span.mese GENNAIO
+                  span.giorno
+                    != RichText.asText(home.data.giorno_evento)
+                  span.mese.text-upper
+                     != RichText.asText(home.data.mese_evento)
               div
                 .luogo.mt-3
                   div.text-center
                     i.fas.fa-map-marker-alt.text-center
-                  div.paese PERUGIA (PG)
+                  div.paese
+                     != RichText.asText(home.data.paese_evento)
 
 
 
@@ -195,7 +199,7 @@ block body
           .col-md-6.justify-content-center
                 h2.descr-event
 
-                  |Workshop con gli artigiani del gusto, vi aspettiamo numerosi!!
+                     != RichText.asText(home.data.descrizione_evento)
 
 
 

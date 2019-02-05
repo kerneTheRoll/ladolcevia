@@ -225,6 +225,7 @@ function getCategoria(req, res, next) {
     .then(categoria => {
       if (!categoria) res.status(404).send("page not found");
       else req.categoria = categoria;
+
       next();
     })
     .catch(error => {
@@ -238,16 +239,19 @@ function getProdottoSimile(req, res, next) {
   const id = req.categoria.id;
 
   req.prismic.api
-    .query([
-      Prismic.Predicates.at("document.type", "prodotto"),
+    .query(
+      [
+        Prismic.Predicates.at("document.type", "prodotto"),
 
-      Prismic.Predicates.at("my.prodotto.categories.link", id)
-    ])
+        Prismic.Predicates.at("my.prodotto.categories.link", id)
+      ],
+      I18NConfig(req)
+    )
     .then(function(response) {
       // response is the response object, response.results holds the documents
 
       req.prodottoFiglio = response.results;
-
+      console.log(response.results);
       next();
     })
     .catch(error => {
@@ -369,7 +373,7 @@ function gestisciEmail(req, res, next) {
     const telefono = req.body.telefono;
     const richiesta = req.body.richiesta;
     const scelta = req.body.scelta;
- 
+
     // setup email data with unicode symbols
     let mailOptions = {
       to: "villani.emilia92@gmail.com ", // list of receivers
@@ -398,9 +402,7 @@ function gestisciEmail(req, res, next) {
           "Non è stato possibile inviare il messaggio, riprovare più tardi";
       } else {
         res.status(200).send({
-          message: JSON.stringify(
-            "La Sua richiesta è stata inviata"
-          )
+          message: JSON.stringify("La Sua richiesta è stata inviata")
         });
       }
 
