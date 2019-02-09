@@ -82,7 +82,7 @@ app.use(I18NUrl(), (req, res, next) => {
 //redirect / to default language from i18n.json
 app.get("/", (req, res, next) => {
   //res.redirect("http://www.ladolcevia.eu/");
-   res.redirect(I18N.default);
+  res.redirect(I18N.default);
 });
 
 function getHome(req, res, next) {
@@ -220,13 +220,22 @@ function cerca_ingredienti(req, res, next) {
 }
 function getCategoria(req, res, next) {
   const uid = req.params.uid;
+
   req.prismic.api
     .getByUID("category", uid, I18NConfig(req))
     .then(categoria => {
-      if (!categoria) res.status(404).send("page not found");
-      else req.categoria = categoria;
-
-      next();
+      if (!categoria) {
+        res.status(404).send("page not found");
+      } else {
+        req.categoria = categoria;
+        console.log(
+          "trovato id della categoria " +
+            req.categoria.id +
+            " lingua " +
+            req.params.lang
+        );
+        next();
+      }
     })
     .catch(error => {
       next(`error when retriving page ${error.message}`);
@@ -240,18 +249,19 @@ function getProdottoSimile(req, res, next) {
 
   req.prismic.api
     .query(
-      [
-        Prismic.Predicates.at("document.type", "prodotto"),
+      // [
+      Prismic.Predicates.at("document.type", "prodotto"),
+      { lang: req.params.lang }
 
-        Prismic.Predicates.at("my.prodotto.categories.link", id)
-      ],
-      I18NConfig(req)
+      //Prismic.Predicates.at("my.prodotto.categories.link", id)
+      //]
+      //I18NConfig(req)
     )
     .then(function(response) {
       // response is the response object, response.results holds the documents
 
       req.prodottoFiglio = response.results;
-      console.log(response.results);
+
       next();
     })
     .catch(error => {
