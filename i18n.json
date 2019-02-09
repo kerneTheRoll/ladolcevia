@@ -1,12 +1,15 @@
 {
-  "languages": [
-    {
+  "languages": [{
       "key": "it-it",
       "label": "Italiano"
     },
     {
       "key": "de-de",
       "label": "Deutsch"
+    },
+    {
+      "key": "en-gb",
+      "label": "English"
     }
   ],
   "default": "it-it"
