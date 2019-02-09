@@ -81,8 +81,8 @@ app.use(I18NUrl(), (req, res, next) => {
 
 //redirect / to default language from i18n.json
 app.get("/", (req, res, next) => {
-  res.redirect("http://www.ladolcevia.eu/");
-  // res.redirect(I18N.default);
+  //res.redirect("http://www.ladolcevia.eu/");
+   res.redirect(I18N.default);
 });
 
 function getHome(req, res, next) {
