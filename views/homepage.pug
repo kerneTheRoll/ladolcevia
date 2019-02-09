@@ -186,11 +186,13 @@ block body
                   span.mese.text-upper
                      != RichText.asText(home.data.mese_evento)
               div
-                .luogo.mt-3
-                  div.text-center
-                    i.fas.fa-map-marker-alt.text-center
-                  div.paese
-                     != RichText.asText(home.data.paese_evento)
+
+                    .luogo.mt-3
+                      div.text-center
+
+                            i.fas.fa-map-marker-alt.text-center
+                      div.paese
+                        != RichText.asText(home.data.paese_evento)
 
 
 
