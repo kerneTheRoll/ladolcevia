@@ -1,18 +1,23 @@
 $(document).ready(function() {
   var mylingua = localStorage.getItem("language");
-  var url = localStorage.getItem("url");
+  var url = navigator.language;
 
   if (mylingua === null) {
     mylingua = "It";
   }
   jeoquery.defaultData.userName = "ladolcevia";
+  jeoquery.defaultData.lang = mylingua;
+  $("#country").jeoCountrySelect({
+    callback: function(elem) {
+      $("#country option:first").text(mylingua);
+    }
+  });
 
-  $("#country").jeoCountrySelect({});
   $("#postalCode").jeoPostalCodeLookup({
     countryInput: $("#country"),
     target: $("#postalPlace")
   });
-  $("#dropdownMenuButton").text(mylingua);
+
   console.log(url);
   var getDispositivo = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
@@ -75,13 +80,7 @@ $(document).ready(function() {
       '<span class="custom-prev"><img src="../images/next.png" /></span>',
     pager: false
   });
-  $(".dropdown-menu a ").click(function(e) {
-    var lingua = $(this).attr("data-lingua");
-    var url = $(this).attr("data-href");
-    localStorage.setItem("language", lingua);
-    localStorage.setItem("url", url);
-    $("#dropdownMenuButton").text(lingua);
-  });
+
   $(".language-selector select").on("change", function(event) {
     const $select = $(this);
     const $option = $select.find("option:selected", this);
@@ -211,23 +210,21 @@ function validaContatti() {
       telefono: {
         required: true,
         number: true
-      },
+      }
 
-      
       // qui va bene
     },
 
     messages: {
       nome: {
         required: traduciErrori("nome", language),
-        minlength: "nome troppo corto, minimo 4 lettere",
-
+        minlength: "nome troppo corto, minimo 4 lettere"
       },
 
       cognome: {
         required: traduciErrori("cognome", language),
         minlength: "cognome troppo corto, minimo 4 lettere",
-        required:"Campo obbligatorio"
+        required: "Campo obbligatorio"
       },
       email: {
         required: "Campo obbligatorio",

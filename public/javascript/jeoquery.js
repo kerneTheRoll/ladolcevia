@@ -183,6 +183,7 @@ var jeoquery = (function($) {
 (function($) {
   $.fn.jeoCountrySelect = function(options) {
     var el = this;
+
     $.when(jeoquery.getGeoNames("countryInfo")).then(function(data) {
       var sortedNames = data.geonames;
       if (data.geonames.sort) {
@@ -197,7 +198,9 @@ var jeoquery = (function($) {
           '<option value="' + c.countryCode + '">' + c.countryName + "</option>"
         );
       });
-      el.html("<option value=''>seleziona il tuo stato</option>" + html);
+      el.html(
+        "<option disabled selected id='firstOption'>State</option>" + html
+      );
       if (options && options.callback) options.callback(sortedNames);
     });
   };

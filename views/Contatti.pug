@@ -26,7 +26,7 @@ block body
             != RichText.asText(contatti.data.fax)
           .mt-2.desc
             != RichText.asText(contatti.data.email)
-  
+
     .container-fluid
       h2.pl-5.mt-4.blue-color
         != RichText.asText(contatti.data.titolo_contatti)
@@ -34,9 +34,9 @@ block body
         != RichText.asText(contatti.data.descrizione_contatti)
 
 
-   
+
     form(method="post" action='/'+contatti.lang+'/contatti' name='contatti' id='contatta').container-fluid.pl-5.contactme
-     
+
 
      input#language(type="hidden" value=contatti.lang)
      .container-fluid.row
@@ -91,7 +91,10 @@ block body
           textarea#richiesta.form-controll.py-3(name="richiesta", placeholder=RichText.asText(contatti.data.form__richiesta))
      .container-fluid.row.pt-4.blue-color.pl-4
           button(type='submit').btn-block.mybtn#sub
-            | invia la tua richiesta
-     .container  
+              != RichText.asText(contatti.data.bottone_invia)
+     .container
         h2#answers.pl-5.alert.alert-success.text-center
-        
+
+
+
+
