@@ -9,7 +9,18 @@ $(document).ready(function() {
   jeoquery.defaultData.lang = mylingua;
   $("#country").jeoCountrySelect({
     callback: function(elem) {
-      $("#country option:first").text(mylingua);
+      var lingua = $("#language").val();
+      var traduciStato = "";
+      if (lingua === "it-it") {
+        traduciStato = "scegli il tuo stato";
+      }
+      if (lingua === "de-de") {
+        traduciStato = "wähle dein Land";
+      }
+      if (lingua === "en-gb") {
+        traduciStato = "choose your country";
+      }
+      $("#country option:first").text(traduciStato);
     }
   });
 
