@@ -736,11 +736,15 @@ div.colonna2 img {
   height: 300px;
   width: 300px;
 }
-.backCard1,.backCard2,.backCard3{
-  background-size:cover;
+
+.backCard1,
+.backCard2,
+.backCard3 {
+  background-size: cover;
   background-repeat: no-repeat;
 
 }
+
 #card2 {
   height: 300px;
   width: 300px;
@@ -978,7 +982,7 @@ h1.titolo-ingredienti.badge>span.title {
   }
 
   .titolo-storia1 {
-    padding-top:10px;
+    padding-top: 10px;
     line-height: 25px;
   }
 
@@ -1026,7 +1030,7 @@ h1.titolo-ingredienti.badge>span.title {
     margin-top: 20px;
     line-height: 30px;
     font-size: 3em;
-    
+
   }
 
 

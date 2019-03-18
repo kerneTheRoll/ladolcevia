@@ -266,7 +266,7 @@ function validaContatti() {
         data: $(form).serialize(),
         success: function(response) {
           $("#answers")
-            .slideDown()
+            .fadeIn("fast")
             .html(response.message);
         }
       });

@@ -102,7 +102,12 @@ function getPremium(req, res, next) {
   req.prismic.api
     .query(
       [Prismic.Predicates.at("document.type", "ingredienti-premium")],
-      I18NConfig(req)
+      {
+        lang: req.params.lang,
+        orderings: "[my.ingredienti-premium.ordinamento]"
+      }
+
+      /// I18NConfig(req)
     )
     .then(function(response) {
       req.premium = response.results;
@@ -358,12 +363,11 @@ function gestisciEmail(req, res, next) {
       },
       auth: {
         type: "OAuth2",
-        user: "abdimohamed862992@gmail.com",
+        user: "servizioweb.ladolcevia@gmail.com",
         clientId:
-          "1002077818722-nuu831na5k4ooukl7k6ktv5on52er09t.apps.googleusercontent.com",
-        clientSecret: "8jjiNsSSekwHiGOzXldLPnw3",
-        refreshToken:
-          "1/OAiMWWIav06OOfgOMmNUz0QJZwnkSweA-i1mmihs3BIBcG5l8ul0lfn7IZ3zx-bJ"
+          "1037606441752-l8kq4j9v9hstd38vnia4g9skqf9jda9t.apps.googleusercontent.com",
+        clientSecret: "Hv9nDtUTvEycaLVfXUsFVAN8",
+        refreshToken: "1/P5RDIxwpoR3pollN0GtX6VMK1ZYzWdM5Hyuri5oHIfc"
       }
     });
     // bisogna controllare!!!!
@@ -380,7 +384,7 @@ function gestisciEmail(req, res, next) {
 
     // setup email data with unicode symbols
     let mailOptions = {
-      to: "villani.emilia92@gmail.com ", // list of receivers
+      to: "ladolcevia@ladolcevia.eu", // list of receivers
       subject: "richiesta da parte di " + nome + " per " + scelta, // Subject line
       text:
         "Buona sera, una richiesta  a nome di  " +
@@ -402,11 +406,12 @@ function gestisciEmail(req, res, next) {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
+        console.log(error);
         req.message =
           "Non è stato possibile inviare il messaggio, riprovare più tardi";
       } else {
         res.status(200).send({
-          message: JSON.stringify("La Sua richiesta è stata inviata")
+          message: "La Sua richiesta è stata inviata"
         });
       }
 

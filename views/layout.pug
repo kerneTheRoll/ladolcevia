@@ -5,8 +5,12 @@ doctype html(lang='it')
 head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   link(rel='shortcut icon', type='image/png', href='/images/favicon.png')
-
-  title #{title}
+  link(rel="alternate", href="http://ladolcevia.it", hreflang="x-default")
+  link(rel="alternate", href="http://ladolcevia.it/it-it", hreflang="it-it")
+  link(rel="alternate", href="http://ladolcevia.it/de-de", hreflang="de-de")
+  link(rel="alternate", href="http://ladolcevia.it/en-gb", hreflang="en-gb")
+  if I18N.current == 'it-it'
+    meta(name='description', content='LaDolcevia gelateria ti offre una vasta gamma di prodotti e ingredienti per gelati, entra e scopri il gelato di qualità di Parma')
   link(rel="stylesheet", href="/stylesheets/reset.css")
   link(rel='stylesheet', href='/stylesheets/common.css')
   link(rel="stylesheet", href="/stylesheets/style.css")
@@ -40,17 +44,17 @@ head
     window.cookieconsent.initialise({
     "palette": {
     "popup": {
-    "background": "#000"
+    "background": "#1d74bb"
     },
     "button": {
-    "background": "#f1d600"
+    "background": "#fff"
     }
     },
     "position": "top",
     "content": {
-    "message": "This website uses cookies to ensure you get the best experience on our website.",
-    "dismiss": "Got it!",
-    "link": "Read",
+    "message": "Questo sito Web utilizza i cookie per assicurarti di ottenere la migliore esperienza sul nostro sito web.",
+    "dismiss": "Prosegui",
+    "link": "Leggi",
     "href":"https://cookiepolicygenerator.com/live.php?token=thQUh0lemw5QFkgLgXPWpoKT2oFpPxtr"
     }
     })});
