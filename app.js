@@ -366,8 +366,10 @@ function gestisciEmail(req, res, next) {
         user: "servizioweb.ladolcevia@gmail.com",
         clientId:
           "1037606441752-l8kq4j9v9hstd38vnia4g9skqf9jda9t.apps.googleusercontent.com",
+
         clientSecret: "Hv9nDtUTvEycaLVfXUsFVAN8",
-        refreshToken: "1/P5RDIxwpoR3pollN0GtX6VMK1ZYzWdM5Hyuri5oHIfc"
+
+        refreshToken: "1/5nW_DhE4_F_ub9njop1HMBCSRAjI7fWu_5EeUpgNCzw"
       }
     });
     // bisogna controllare!!!!
@@ -384,7 +386,7 @@ function gestisciEmail(req, res, next) {
 
     // setup email data with unicode symbols
     let mailOptions = {
-      to: "ladolcevia@ladolcevia.eu", // list of receivers
+      to: "osmide.ferrari@gmail.com", // list of receivers
       subject: "richiesta da parte di " + nome + " per " + scelta, // Subject line
       text:
         "Buona sera, una richiesta  a nome di  " +
