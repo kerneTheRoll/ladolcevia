@@ -12,18 +12,23 @@ block body
         p
           h2.nome-azienda
             != RichText.asText(contatti.data.nome_azienda)
+          p.sotto-tit(style="font-size:1.2em")
+           != RichText.asText(contatti.data.sotto_titolo)
           div.text-left.desc
              != RichText.asText(contatti.data.residenza)
           div.desc
             != RichText.asText(contatti.data.localita)
           div.desc
             != RichText.asText(contatti.data.cap_azienda)
-          div.desc
+          div.desc(style="text-transform:uppercase")
             != RichText.asText(contatti.data.stato)
-          .mt-5.desc Tel
-            != RichText.asText(contatti.data.telefono)
           div.desc
             != RichText.asText(contatti.data.piva)
+          .desc
+            != RichText.asText(contatti.data.cod_dest)
+          .mt-5.desc Tel
+            != RichText.asText(contatti.data.telefono)
+
           .mt-2.desc
             != RichText.asText(contatti.data.email)
 
