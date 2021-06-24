@@ -1,4 +1,13 @@
 $(document).ready(function() {
+  
+  $('#inviabtn').click(function () {
+    var btn = $(this);
+    $(btn).buttonLoader('start');
+    setTimeout(function () {
+      $(btn).buttonLoader('stop');
+    }, 5000);
+  })
+
   var mylingua = localStorage.getItem("language");
   var url = navigator.language;
 
@@ -183,8 +192,9 @@ $(document).ready(function() {
 });
 
 /**guarda sotto e togli i commetni serve per le api delle citta  */
-
+ 
 function validaContatti() {
+ 
   var language = $("#language").val();
 
   $("#contatta").validate({
@@ -259,7 +269,9 @@ function validaContatti() {
         required: "scrivi un messaggio"
       }
     },
+
     submitHandler: function(form) {
+     
       $.ajax({
         url: form.action,
         type: form.method,
@@ -268,6 +280,11 @@ function validaContatti() {
           $("#answers")
             .fadeIn("fast")
             .html(response.message);
+        },
+        error:function(response){
+          console.log("Errore!!!!!");
+          console.log(response);
+          console.log("Fine errore!!!!");
         }
       });
     }
