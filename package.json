@@ -2,8 +2,8 @@
   "name": "LadolceVia",
   "version": "1.0.0",
   "engines": {
-    "node": ">=9.4.0",
-    "npm":">=7.19.0"
+    "node": "14.16.1",
+    "npm":"7.7.6"
   },
   "scripts": {
     "start": "npm run build:css; node app.js",
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
-    "node-sass": ">=5.0.0",
+    "node-sass": "5.0.0",
     "nodemon": "^1.18.7",
     "postcss": "^6.0.23",
     "postcss-cli": "^4.1.0",
