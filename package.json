@@ -17,7 +17,7 @@
     "url": "https://github.com/kerneTheRoll/ladolcevia"
   },
   "dependencies": {
-    "npm":"7.19.0",
+    "npm":">=7.19.0",
     "body-parser": "^1.17.2",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",
