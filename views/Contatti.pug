@@ -95,9 +95,12 @@ block body
      .container-fluid.row.pt-4.blue-color.pl-4.textarealabel#content
           textarea#richiesta.form-controll.py-3(name="richiesta", placeholder=RichText.asText(contatti.data.form__richiesta))
      .container-fluid.row.pt-4.blue-color.pl-4
-          button(type='submit').btn-block.mybtn#sub
-              != RichText.asText(contatti.data.bottone_invia)
-          button#inviabtn.btn.btn-default.has-spinner(type='button') Submit Order
+          button(type='button' data-loading-text='Invio in corso ').btn-block.mybtn#inviabtn.btn.btn-darkblue
+              i.loading-icon.fa.fa-spinner.fa-spin.hide#loading
+              span(data-message =RichText.asText(contatti.data.bottone_invia) ).btn.txt      
+                  != RichText.asText(contatti.data.bottone_invia)
+
+         
 
      .container.mt-3
         h2#answers.pl-5.alert.alert-success.text-center

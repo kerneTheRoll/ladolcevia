@@ -24,7 +24,13 @@ h2.text-camel::first-line {
 h2.text-camel {
   text-transform: lowercase;
 }
-
+#loading{
+ 
+ margin-right: 10px;
+}
+.hide{
+  display: none!important;
+}
 
 .text-grey {
   color: var(--main-colore-test);

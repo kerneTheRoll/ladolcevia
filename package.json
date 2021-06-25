@@ -22,6 +22,7 @@
     "cookie-parser": "^1.4.3",
     "cookies": "^0.7.3",
     "debug": "^2.6.8",
+    "dotenv": "^10.0.0",
     "errorhandler": "^1.5.0",
     "escape-html": "^1.0.3",
     "express": "^4.16.4",

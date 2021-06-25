@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Prismic = require("prismic-javascript");
 const { RichText, Link } = require("prismic-dom");
 
@@ -8,6 +9,7 @@ const Cookies = require("cookies");
 const nodemailer = require("nodemailer");
 //Must be at the end so it go through the Prismic middleware because ended up in the final route
 const I18N = require("./i18n.json");
+const { purge } = require("./config");
 //provide a lang parameter in the route
 
 function I18NUrl(urlPart) {
@@ -20,6 +22,7 @@ function I18NConfig(req, options) {
 
 app.listen(PORT, () => {
   // console.log(`Go to browser: http://localhost:${PORT}`);
+  console.log(process.env.USER);
 });
 
 //Middleware catch all request, query Prismic API and configure everything for it
@@ -350,26 +353,20 @@ function getContatti(req, res, next) {
       next(`error when retriving homepage ${error.message}`);
     });
 }
+
+ 
 function gestisciEmail(req, res, next) {
   var message = "";
   nodemailer.createTestAccount((err, account) => {
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
+      host: "smtps.aruba.it",
       port: 465,
-      secure: true, // true for 465, false for other ports
-      tls: {
-        rejectUnauthorized: false
-      },
+      logger:true,
+      debug:true,
       auth: {
-        type: "OAuth2",
-        user: "servizioweb.ladolcevia@gmail.com",
-        clientId:
-          "1037606441752-l8kq4j9v9hstd38vnia4g9skqf9jda9t.apps.googleusercontent.com",
-
-        clientSecret: "Hv9nDtUTvEycaLVfXUsFVAN8",
-
-        refreshToken: "1/5nW_DhE4_F_ub9njop1HMBCSRAjI7fWu_5EeUpgNCzw"
+       user:process.env.USER,
+        pass:process.env.PASSWORD
       }
     });
     // bisogna controllare!!!!
@@ -386,25 +383,47 @@ function gestisciEmail(req, res, next) {
 
     // setup email data with unicode symbols
     let mailOptions = {
-      to: "osmide.ferrari@gmail.com", // list of receivers
+     // to: "osmide.ferrari@gmail.com", // list of receivers
+     from: process.env.USER,
+      to:process.env.INVIAVERSO,
       subject: "richiesta da parte di " + nome + " per " + scelta, // Subject line
-      text:
-        "Buona sera, una richiesta  a nome di  " +
-        nome +
-        " " +
-        cognome +
-        " numero di telefono " +
-        telefono +
-        " la richiesta scritta è " +
-        richiesta +
-        " effettuata da localita " +
-        country +
-        " cap " +
-        cap +
-        " città " +
-        citta
+      html:
+        `<table style="background:rgb(29 116 187);color:#ffff;width:100%;">
+        <thead>
+        <tr><td>Buona sera, <br/>una richiesta  a nome di ${nome} ${cognome}
+        ed è interessato a <br/> ${scelta}
+        </td></tr>
+        </thead>
+        <tbody>
+        <tr><td><hr/></td></tr>
+            <tr><td>Richiesta:</td></tr>
+             <tr><td>${richiesta}</td></tr>
+               <tr><td><hr/></td></tr>
+          <tr>
+             <tr><td>Numero di telefono:</td></tr>
+              <tr><td>${telefono}</td></tr>
+                 <tr><td><hr/></td></tr>
+          </tr>
+          
+           <tr>
+             <tr><td>Città:</td></tr>
+              <tr><td>${citta}</td></tr>
+                 <tr><td><hr/></td></tr>
+          </tr>
+          
+           <tr>
+             <tr><td>Cap</td></tr>
+              <tr><td>${cap}</td></tr>
+                 <tr><td><hr/></td></tr>
+          </tr>
+        </tbody>
+       
+         <tr></tr>
+        </table>`
+      
     };
 
+ 
     // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {

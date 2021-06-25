@@ -1,12 +1,6 @@
 $(document).ready(function() {
   
-  $('#inviabtn').click(function () {
-    var btn = $(this);
-    $(btn).buttonLoader('start');
-    setTimeout(function () {
-      $(btn).buttonLoader('stop');
-    }, 5000);
-  })
+ 
 
   var mylingua = localStorage.getItem("language");
   var url = navigator.language;
@@ -192,11 +186,11 @@ $(document).ready(function() {
 });
 
 /**guarda sotto e togli i commetni serve per le api delle citta  */
- 
-function validaContatti() {
- 
-  var language = $("#language").val();
 
+function validaContatti() {
+
+  var language = $("#language").val();
+  
   $("#contatta").validate({
     highlight: function(element) {
       $(element).addClass("is-invalid");
@@ -269,26 +263,81 @@ function validaContatti() {
         required: "scrivi un messaggio"
       }
     },
+  });
 
-    submitHandler: function(form) {
-     
-      $.ajax({
-        url: form.action,
-        type: form.method,
-        data: $(form).serialize(),
+$("#inviabtn").click(function(){
+
+  if($("#contatta").valid()){
+     $.ajax({
+        url: $('#contatta').attr('action'),
+        type: "POST",
+        data: $('#contatta').serialize(),
+        beforeSend:function(){
+         
+          $("#loading").removeClass("hide");
+          
+         
+          $(".btn.txt") .text("...invio email in corso");
+          $("#inviabtn").attr("disabled",true);
+        },
         success: function(response) {
+          let message = $('.btn.txt').attr("data-message") ;
+          $("#loading").addClass("hide");
+          $(".btn.txt") .text(message);
+          setTimeout(function(){
+            $("#inviabtn").removeAttr("disabled");
+          },5000)
+          
           $("#answers")
             .fadeIn("fast")
-            .html(response.message);
+            .html(response.message).delay(1000).fadeOut('fast');
         },
         error:function(response){
-          console.log("Errore!!!!!");
-          console.log(response);
-          console.log("Fine errore!!!!");
+
+          let message = $('.btn.txt').attr("data-message") ;
+          $("#loading").addClass("hide");
+          $(".btn.txt") .text(message);
+          setTimeout(function(){
+            $("#inviabtn").removeAttr("disabled");
+          },5000)
+
+          $("#answers").removeClass("alert-success").addClass("alert-warning")
+          .fadeIn("fast")
+          .html("Ops!Si è verificato un errore...vi preghiamo di riprovare più tardi ").delay(10000).fadeOut('fast');
         }
       });
-    }
-  });
+  
+  }else{
+    
+    console.log("errore");
+  }
+})
+    // submitHandler: function(form) {
+      
+     
+  
+    //   $.ajax({
+    //     url: form.action,
+    //     type: form.method,
+    //     data: $(form).serialize(),
+    //     beforeSend:function(){
+    //       $("#loading").removeClass("hide");
+          
+    //       $("#loading").closets("button").attr("disabled",true).text("...invio email in corso");
+    //     },
+    //     success: function(response) {
+    //       $("#answers")
+    //         .fadeIn("fast")
+    //         .html(response.message);
+    //     },
+    //     error:function(response){
+    //       console.log("Errore!!!!!");
+    //       console.log(response);
+    //       console.log("Fine errore!!!!");
+    //     }
+    //   });
+    // }
+
   $("#content")
     .on("change keyup keydown paste cut", "textarea", function() {
       $(this)
