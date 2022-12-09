@@ -24,7 +24,7 @@
     "debug": "^2.6.8",
     "errorhandler": "^1.5.0",
     "escape-html": "^1.0.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "method-override": "^2.3.9",
     "morgan": "^1.9.1",
